@@ -1,0 +1,607 @@
+---
+import Social from "../components/Social.astro";
+import Footer from "../components/Footer.astro";
+import Portafolio from "../components/Portafolio.astro";
+import Formulario from "../components/Formulario.astro";
+import Tarifas from "../components/Tarifas.astro";
+import Hero from "../components/Hero.astro";
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diseño Landing page Chile, Páginas Landing page, Landing page Chile</title>
+  <link rel="canonical" href="https://xn--diseopaginas-dhb.cl/index.php">
+  <meta name="p:domain_verify" content="202a15564602cb7871e576394e4296b8"/>
+  <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+  <!--- End favicon-->
+
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+  <!-- End google font  -->
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/magnific-popup.css">
+  <link rel="stylesheet" href="/css/slick.css">
+  <link rel="stylesheet" href="/css/fontawesome.css">
+  <link rel="stylesheet" href="/css/remixicon.css">
+  <link rel="stylesheet" href="/css/aos.css">
+  <link rel="stylesheet" href="/css/niceselect.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+  <!-- Code Editor  -->
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/app.min.css">
+</head>
+
+<body>
+
+  <div class="luminix-preloader-wrap">
+    <div class="luminix-preloader">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <!-- End preloader -->
+
+  <div class="progress-bar-container">
+    <div class="progress-bar"></div>
+  </div>
+
+  <!-- progress circle -->
+  <div class="paginacontainer">
+    <div class="progress-wrap">
+      <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+      </svg>
+      <div class="top-arrow">
+        <svg width="12" height="20" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0.999999 1L8 8L1 15" stroke="#2920D2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </div>
+    </div>
+  </div>
+  <!-- End All Js -->
+  <!-- Mobile Menu -->
+  <div class="luminix-menu-wrapper">
+    <div class="luminix-menu-area text-center">
+      <div class="luminix-menu-mobile-top">
+        <div class="mobile-logo">
+          <a href="index.html">
+            <img src="/images/logo/disenopaginas.svg" width="112" alt="logo">
+          </a>
+        </div>
+        <button class="luminix-menu-toggle mobile">
+          <i class="ri-close-line"></i>
+        </button>
+      </div>
+      <div class="luminix-mobile-menu">
+        <ul class="luminix-mobile-menu-list">
+          <li><a href="/">Inicio</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#portafolio">Portafolio</a></li>
+          <li><a href="#precio">Precios</a></li>    
+          <li><a href="#contacto">Contacto</a></li>    
+        </ul>
+      </div>
+      
+    </div>
+  </div>
+  <!-- End mobile menu -->
+
+  <header class="site-header luminix-header-section luminix-header-three" id="sticky-menu">
+    <div class="luminix-header-top bg-accent">
+      <div class="container">
+        <div class="luminix-header-info-wraper">
+          <div class="luminix-header-info-wrap">
+            <div class="luminix-header-info-data">
+              <ul>
+                <li>
+                  <a href="mailto:name@email.com">
+                    <img src="assets/images/iconbox/mail.svg" alt="">codigoraul@gmail.com
+                  </a>
+                </li>
+                <li>
+                  <img src="assets/images/iconbox/location.svg" alt="">Temuco, Chile
+                </li>
+              </ul>
+            </div>
+
+          </div>
+          <div class="luminix-header-info-and-social">
+            <div class="luminix-header-info-data">
+              <ul>
+                <li>
+                  <img src="assets/images/iconbox/clock.svg" alt="">Lunes a sabado: 24hrs
+                </li>
+              </ul>
+            </div>
+           <!-- luminix social -->
+            <Social />
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="luminix-header-bottom white-bg1">
+      <div class="container">
+        <div class="row gx-3 align-items-center justify-content-between">
+          <div class="col-8 col-sm-auto ">
+            <div class="header-logo1 ">
+              <a href="index.html">
+                <img src="/images/logo/disenopaginas.svg" width="178" alt="logo Diseño web chile">
+              </a>
+            </div>
+          </div>
+          <div class="col-auto text-end text-lg-center">
+            <div class="luminix-main-menu-item">
+              <nav class="main-menu menu-style1 d-none d-xl-block menu-left">
+                <ul>
+                  <li><a href="/">Inicio</a></li>
+                  <li><a href="#nosotros">Nosotros</a></li>
+                  <li><a href="#servicios">Servicios</a></li>
+                  <li><a href="#portafolio">Portafolio</a></li>
+                  <li><a href="#precio">Precios</a></li>    
+                  <li><a href="#contacto">Contacto</a></li>    
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="col-auto d-flex align-items-center">
+            <a class="luminix-default-btn luminix-header-btn3" href="#contacto">Formulario de contacto</a>
+            <div class="luminix-header-menu">
+              <nav class="navbar site-navbar justify-content-between">
+                <!-- Brand Logo-->
+                <!-- mobile menu trigger -->
+                <button class="luminix-menu-toggle  d-inline-block d-xl-none">
+                  <span></span>
+                </button>
+                <!--/.Mobile Menu Hamburger Ends-->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+ <!-- Hero -->
+
+  <Hero />
+  <!-- end hero -->
+
+  <div class="luminix-padding-section light-bg1" id="nosotros">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5">
+          <div class="luminix-about-thumb" data-aos="fade-up" data-aos-duration="700">
+            <img src="/images/hero/landing-nosotros.jpg" alt="Landing page para empresas y emprendedores">
+            <div class="luminix-about-card3">
+              <img src="/images/about-us/author.png" alt="">
+              <h6>Nuestros Clientes nos respaldan con un 98% de satisfacción y continuidad en los años de nuestros servicios web.</h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7 d-flex align-items-center">
+          <div class="luminix-default-content pl-100">
+            <h2 class="title2">Diseño de Landing page </h2>
+            <p class="text">Landing Pages en Astro en Chile | Diseño y desarrollo de páginas web rápidas y optimizadas con Astro. Creamos landing pages modernas, ligeras y SEO-friendly para maximizar conversiones y atraer clientes. Ideal para empresas, emprendedores y negocios en Chile que buscan presencia digital con altísimo rendimiento y velocidad.</p>
+            <div class="luminix-list-icon-content">
+              <ul>
+                <li>
+                  <img src="/images/about-us/icon1.svg" alt="">
+                  Soluciones adaptadas a todo tipo de presupuestos.
+                </li>
+                <li>
+                  <img src="/images/about-us/icon1.svg" alt="">
+                  Diseño responsivo para una experiencia óptima en dispositivos móviles, tablets y computadores.
+                </li>
+                <li>
+                  <img src="/images/about-us/icon1.svg" alt="">
+                  Asesoramiento en elección de tecnología según los objetivos del negocio
+                </li>
+                <li>
+                  <img src="/images/about-us/icon1.svg" alt="">
+                  Soporte y mantenimiento continuo para garantizar la eficiencia y la seguridad de su sitio web.
+                </li>
+               
+              </ul>
+            </div>
+            <div class="mt-50">
+              <a href="#contacto" class="luminix-default-btn extra-btn2">Contactanos</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end nosotros -->
+
+  <section id="servicios" class="luminix-padding-section">
+    <div class="container">
+      <div class="luminix-section-title center">
+        <h2 class="title2">Te presentamos nuestros Servicios</h2>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-6">
+          <div class="luminix-service-wrap" data-aos="fade-up" data-aos-duration="500">
+            <div class="luminix-service-icon">
+              <img src="/images/service/icon3.svg" alt="">
+            </div>
+            <div class="luminix-service-content">
+              <h5>Diseño de Landing Pages</h5>
+              <p>Creamos sitios web únicos, ligeros y optimizados, ideales para quienes buscan una 
+                Solución básica pero profesional y efectiva.</p>
+            </div>
+            <div class="luminix-blog-btn">
+              <a href="#">Leer más
+                <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.50024 0.75L14.7502 6M14.7502 6L9.50024 11.25M14.7502 6L1.25024 6" stroke="#001A3D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M9.50024 0.75L14.7502 6M14.7502 6L9.50024 11.25M14.7502 6L1.25024 6" stroke="#001A3D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="luminix-service-wrap" data-aos="fade-up" data-aos-duration="700">
+            <div class="luminix-service-icon">
+              <img src="/images/service/icon4.svg" alt="">
+            </div>
+            <div class="luminix-service-content">
+              <h5>Diseño de Landing Pages</h5>
+              <p> Diseñamos páginas de aterrizaje atractivas y orientadas a la conversión, perfectas para campañas específicas, promociones o generación de leads.</p>
+            </div>
+            <div class="luminix-blog-btn">
+              <a href="">Leer Más
+                <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.50024 0.75L14.7502 6M14.7502 6L9.50024 11.25M14.7502 6L1.25024 6" stroke="#001A3D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M9.50024 0.75L14.7502 6M14.7502 6L9.50024 11.25M14.7502 6L1.25024 6" stroke="#001A3D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="luminix-service-wrap" data-aos="fade-up" data-aos-duration="900">
+            <div class="luminix-service-icon">
+              <img src="/images/service/icon5.svg" alt="">
+            </div>
+            <div class="luminix-service-content">
+              <h5>Sitios Web Autoadministrables</h5>
+              <p>Implementamos sitios web que permiten a los usuarios gestionar fácilmente su contenido, utilizando 
+                tecnología como  CMS WordPress</p>
+            </div>
+            <div class="luminix-blog-btn">
+              <a href="#">Leer más
+                <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.50024 0.75L14.7502 6M14.7502 6L9.50024 11.25M14.7502 6L1.25024 6" stroke="#001A3D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M9.50024 0.75L14.7502 6M14.7502 6L9.50024 11.25M14.7502 6L1.25024 6" stroke="#001A3D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="luminix-service-wrap" data-aos="fade-up" data-aos-duration="1100">
+            <div class="luminix-service-icon">
+              <img src="/images/service/icon6.svg" alt="">
+            </div>
+            <div class="luminix-service-content">
+              <h5>Diseño de Logotipos Web</h5>
+              <p>Diseñamos tu logotipo de empresa en Adobe Illustrator, de manera rápida pero eficiente, 
+                con un enfoque en la usabilidad y la calidad para tu página web.
+
+              </p>
+            </div>
+            <div class="luminix-blog-btn">
+              <a href="#">Leer Más
+                <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.50024 0.75L14.7502 6M14.7502 6L9.50024 11.25M14.7502 6L1.25024 6" stroke="#001A3D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M9.50024 0.75L14.7502 6M14.7502 6L9.50024 11.25M14.7502 6L1.25024 6" stroke="#001A3D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="luminix-service-wrap" data-aos="fade-up" data-aos-duration="1300">
+            <div class="luminix-service-icon">
+              <img src="/images/service/icon1.svg" alt="">
+            </div>
+            <div class="luminix-service-content">
+              <h5>Posicionamiento Web SEO</h5>
+              <p>Creamos páginas web con posicionamiento SEO en Chile, para que tus marca, servicios y/o productos sean visibles en la web.
+                mediante el proceso de optimización de contenidos y enlaces.
+              </p>
+            </div>
+            <div class="luminix-blog-btn">
+              <a href="#">Leer más
+                <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.50024 0.75L14.7502 6M14.7502 6L9.50024 11.25M14.7502 6L1.25024 6" stroke="#001A3D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M9.50024 0.75L14.7502 6M14.7502 6L9.50024 11.25M14.7502 6L1.25024 6" stroke="#001A3D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="luminix-service-wrap" data-aos="fade-up" data-aos-duration="1500">
+            <div class="luminix-service-icon">
+              <img src="/images/service/icon2.svg" alt="">
+            </div>
+            <div class="luminix-service-content">
+              <h5>Sitios web Ecommerce</h5>
+              <p>Páginas web Tiendas online, ya sea con caracteristicas de venta de productos o servicios, o como catalogo para que
+                tus clientes conoscan tus productos y te contácten rápidamente.
+              </p>
+            </div>
+            <div class="luminix-blog-btn">
+              <a href="#">Leer más
+                <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.50024 0.75L14.7502 6M14.7502 6L9.50024 11.25M14.7502 6L1.25024 6" stroke="#001A3D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M9.50024 0.75L14.7502 6M14.7502 6L9.50024 11.25M14.7502 6L1.25024 6" stroke="#001A3D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end servicios -->
+
+  <div class="luminix-padding-section video-section section" style="background-image: url(/images/v3/thumb1.png);">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="luminix-video-content">
+            <h2 class="video-title">Landing Page Optimizadas</h2>
+            <p class="video-text"><b>Landing page optimizada,</b> Astro mejora el rendimiento del sitio web al renderizar componentes en el servidor y enviar HTML liviano al navegador 
+              sin sobrecarga innecesaria de JavaScript.</p>
+            <div class="mt-50 play-btn">
+              <a class="luminix-popup-video3 video-init" href="https://www.youtube.com/watch?v=kssIEqSJeMI">
+                <img src="/images/v2/play-btn1.svg" alt="">
+                <div class="waves waves2 wave-1"></div>
+                <div class="waves waves2 wave-2"></div>
+                <div class="waves waves2 wave-3"></div>
+              </a>
+              <p>Watch Video</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="luminix-skill-wrap pl-100">
+            <div class="luminix-skill-item">
+              <div class="luminix-skill-title title2 pb-0">
+                <h5>Leadership</h5>
+              </div>
+              <div class="luminix-skill-line">
+                <div class="luminix-skill-bar extra-bar bar-one"></div>
+              </div>
+            </div>
+            <div class="luminix-skill-item">
+              <div class="luminix-skill-title title2 pb-0">
+                <h5>Marketing</h5>
+              </div>
+              <div class="luminix-skill-line2">
+                <div class="luminix-skill-bar2 extra-bar bar-two"></div>
+              </div>
+            </div>
+            <div class="luminix-skill-item">
+              <div class="luminix-skill-title title2 pb-0">
+                <h5>Problem Solving</h5>
+              </div>
+              <div class="luminix-skill-line2">
+                <div class="luminix-skill-bar2 extra-bar bar-three"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end video -->
+
+  <div class="luminix-brand-section">
+    <div class="luminix-brand-slider-wrap">
+      <div class="luminix-brand-item">
+        <img src="/images/brand/brand1.svg" alt="">
+      </div>
+      <div class="luminix-brand-item">
+        <img src="/images/brand/brand2.svg" alt="">
+      </div>
+      <div class="luminix-brand-item">
+        <img src="/images/brand/brand3.svg" alt="">
+      </div>
+      <div class="luminix-brand-item">
+        <img src="/images/brand/brand4.svg" alt="">
+      </div>
+      <div class="luminix-brand-item">
+        <img src="/images/brand/brand5.svg" alt="">
+      </div>
+      <div class="luminix-brand-item">
+        <img src="/images/brand/brand4.svg" alt="">
+      </div>
+      <div class="luminix-brand-item">
+        <img src="/images/brand/brand3.svg" alt="">
+      </div>
+      <div class="luminix-brand-item">
+        <img src="/images/brand/brand2.svg" alt="">
+      </div>
+      <div class="luminix-brand-item">
+        <img src="/images/brand/brand3.svg" alt="">
+      </div>
+      <div class="luminix-brand-item">
+        <img src="/images/brand/brand4.svg" alt="">
+      </div>
+      <div class="luminix-brand-item">
+        <img src="/images/brand/brand5.svg" alt="">
+      </div>
+      <div class="luminix-brand-item">
+        <img src="/images/brand/brand4.svg" alt="">
+      </div>
+      <div class="luminix-brand-item">
+        <img src="/images/brand/brand3.svg" alt="">
+      </div>
+      <div class="luminix-brand-item">
+        <img src="/images/brand/brand2.svg" alt="">
+      </div>
+      <div class="luminix-brand-item">
+        <img src="/images/brand/brand3.svg" alt="">
+      </div>
+      <div class="luminix-brand-item">
+        <img src="/images/brand/brand4.svg" alt="">
+      </div>
+      <div class="luminix-brand-item">
+        <img src="/images/brand/brand5.svg" alt="">
+      </div>
+      <div class="luminix-brand-item">
+        <img src="/images/brand/brand4.svg" alt="">
+      </div>
+      <div class="luminix-brand-item">
+        <img src="/images/brand/brand3.svg" alt="">
+      </div>
+      <div class="luminix-brand-item">
+        <img src="/images/brand/brand2.svg" alt="">
+      </div>
+      <div class="luminix-brand-item">
+        <img src="/images/brand/brand3.svg" alt="">
+      </div>
+      <div class="luminix-brand-item">
+        <img src="/images/brand/brand4.svg" alt="">
+      </div>
+      <div class="luminix-brand-item">
+        <img src="/images/brand/brand5.svg" alt="">
+      </div>
+      <div class="luminix-brand-item">
+        <img src="/images/brand/brand4.svg" alt="">
+      </div>
+      <div class="luminix-brand-item">
+        <img src="/images/brand/brand3.svg" alt="">
+      </div>
+      <div class="luminix-brand-item">
+        <img src="/images/brand/brand2.svg" alt="">
+      </div>
+    </div>
+  </div>
+  <!-- end brand -->
+
+  <div class="luminix-padding-section7">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="luminix-content-thumb2" data-aos="fade-up" data-aos-duration="700">
+            <img src="/images/hero/landingpage.jpg" alt="">
+          </div>
+        </div>
+        <div class="col-lg-6 d-flex align-items-center">
+          <div class="luminix-default-content">
+            <h2 class="title2">Landing page Rápidas, Páginas rápidas</h2>
+            <p class="text">En un mundo digital donde la velocidad y la optimización marcan la diferencia,
+               diseñamos landing pages en Astro que cargan en milisegundos
+               y están optimizadas para el mejor rendimiento en Google</p>
+            <div class="mt-50">
+              <div class="luminix-list-icon-wrap wrap3">
+                <div class="luminix-list-icon-icon2">
+                  <img src="/images/v3/icon1.svg" alt="">
+                </div>
+                <div class="luminix-list-icon-data">
+                  <h5>Ayudamos a aumentar sus ganancias y el valor de su negocio</h5>
+                  <p>We specialize in talent management, recruitment, training and organizational development for business growth.</p>
+                </div>
+              </div>
+              <div class="luminix-list-icon-wrap wrap3">
+                <div class="luminix-list-icon-icon2">
+                  <img src="/images/v3/icon2.svg" alt="">
+                </div>
+                <div class="luminix-list-icon-data">
+                  <h5>Amplio conocimiento y experiencia en la industria.</h5>
+                  <p>Our activities involve market research, branding, grow customer engagement and digital marketing strategies.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end content -->+
+
+
+<Tarifas />
+  
+  <!-- end section -->
+
+  <Portafolio />
+
+  <!-- end Portafolio -->
+
+  <div id="contacto" class="luminix-padding-section4">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5">
+          <div class="luminix-contact-us-thumb" data-aos="fade-up" data-aos-duration="700">
+            <img src="images/contact-us/fondo-contacto.png" alt="Landing pages rápidas y optimizadas">
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="luminix-contact-box">
+            <div class="luminix-contact-title">
+              <h2 class="title pb-0 pt-0">Envianos tu consulta:</h2>
+            </div>
+           <!-- Formulario -->
+            <Formulario />
+
+           <!-- End Formulario -->
+          </div>
+        </div>
+      </div>
+  
+
+    </div>
+  </div>
+  <!-- end team -->
+
+  <!-- Footer  -->
+<Footer />
+
+  <!-- scripts -->
+  <script src="/js/jquery-3.7.1.min.js" is:inline></script>
+
+  <script src="/js/bootstrap.bundle.min.js"is:inline></script>
+  <script src="/js/menu/menu.js"is:inline></script>
+  <script src="/js/jquery.magnific-popup.min.js"is:inline></script>
+  <script src="/js/slick.js" is:inline></script>
+  <script src="/js/pricing.min.js"is:inline></script>
+  <script src="/js/countdown.js"is:inline></script>
+  <script src="/js/skillbar.js"is:inline></script>
+  <script src="/js/slick-animation.js" is:inline></script>
+  <script src="/js/slick-animation.min.js" is:inline></script>
+  <script src="/js/faq.js" is:inline></script>
+  <script src="/js/isotope.pkgd.min.js" is:inline></script>
+  <script src="/js/tabs-slider.js" is:inline></script>
+  <script src="/js/product-increment.js" is:inline></script>
+  <script src="/js/aos.js" is:inline></script>
+  <script src="/js/niceselect.js" is:inline></script>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyArZVfNvjnLNwJZlLJKuOiWHZ6vtQzzb1Y"></script>
+  <script src="/js/slick.js" is:inline></script>
+
+  <script src="/js/app.js" is:inline></script>
+
+
+</body>
+</html>
+

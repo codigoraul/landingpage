@@ -1,0 +1,84 @@
+---
+
+---
+
+<form action="/procesar-formulario.php" id="formulario" method="post">
+    <div class="row">
+      <div class="col-lg-6">
+      <div class="luminix-main-field">
+        <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="luminix-main-field">
+        <input type="email" id="email" name="email" placeholder="Email" required>
+      </div>
+    </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="luminix-main-field">
+          <input type="tel" name="fono" id="fono" placeholder="Fono" required>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="luminix-main-field">
+          <select required name="presupuesto" name="presupuesto" id="presupuesto" class="button-text">
+            <option selected disabled value="Presupuesto">Presupuesto Aproximado</option>
+            <option value="200 a 250mil">200.000 a 250.000</option>
+            <option value="250 a 300mil">260.000 a 310.000</option>
+            <option value="300mil y más">310.000 y más </option>
+        </select>
+        </div>
+      </div>
+    </div>
+    <div class="luminix-main-field-textarea">
+      <textarea class="button-text" required name="textarea" placeholder="Mensaje"></textarea>
+    </div>
+
+    <button class="luminix-default-btn extra-btn4 pill" type="submit">Enviar Mensaje
+      <svg width="19" height="16" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M11.2139 1.5L17.7139 8M17.7139 8L11.2139 14.5M17.7139 8L0.999581 8" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path d="M11.2139 1.5L17.7139 8M17.7139 8L11.2139 14.5M17.7139 8L0.999581 8" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </button>
+    <div id="error-message"></div>
+  </form>
+
+  <script>
+    const formulario = document.getElementById("formulario");
+    const errorMessage = document.getElementById("error-message");
+  
+    formulario.addEventListener("submit", (event) => {
+      errorMessage.style.display = "none";
+      errorMessage.textContent = "";
+  
+      const nombre = formulario.nombre.value.trim();
+      const email = formulario.email.value.trim();
+      const fono = formulario.fono.value.trim();
+      const presupuesto = formulario.presupuesto.value;
+      const mensaje = formulario.textarea.value.trim();
+  
+      if (nombre.length < 3) {
+        event.preventDefault();
+        errorMessage.textContent = "El nombre debe tener al menos 3 caracteres.";
+        errorMessage.style.display = "block";
+      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        event.preventDefault();
+        errorMessage.textContent = "Por favor ingrese un email válido.";
+        errorMessage.style.display = "block";
+      } else if (!/^\d{9}$/.test(fono)) {
+        event.preventDefault();
+        errorMessage.textContent = "El número de teléfono debe tener 9 dígitos.";
+        errorMessage.style.display = "block";
+      } else if (!presupuesto) {
+        event.preventDefault();
+        errorMessage.textContent = "Por favor seleccione un presupuesto.";
+        errorMessage.style.display = "block";
+      } else if (mensaje.length < 10) {
+        event.preventDefault();
+        errorMessage.textContent = "El mensaje debe tener al menos 10 caracteres.";
+        errorMessage.style.display = "block";
+      }
+    });
+  </script>
