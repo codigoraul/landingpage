@@ -2,8 +2,26 @@ import { defineConfig } from 'astro/config';
 import node from '@astrojs/node';
 
 export default defineConfig({
-  output: 'static', // Esto generará solo archivos estáticos.
+  output: 'static',
+  outDir: './dist',
+  publicDir: './public',
+  base: './',
+  build: {
+    assets: '_assets'
+  },
+  vite: {
+    base: './',
+    build: {
+      rollupOptions: {
+        output: {
+          assetFileNames: 'assets/[name][extname]',
+          chunkFileNames: 'assets/[name].js',
+          entryFileNames: 'assets/[name].js',
+        }
+      }
+    }
+  },
   adapter: node({
-    mode: 'standalone', // Configuración para un servidor independiente.
-  }),
+    mode: 'standalone'
+  })
 });

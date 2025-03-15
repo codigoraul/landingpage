@@ -6,8 +6,11 @@
 .luminix-hero-section {
   padding: 96px 0 !important;
 }
-luminix-pricing-price span {
+.luminix-pricing-price span {
   font-size: 28px !important;
+}
+.luminix-padding-section.video-section.section {
+  background: linear-gradient(247deg, #8f8f8f, #003391);
 }
 h2.title2{
   font-size: 50px !important;}

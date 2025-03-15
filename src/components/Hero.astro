@@ -1,14 +1,34 @@
 ---
-
-
+import { Image } from 'astro:assets';
+import bgImage from '@images/bg-hero.webp';
+import htmlImage from '@images/astro-img.jpg';
 ---
 
-<section class="luminix-hero-section section" style="background-image: url(/images/hero/bg-slider-Landing.jpg);"> 
+
+<section class="luminix-hero-section section"> 
+    <div class="hero-background">
+        <Image 
+            src={bgImage} 
+            alt=""
+            widths={[768, 1024, 1440, 1920]}
+            sizes="100vw"
+            quality={75}
+            class="bg-image"
+        />
+    </div>
     <div class="container">
       <div class="row">
         <div class="col-lg-5 order-lg-2">
           <div class="luminix-hero-thumb" data-aos="fade-left" data-aos-duration="700">
-            <img src="/images/hero/html-y-css.jpg" alt="Diseño de Landing Pages Chile">
+            <Image 
+              src={htmlImage} 
+              alt="Diseño de Landing Pages Chile"
+              widths={[280, 440, 540, 720, 960, 1280]}
+              sizes="(max-width: 360px) 280px, (max-width: 720px) 440px, (max-width: 1024px) 540px, (max-width: 1280px) 720px, 960px"
+              quality={80}
+              loading="eager"
+              class="img-fluid"
+            />
           </div>
         </div>
         <div class="col-lg-7 d-flex align-items-center">
@@ -29,21 +49,41 @@
   </section>
 
   <style>
+    .luminix-hero-section {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+
+    .bg-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
 
     @media (max-width:  1224px) {
         h1.hero-title.aos-init.aos-animate {
-        font-size: 86px;
+            font-size: 86px;
         }
     }
     
     @media (max-width:  991px) {
         h1.hero-title.aos-init.aos-animate {
-        font-size: 78px;
+            font-size: 78px;
         }
     }
     @media (max-width: 767px) {
         h1.hero-title.aos-init.aos-animate {
             font-size: 62px;
-            }
+        }
     }
   </style>

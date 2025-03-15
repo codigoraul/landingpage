@@ -3,6 +3,11 @@
   "include": [".astro/types.d.ts", "**/*"],
   "exclude": ["dist"],
   "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@utils/*": ["./src/utils/*"],
+      "@images/*": ["./src/assets/images/*"]
+    },
     "module": "ESNext", 
     "moduleResolution": "node16",
     "target": "ESNext", 

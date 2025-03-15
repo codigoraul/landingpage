@@ -1,5 +1,5 @@
 ---
-
+const SITE_KEY = "6Lc1VBsTAAAAAJ94jzAhw1B3-Cgi3G6TRnoeejLF";
 ---
 
 <form action="/procesar-formulario.php" id="formulario" method="post">
@@ -8,6 +8,7 @@
       <div class="luminix-main-field">
         <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
       </div>
+      <input type="hidden" name="desde" value="LandingPage" id="ciudad">
     </div>
     <div class="col-lg-6">
       <div class="luminix-main-field">
@@ -35,6 +36,8 @@
     <div class="luminix-main-field-textarea">
       <textarea class="button-text" required name="textarea" placeholder="Mensaje"></textarea>
     </div>
+     <!-- reCAPTCHA -->
+  <div class="g-recaptcha" data-sitekey={SITE_KEY}></div>
 
     <button class="luminix-default-btn extra-btn4 pill" type="submit">Enviar Mensaje
       <svg width="19" height="16" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -56,6 +59,7 @@
       const nombre = formulario.nombre.value.trim();
       const email = formulario.email.value.trim();
       const fono = formulario.fono.value.trim();
+      const desde = formulario.desde.value.trim();
       const presupuesto = formulario.presupuesto.value;
       const mensaje = formulario.textarea.value.trim();
   
@@ -81,4 +85,7 @@
         errorMessage.style.display = "block";
       }
     });
+
+    
   </script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>

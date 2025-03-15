@@ -5,6 +5,13 @@ import Portafolio from "../components/Portafolio.astro";
 import Formulario from "../components/Formulario.astro";
 import Tarifas from "../components/Tarifas.astro";
 import Hero from "../components/Hero.astro";
+
+import {Image} from 'astro:assets';
+import bgImagePantalla from '@images/bg-pantallas.jpg';
+import landingNosotros from '@images/landing-nosotros.jpg';
+import imgLanding from '@images/landingpage.jpg';
+import fondoContacto from '@images/fondo-contacto.jpg';
+
 ---
 
 <!DOCTYPE html>
@@ -187,7 +194,12 @@ import Hero from "../components/Hero.astro";
       <div class="row">
         <div class="col-lg-5">
           <div class="luminix-about-thumb" data-aos="fade-up" data-aos-duration="700">
-            <img src="/images/hero/landing-nosotros.jpg" alt="Landing page para empresas y emprendedores">
+            <Image
+             src={landingNosotros} 
+             width={600}
+             height={700}
+             alt="Landing page para empresas y emprendedores"
+             />
             <div class="luminix-about-card3">
               <img src="/images/about-us/author.png" alt="">
               <h6>Nuestros Clientes nos respaldan con un 98% de satisfacción y continuidad en los años de nuestros servicios web.</h6>
@@ -201,15 +213,15 @@ import Hero from "../components/Hero.astro";
             <div class="luminix-list-icon-content">
               <ul>
                 <li>
-                  <img src="/images/about-us/icon1.svg" alt="">
+                  <img src="/images/about-us/icon1.svg" alt="Landing page para empresas y emprendedores">
                   Soluciones adaptadas a todo tipo de presupuestos.
                 </li>
                 <li>
-                  <img src="/images/about-us/icon1.svg" alt="">
+                  <img src="/images/about-us/icon1.svg" alt="Diseño web responsivo">
                   Diseño responsivo para una experiencia óptima en dispositivos móviles, tablets y computadores.
                 </li>
                 <li>
-                  <img src="/images/about-us/icon1.svg" alt="">
+                  <img src="/images/about-us/icon1.svg" alt="Landing page rápidas">
                   Asesoramiento en elección de tecnología según los objetivos del negocio
                 </li>
                 <li>
@@ -260,9 +272,10 @@ import Hero from "../components/Hero.astro";
             <div class="luminix-service-icon">
               <img src="/images/service/icon4.svg" alt="">
             </div>
-            <div class="luminix-service-content">
-              <h5>Diseño de Landing Pages</h5>
-              <p> Diseñamos páginas de aterrizaje atractivas y orientadas a la conversión, perfectas para campañas específicas, promociones o generación de leads.</p>
+            <div class="luminix-serice-content">
+              <h5> Landing Pages ultra rápidas</h5>
+              <p> Diseño de landing pages ultra rápidas con Astro JS en Chile. Optimiza la velocidad de carga y mejora 
+                la experiencia de usuario con soluciones personalizadas</p>
             </div>
             <div class="luminix-blog-btn">
               <a href="">Leer Más
@@ -363,56 +376,153 @@ import Hero from "../components/Hero.astro";
   </section>
   <!-- end servicios -->
 
-  <div class="luminix-padding-section video-section section" style="background-image: url(/images/v3/thumb1.png);">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6">
-          <div class="luminix-video-content">
-            <h2 class="video-title">Landing Page Optimizadas</h2>
-            <p class="video-text"><b>Landing page optimizada,</b> Astro mejora el rendimiento del sitio web al renderizar componentes en el servidor y enviar HTML liviano al navegador 
-              sin sobrecarga innecesaria de JavaScript.</p>
-            <div class="mt-50 play-btn">
-              <a class="luminix-popup-video3 video-init" href="https://www.youtube.com/watch?v=kssIEqSJeMI">
-                <img src="/images/v2/play-btn1.svg" alt="">
-                <div class="waves waves2 wave-1"></div>
-                <div class="waves waves2 wave-2"></div>
-                <div class="waves waves2 wave-3"></div>
-              </a>
-              <p>Watch Video</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6">
-          <div class="luminix-skill-wrap pl-100">
-            <div class="luminix-skill-item">
-              <div class="luminix-skill-title title2 pb-0">
-                <h5>Leadership</h5>
-              </div>
-              <div class="luminix-skill-line">
-                <div class="luminix-skill-bar extra-bar bar-one"></div>
-              </div>
-            </div>
-            <div class="luminix-skill-item">
-              <div class="luminix-skill-title title2 pb-0">
-                <h5>Marketing</h5>
-              </div>
-              <div class="luminix-skill-line2">
-                <div class="luminix-skill-bar2 extra-bar bar-two"></div>
-              </div>
-            </div>
-            <div class="luminix-skill-item">
-              <div class="luminix-skill-title title2 pb-0">
-                <h5>Problem Solving</h5>
-              </div>
-              <div class="luminix-skill-line2">
-                <div class="luminix-skill-bar2 extra-bar bar-three"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+  <div class="luminix-padding-section video-section">
+    <div class="video-background">
+        <Image 
+            src={bgImagePantalla} 
+            alt="Fondo de sección de video"
+            width={1920}
+            height={1080}
+            quality={80}
+            format="webp"
+            class="bg-image"
+        />
+        <div class="video-overlay"></div>
     </div>
-  </div>
+    <div class="video-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="luminix-video-content">
+                        <h2 class="video-title">Landing Page Optimizadas</h2>
+                        <p class="video-text"><b>Landing page optimizada,</b> Astro mejora el rendimiento del sitio web al renderizar componentes en el servidor y enviar HTML liviano al navegador 
+                        sin sobrecarga innecesaria de JavaScript.</p>
+                        <div class="mt-50 play-btn">
+                            <a class="luminix-popup-video3 video-init" href="https://www.youtube.com/watch?v=kssIEqSJeMI">
+                                <img src="/images/v2/play-btn1.svg" alt="">
+                                <div class="waves waves2 wave-1"></div>
+                                <div class="waves waves2 wave-2"></div>
+                                <div class="waves waves2 wave-3"></div>
+                            </a>
+                            <p>Ver Video</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="luminix-skill-wrap pl-100">
+                        <div class="luminix-skill-item">
+                            <div class="luminix-skill-title title2 pb-0">
+                                <h5>Diseño Profesional</h5>
+                            </div>
+                            <div class="luminix-skill-line">
+                                <div class="luminix-skill-bar extra-bar bar-one"></div>
+                            </div>
+                        </div>
+                        <div class="luminix-skill-item">
+                            <div class="luminix-skill-title title2 pb-0">
+                                <h5>Optimización SEO</h5>
+                            </div>
+                            <div class="luminix-skill-line2">
+                                <div class="luminix-skill-bar2 extra-bar bar-two"></div>
+                            </div>
+                        </div>
+                        <div class="luminix-skill-item">
+                            <div class="luminix-skill-title title2 pb-0">
+                                <h5>Velocidad de Carga</h5>
+                            </div>
+                            <div class="luminix-skill-line2">
+                                <div class="luminix-skill-bar2 extra-bar bar-three"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .video-section {
+        position: relative;
+        min-height: 600px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        color: white;
+        overflow: hidden;
+    }
+
+    .video-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+    }
+
+    .bg-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .video-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .video-content {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+    }
+
+    .video-title {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        font-weight: bold;
+        color: white;
+    }
+
+    .video-text {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+        color: white;
+    }
+
+    .luminix-video-content {
+        color: white;
+    }
+
+    .luminix-skill-title h5,
+    .luminix-skill-wrap {
+        color: white;
+    }
+
+    @media (max-width: 768px) {
+        .video-section {
+            min-height: 500px;
+        }
+
+        .video-title {
+            font-size: 2rem;
+        }
+
+        .video-text {
+            font-size: 1rem;
+        }
+    }
+</style>
   <!-- end video -->
 
   <div class="luminix-brand-section">
@@ -504,7 +614,7 @@ import Hero from "../components/Hero.astro";
       <div class="row">
         <div class="col-lg-6">
           <div class="luminix-content-thumb2" data-aos="fade-up" data-aos-duration="700">
-            <img src="/images/hero/landingpage.jpg" alt="">
+            <Image src={imgLanding} alt="Diseño de Landing page en Chile" />
           </div>
         </div>
         <div class="col-lg-6 d-flex align-items-center">
@@ -516,20 +626,20 @@ import Hero from "../components/Hero.astro";
             <div class="mt-50">
               <div class="luminix-list-icon-wrap wrap3">
                 <div class="luminix-list-icon-icon2">
-                  <img src="/images/v3/icon1.svg" alt="">
+                  <img src="/images/v3/icon1.svg" alt="Diseño de landing pages en Chile">
                 </div>
                 <div class="luminix-list-icon-data">
-                  <h5>Ayudamos a aumentar sus ganancias y el valor de su negocio</h5>
-                  <p>We specialize in talent management, recruitment, training and organizational development for business growth.</p>
+                  <h5>Aumenta tus Conversiones con Landing Pages Profesionales</h5>
+                  <p>Desarrollamos landing pages optimizadas que transforman visitantes en clientes. Nuestro diseño estratégico maximiza las conversiones y potencia el crecimiento de tu negocio en el mercado chileno.</p>
                 </div>
               </div>
               <div class="luminix-list-icon-wrap wrap3">
                 <div class="luminix-list-icon-icon2">
-                  <img src="/images/v3/icon2.svg" alt="">
+                  <img src="/images/v3/icon2.svg" alt="Expertos en landing pages Chile">
                 </div>
                 <div class="luminix-list-icon-data">
-                  <h5>Amplio conocimiento y experiencia en la industria.</h5>
-                  <p>Our activities involve market research, branding, grow customer engagement and digital marketing strategies.</p>
+                  <h5>Experiencia Comprobada en Landing Pages</h5>
+                  <p>Más de 5 años diseñando landing pages exitosas en Chile. Combinamos diseño atractivo, optimización SEO y estrategias de conversión para destacar tu marca en el mercado digital chileno.</p>
                 </div>
               </div>
             </div>
@@ -554,7 +664,7 @@ import Hero from "../components/Hero.astro";
       <div class="row">
         <div class="col-lg-5">
           <div class="luminix-contact-us-thumb" data-aos="fade-up" data-aos-duration="700">
-            <img src="images/contact-us/fondo-contacto.png" alt="Landing pages rápidas y optimizadas">
+            <Image src={fondoContacto} alt="Landing pages rápidas y optimizadas" />
           </div>
         </div>
         <div class="col-lg-7">

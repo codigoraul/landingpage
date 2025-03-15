@@ -1,7 +1,13 @@
 ---
-
+import { Image } from 'astro:assets';
+import arqueocat from '../../public/images/portafolio/arqueocat.jpg';
+import animaldoc from '../../public/images/portafolio/animaldoc.jpg';
+import apurolegal from '../../public/images/portafolio/apurolegal.jpg';
+import asesorialimentos from '../../public/images/portafolio/asesorialimentos.jpg';
+import bestproperty from '../../public/images/portafolio/bestproperty.jpg';
+import ceromultas from '../../public/images/portafolio/ceromultas.jpg';
+import comprobe from '../../public/images/portafolio/comprobe.jpg';
 ---
-
 
 <div id="portafolio" class="luminix-padding-section3">
     <div class="container">
@@ -20,92 +26,216 @@
         </div>
       </div>
     </div>
-    <div class="luminix-team-slider">
-      <div class="luminix-team-wrap">
-        <div class="luminix-team-thumb">
-          <img src="/images/portafolio/arqueocat.jpg" alt="">
-          <div class="luminix-blog-thumb">
-            <a href="https://arqueocat.cl" target="_blank">
-              <h5>www.arqueocat.cl</h5>
-            </a>
-            <p>Diseño web Arqueloga</p>
-          
-          </div>
-        </div>
-      </div>
-      <div class="luminix-team-wrap">
-        <div class="luminix-team-thumb">
-          <img src="/images/portafolio/animaldoc.jpg" alt="">
-          <div class="luminix-blog-thumb">
-            <a href="https://animaldoc.cl" target="_blank">
-              <h5>www.animaldoc.cl</h5>
-            </a>
-            <p>Diseño web Veterinaria</p>
-          
-          </div>
-        </div>
-      </div>
-      <div class="luminix-team-wrap">
-        <div class="luminix-team-thumb">
-          <img src="/images/portafolio/apurolegal.jpg" alt="">
-          <div class="luminix-blog-thumb">
-            <a href="https://apurolegal.cl" target="_blank">
-              <h5>www.apurolegal.cl</h5>
-            </a>
-            <p>Diseño web Abogados</p>
-          
-          </div>
-        </div>
-      </div>
-      <div class="luminix-team-wrap">
-        <div class="luminix-team-thumb">
-          <img src="/images/portafolio/asesorialimentos.jpg" alt="">
-          <div class="luminix-blog-thumb">
-            <a href="https://asesorialimento.cl" target="_blank">
-              <h5>www.asesorialimento.cl</h5>
-            </a>
-            <p>Diseño web Alimentos</p>
-          
-          </div>
-        </div>
-      </div>
-      <div class="luminix-team-wrap">
-        <div class="luminix-team-thumb">
-          <img src="/images/portafolio/bestproperty.jpg" alt="">
-          <div class="luminix-blog-thumb">
-            <a href="https://bestproperty.cl" target="_blank">
-              <h5>www.bestproperty.cl</h5>
-            </a>
-            <p>Diseño web Propiedades</p>
-          
-          </div>
-        </div>
-      </div>
-      <div class="luminix-team-wrap">
-        <div class="luminix-team-thumb">
-          <img src="/images/portafolio/ceromultas.jpg" alt="">
-          <div class="luminix-blog-thumb">
-            <a href="https://ceromultas.cl" target="_blank">
-              <h5>www.ceromultas.cl</h5>
-            </a>
-            <p>Diseño web Abogados</p>
-          
-          </div>
-        </div>
-      </div>
-      <div class="luminix-team-wrap">
-        <div class="luminix-team-thumb">
-          <img src="/images/portafolio/comprobe.jpg" alt="">
-          <div class="luminix-blog-thumb">
-            <a href="https://comprobe.cl" target="_blank">
-              <h5>www.comprobe.cl</h5>
-            </a>
-            <p>Diseño web Empresa</p>
-          
-          </div>
-        </div>
-      </div>
-     
-    </div>
     
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="luminix-team-wrap">
+            <div class="luminix-team-thumb">
+              <Image 
+                src={arqueocat} 
+                alt="Diseño web para arqueólogos en Chile"
+                width={600}
+                height={400}
+                quality={80}
+                format="webp"
+                loading="lazy"
+              />
+              <div class="luminix-blog-thumb">
+                <a href="https://arqueocat.cl" target="_blank">
+                  <h5>www.arqueocat.cl</h5>
+                </a>
+                <p>Diseño web Arqueloga</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="luminix-team-wrap">
+            <div class="luminix-team-thumb">
+              <Image 
+                src={animaldoc} 
+                alt="Diseño web para veterinarias en Chile"
+                width={600}
+                height={400}
+                quality={80}
+                format="webp"
+                loading="lazy"
+              />
+              <div class="luminix-blog-thumb">
+                <a href="https://animaldoc.cl" target="_blank">
+                  <h5>www.animaldoc.cl</h5>
+                </a>
+                <p>Diseño web Veterinaria</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="luminix-team-wrap">
+            <div class="luminix-team-thumb">
+              <Image 
+                src={apurolegal} 
+                alt="Diseño web para abogados en Chile"
+                width={600}
+                height={400}
+                quality={80}
+                format="webp"
+                loading="lazy"
+              />
+              <div class="luminix-blog-thumb">
+                <a href="https://apurolegal.cl" target="_blank">
+                  <h5>www.apurolegal.cl</h5>
+                </a>
+                <p>Diseño web Abogados</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="luminix-team-wrap">
+            <div class="luminix-team-thumb">
+              <Image 
+                src={asesorialimentos} 
+                alt="Diseño web para empresas de alimentos en Chile"
+                width={600}
+                height={400}
+                quality={80}
+                format="webp"
+                loading="lazy"
+              />
+              <div class="luminix-blog-thumb">
+                <a href="https://asesorialimento.cl" target="_blank">
+                  <h5>www.asesorialimento.cl</h5>
+                </a>
+                <p>Diseño web Alimentos</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="luminix-team-wrap">
+            <div class="luminix-team-thumb">
+              <Image 
+                src={bestproperty} 
+                alt="Diseño web para corredoras de propiedades en Chile"
+                width={600}
+                height={400}
+                quality={80}
+                format="webp"
+                loading="lazy"
+              />
+              <div class="luminix-blog-thumb">
+                <a href="https://bestproperty.cl" target="_blank">
+                  <h5>www.bestproperty.cl</h5>
+                </a>
+                <p>Diseño web Propiedades</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="luminix-team-wrap">
+            <div class="luminix-team-thumb">
+              <Image 
+                src={ceromultas} 
+                alt="Diseño web para servicios legales en Chile"
+                width={600}
+                height={400}
+                quality={80}
+                format="webp"
+                loading="lazy"
+              />
+              <div class="luminix-blog-thumb">
+                <a href="https://ceromultas.cl" target="_blank">
+                  <h5>www.ceromultas.cl</h5>
+                </a>
+                <p>Diseño web Abogados</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="luminix-team-wrap">
+            <div class="luminix-team-thumb">
+              <Image 
+                src={comprobe} 
+                alt="Diseño web para empresas en Chile"
+                width={600}
+                height={400}
+                quality={80}
+                format="webp"
+                loading="lazy"
+              />
+              <div class="luminix-blog-thumb">
+                <a href="https://comprobe.cl" target="_blank">
+                  <h5>www.comprobe.cl</h5>
+                </a>
+                <p>Diseño web Empresa</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+
+<style>
+  .luminix-team-thumb {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
+  .luminix-team-thumb img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+  }
+
+  .luminix-team-thumb:hover img {
+    transform: scale(1.05);
+  }
+
+  .luminix-blog-thumb {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: white;
+  }
+
+  .luminix-blog-thumb h5 {
+    color: white;
+    margin-bottom: 5px;
+  }
+
+  .luminix-blog-thumb p {
+    color: rgba(255,255,255,0.9);
+    margin: 0;
+  }
+
+  .luminix-blog-thumb a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .luminix-blog-thumb a:hover {
+    color: #007bff;
+  }
+
+  @media (max-width: 991px) {
+    .col-lg-3 {
+      margin-bottom: 30px;
+    }
+  }
+</style>
