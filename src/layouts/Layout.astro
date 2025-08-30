@@ -1,22 +1,58 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+import '../styles/main.css';
+---
+
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>{title}</title>
+		
+		<!-- Precargar recursos críticos -->
+		<link rel="preload" href="/css/bootstrap.min.css" as="style" />
+		<link rel="preload" href="/css/app.min.css" as="style" />
+		
+		<!-- Cargar estilos no críticos de manera asíncrona -->
+		<link rel="preload" href="/css/fontawesome.css" as="style" media="print" onload="this.media='all'" />
+		<link rel="preload" href="/css/aos.css" as="style" media="print" onload="this.media='all'" />
 	</head>
 	<body>
 		<slot />
+		
+		<!-- Scripts críticos en orden correcto -->
+		<script src="/js/jquery-3.7.1.min.js"></script>
+		<script src="/js/bootstrap.bundle.min.js"></script>
+		
+		<!-- Scripts secundarios -->
+		<script src="/js/app.js"></script>
 	</body>
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
+<style is:global>
+	:root {
+		--accent: 136, 58, 234;
+		--accent-light: 224, 204, 250;
+		--accent-dark: 49, 10, 101;
+		--accent-gradient: linear-gradient(
+			45deg,
+			rgb(var(--accent)),
+			rgb(var(--accent-light)) 30%,
+			white 60%
+		);
+	}
+	html {
+		font-family: system-ui, sans-serif;
+		background: #13151a;
+		background-size: 224px;
+		color-scheme: dark light;
 	}
 </style>

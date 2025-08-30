@@ -1,0 +1,80 @@
+import { Image } from 'astro:assets';
+import landingNosotros from '../assets/images/landing-nosotros.jpg';
+import authorImage from '../assets/images/about-us/author.png';
+
+<div class="luminix-about-thumb" data-aos="fade-up" data-aos-duration="700">
+    <Image
+        src={landingNosotros} 
+        alt="Landing page para empresas y emprendedores"
+        width={600}
+        height={700}
+        loading="lazy"
+        decoding="async"
+        format="webp"
+        quality={80}
+    />
+    <div class="luminix-about-card3">
+        <Image 
+            src={authorImage} 
+            alt="Autor" 
+            width={60} 
+            height={60} 
+            loading="lazy"
+            format="webp"
+            quality={80}
+        />
+        <h6>Nuestros Clientes nos respaldan con un 98% de satisfacción y continuidad en los años de nuestros servicios web.</h6>
+    </div>
+</div>
+
+<style>
+    .luminix-about-thumb {
+        position: relative;
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .luminix-about-thumb img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .luminix-about-card3 {
+        position: absolute;
+        bottom: 30px;
+        right: -30px;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        max-width: 80%;
+    }
+
+    .luminix-about-card3 img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .luminix-about-card3 h6 {
+        margin: 0;
+        font-size: 14px;
+        line-height: 1.5;
+        color: #333;
+    }
+
+    @media (max-width: 768px) {
+        .luminix-about-card3 {
+            right: 0;
+            bottom: 20px;
+            padding: 15px;
+        }
+    }
+</style> 

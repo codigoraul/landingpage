@@ -41,7 +41,14 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     /*--------------------------------------------------------------
     luminix PRELOADER JS INIT
     --------------------------------------------------------------*/
-    $(".luminix-preloader-wrap").fadeOut(500);
+    $(window).on('load', function() {
+        $(".luminix-preloader-wrap").fadeOut(100);
+    });
+
+    // Fallback si la carga tarda más de 1 segundo
+    setTimeout(function() {
+        $(".luminix-preloader-wrap").fadeOut(100);
+    }, 1000);
 
     /*--------------------------------------------------------------
     luminix HEADER SEARCH JS INIT
@@ -56,10 +63,15 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     $(window).on('scroll', function () {
       if ($(window).scrollTop() > 50) {
         $('#sticky-menu').addClass('sticky-menu');
+        $('.reveal-header').addClass('scrolled');
       } else {
         $('#sticky-menu').removeClass('sticky-menu');
+        $('.reveal-header').removeClass('scrolled');
       }
     });
+
+    // Trigger scroll event once to set initial state
+    $(window).trigger('scroll');
 
     /*--------------------------------------------------------------
     luminix MENU SIDEBAR JS INIT
@@ -109,16 +121,30 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     });
     var hero_slider = $('.luminix-hero-slider-init');
     if (hero_slider.is_exist()) {
-      hero_slider.slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: false,
-        arrows: true,
-        speed: 1000,
-        lazyLoad: 'progressive',
-        prevArrow: '<button class="slide-arrow luminix-hero-next"></button>',
-        nextArrow: '<button class="slide-arrow luminix-hero-prev"></button>'
-      }).slickAnimation();
+      // Precargar imágenes antes de inicializar el slider
+      const preloadImages = () => {
+        return new Promise((resolve) => {
+          hero_slider.find('img').each(function() {
+            const img = new Image();
+            img.src = this.src;
+          });
+          resolve();
+        });
+      };
+
+      // Inicializar slider después de precargar
+      preloadImages().then(() => {
+        hero_slider.slick({
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          autoplay: false,
+          arrows: true,
+          speed: 1000,
+          lazyLoad: 'progressive',
+          prevArrow: '<button class="slide-arrow luminix-hero-next"></button>',
+          nextArrow: '<button class="slide-arrow luminix-hero-prev"></button>'
+        }).slickAnimation();
+      });
     }
 
     /*--------------------------------------------------------------
@@ -686,3 +712,20 @@ $(function () {
   }
   scrNav();
 });
+
+// Optimizar el manejo del scroll
+var scrollHandler = {
+  init: function() {
+    // Usar requestAnimationFrame para optimizar el rendimiento
+    let ticking = false;
+    window.addEventListener('scroll', function() {
+      if (!ticking) {
+        window.requestAnimationFrame(function() {
+          updateProgress();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+  }
+};

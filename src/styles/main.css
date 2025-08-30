@@ -1,0 +1,29 @@
+/* Importaciones críticas para el LCP */
+@import url('/css/bootstrap.min.css') layer(framework);
+@import url('/css/app.min.css') layer(app);
+
+/* Importaciones no críticas */
+@import url('/css/fontawesome.css') layer(icons);
+@import url('/css/aos.css') layer(animations);
+
+@layer framework, app, icons, animations;
+
+/* Optimizaciones para el LCP */
+.luminix-hero-section {
+  contain: layout style paint;
+}
+
+.hero-background img {
+  content-visibility: auto;
+  contain: paint;
+} 
+
+.luminix-list-icon-content ul li {
+  font-size: 18px;
+  line-height: 1.43em;
+  font-weight: 600;
+  margin-bottom: 15px;
+  position: relative;
+  padding-left: 35px;
+  color: var(--heading-color);
+} 

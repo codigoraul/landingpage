@@ -5,12 +5,14 @@ import Portafolio from "../components/Portafolio.astro";
 import Formulario from "../components/Formulario.astro";
 import Tarifas from "../components/Tarifas.astro";
 import Hero from "../components/Hero.astro";
+import WhatsAppButton from "../components/WhatsAppButton.astro";
+import InfoHeader from '../components/InfoHeader.astro';
 
 import {Image} from 'astro:assets';
 import bgImagePantalla from '@images/bg-pantallas.jpg';
 import landingNosotros from '@images/landing-nosotros.jpg';
 import imgLanding from '@images/landingpage.jpg';
-import fondoContacto from '@images/fondo-contacto.jpg';
+import fondoContacto from '../assets/images/fondo-contacto.jpg';
 
 ---
 
@@ -20,48 +22,167 @@ import fondoContacto from '@images/fondo-contacto.jpg';
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Diseño Landing page Chile, Páginas Landing page, Landing page Chile</title>
-  <link rel="canonical" href="https://xn--diseopaginas-dhb.cl/index.php">
+  <title>Landing Page Económica desde $100.000 | Diseño Rápido y Profesional Chile</title>
+  <meta name="description" content="Landing page económica y rápida desde $100.000 en Chile. Diseño profesional, optimizada para Google, ideal para captar clientes y generar conversiones. ¡Entrega en 48 horas!">
+  <meta name="keywords" content="landing page económica, landing page $100.000, diseño web barato, landing page rápida, Chile, Temuco">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Landing Page Económica desde $100.000 | Diseño Rápido Chile">
+  <meta property="og:description" content="Landing page económica y rápida desde $100.000. Diseño profesional optimizado para Google. ¡Entrega en 48 horas!">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://xn--diseopaginas-dhb.cl/landing">
+  <link rel="canonical" href="https://xn--diseopaginas-dhb.cl/landing">
   <meta name="p:domain_verify" content="202a15564602cb7871e576394e4296b8"/>
   <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
   <!--- End favicon-->
 
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <!-- Optimización de fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Unificar fuentes en una sola llamada -->
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-
-  <link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-
-  <!-- End google font  -->
-
+  <!-- Cargar CSS crítico primero -->
   <link rel="stylesheet" href="/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/css/magnific-popup.css">
-  <link rel="stylesheet" href="/css/slick.css">
-  <link rel="stylesheet" href="/css/fontawesome.css">
-  <link rel="stylesheet" href="/css/remixicon.css">
-  <link rel="stylesheet" href="/css/aos.css">
-  <link rel="stylesheet" href="/css/niceselect.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-
-  <!-- Code Editor  -->
-
-  <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/app.min.css">
+  <link rel="stylesheet" href="/css/main.css">
+
+  <!-- Cargar CSS no crítico de forma asíncrona -->
+  <link rel="preload" href="/css/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="/css/custom-aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="/css/magnific-popup.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="/css/slick.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="/css/fontawesome.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="/css/remixicon.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="/css/niceselect.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+  <noscript>
+    <link rel="stylesheet" href="/css/aos.css">
+    <link rel="stylesheet" href="/css/custom-aos.css">
+    <link rel="stylesheet" href="/css/magnific-popup.css">
+    <link rel="stylesheet" href="/css/slick.css">
+    <link rel="stylesheet" href="/css/fontawesome.css">
+    <link rel="stylesheet" href="/css/remixicon.css">
+    <link rel="stylesheet" href="/css/niceselect.css">
+  </noscript>
+
+  <!-- Reemplazar cualquier script de reCAPTCHA existente con esta versión optimizada -->
+  <script type="text/javascript">
+    let recaptchaScript;
+    const loadRecaptcha = () => {
+      if (!recaptchaScript) {
+        recaptchaScript = document.createElement('script');
+        recaptchaScript.src = 'https://www.google.com/recaptcha/api.js?render=explicit';
+        recaptchaScript.async = true;
+        recaptchaScript.defer = true;
+        document.body.appendChild(recaptchaScript);
+      }
+    };
+
+    // Cargar reCAPTCHA solo cuando el usuario interactúe con el formulario
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.querySelector('#contact-form');
+      if (form) {
+        form.addEventListener('focusin', loadRecaptcha, { once: true });
+      }
+    });
+  </script>
+
+  <!-- Preload AOS CSS -->
+  <link rel="preload" href="/css/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/css/aos.css"></noscript>
+
+  <!-- Cargar AOS JS de manera optimizada -->
+  <script type="module">
+    document.addEventListener('DOMContentLoaded', function() {
+      import('/js/aos.js').then(module => {
+        AOS.init({
+          duration: 800,
+          easing: 'ease-in-out',
+          once: true, // Animar solo una vez
+          mirror: false,
+          disable: 'mobile' // Deshabilitar en móviles para mejor rendimiento
+        });
+      });
+    });
+  </script>
+
+  <!-- Script para el menú hamburguesa - JavaScript vanilla -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Obtener elementos del menú
+      const menuToggleBtns = document.querySelectorAll('.luminix-menu-toggle');
+      const menuWrapper = document.querySelector('.luminix-menu-wrapper');
+      const body = document.body;
+      
+      // Función para toggle del menú
+      function toggleMenu() {
+        if (menuWrapper && body) {
+          menuWrapper.classList.toggle('luminix-body-visible');
+          body.classList.toggle('luminix-body-visible');
+        }
+      }
+      
+      // Agregar event listeners a todos los botones hamburguesa
+      menuToggleBtns.forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          toggleMenu();
+        });
+      });
+      
+      // Cerrar menú al hacer click fuera
+      if (menuWrapper) {
+        menuWrapper.addEventListener('click', function(e) {
+          if (e.target === menuWrapper) {
+            toggleMenu();
+          }
+        });
+      }
+      
+      // Cerrar menú al hacer click en un enlace del menú
+      const menuLinks = document.querySelectorAll('.luminix-mobile-menu-list a');
+      menuLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+          toggleMenu();
+        });
+      });
+    });
+  </script>
+
+  <!-- CSS para ajustar el botón hamburguesa en móvil -->
+  <style>
+    /* Ajuste para el botón hamburguesa en móvil */
+    @media (max-width: 1199px) {
+      .luminix-menu-toggle {
+        margin-right: 15px !important;
+      }
+      
+      .col-auto.text-end {
+        padding-right: 15px !important;
+      }
+      
+      /* Ajustar el contenedor para evitar overflow */
+      .luminix-header-bottom .row {
+        margin-right: -10px !important;
+      }
+    }
+    
+    @media (max-width: 767px) {
+      .luminix-menu-toggle {
+        margin-right: 20px !important;
+      }
+      
+      .col-auto.text-end {
+        padding-right: 20px !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
-
-  <div class="luminix-preloader-wrap">
-    <div class="luminix-preloader">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </div>
-  <!-- End preloader -->
-
+  <WhatsAppButton />
   <div class="progress-bar-container">
     <div class="progress-bar"></div>
   </div>
@@ -86,7 +207,7 @@ import fondoContacto from '@images/fondo-contacto.jpg';
       <div class="luminix-menu-mobile-top">
         <div class="mobile-logo">
           <a href="index.html">
-            <img src="/images/logo/disenopaginas.svg" width="112" alt="logo">
+            <img src="/images/logo/diseno-web-logo.svg" width="112" alt="logo">
           </a>
         </div>
         <button class="luminix-menu-toggle mobile">
@@ -117,11 +238,11 @@ import fondoContacto from '@images/fondo-contacto.jpg';
               <ul>
                 <li>
                   <a href="mailto:name@email.com">
-                    <img src="assets/images/iconbox/mail.svg" alt="">codigoraul@gmail.com
+                    <img src="/images/iconbox/mail.svg" alt="">codigoraul@gmail.com
                   </a>
                 </li>
                 <li>
-                  <img src="assets/images/iconbox/location.svg" alt="">Temuco, Chile
+                  <img src="/images/iconbox/location.svg" alt="">Temuco, Chile
                 </li>
               </ul>
             </div>
@@ -131,7 +252,7 @@ import fondoContacto from '@images/fondo-contacto.jpg';
             <div class="luminix-header-info-data">
               <ul>
                 <li>
-                  <img src="assets/images/iconbox/clock.svg" alt="">Lunes a sabado: 24hrs
+                  <img src="/images/iconbox/clock.svg" alt="">Lunes a sabado: 24hrs
                 </li>
               </ul>
             </div>
@@ -148,21 +269,27 @@ import fondoContacto from '@images/fondo-contacto.jpg';
           <div class="col-8 col-sm-auto ">
             <div class="header-logo1 ">
               <a href="index.html">
-                <img src="/images/logo/disenopaginas.svg" width="178" alt="logo Diseño web chile">
+                <img src="/images/logo/diseno-web-logo.svg" width="178" alt="logo Diseño web chile">
               </a>
             </div>
           </div>
           <div class="col-auto text-end text-lg-center">
             <div class="luminix-main-menu-item">
               <nav class="main-menu menu-style1 d-none d-xl-block menu-left">
-                <ul>
+                <ul class="d-none d-xl-flex">
                   <li><a href="/">Inicio</a></li>
                   <li><a href="#nosotros">Nosotros</a></li>
                   <li><a href="#servicios">Servicios</a></li>
                   <li><a href="#portafolio">Portafolio</a></li>
                   <li><a href="#precio">Precios</a></li>    
-                  <li><a href="#contacto">Contacto</a></li>    
+                  <li><a href="#contacto">Contacto</a></li>
                 </ul>
+                <!-- Brand Logo-->
+                <!-- mobile menu trigger -->
+                <button class="luminix-menu-toggle  d-inline-block d-xl-none">
+                  <span></span>
+                </button>
+                <!--/.Mobile Menu Hamburger Ends-->
               </nav>
             </div>
           </div>
@@ -250,7 +377,7 @@ import fondoContacto from '@images/fondo-contacto.jpg';
         <div class="col-lg-4 col-md-6">
           <div class="luminix-service-wrap" data-aos="fade-up" data-aos-duration="500">
             <div class="luminix-service-icon">
-              <img src="/images/service/icon3.svg" alt="">
+              <img src="/images/iconbox/icon3.svg" alt="Diseño de Landing Pages">
             </div>
             <div class="luminix-service-content">
               <h5>Diseño de Landing Pages</h5>
@@ -270,7 +397,7 @@ import fondoContacto from '@images/fondo-contacto.jpg';
         <div class="col-lg-4 col-md-6">
           <div class="luminix-service-wrap" data-aos="fade-up" data-aos-duration="700">
             <div class="luminix-service-icon">
-              <img src="/images/service/icon4.svg" alt="">
+              <img src="/images/iconbox/icon4.svg" alt="Landing Pages ultra rápidas">
             </div>
             <div class="luminix-serice-content">
               <h5> Landing Pages ultra rápidas</h5>
@@ -290,7 +417,7 @@ import fondoContacto from '@images/fondo-contacto.jpg';
         <div class="col-lg-4 col-md-6">
           <div class="luminix-service-wrap" data-aos="fade-up" data-aos-duration="900">
             <div class="luminix-service-icon">
-              <img src="/images/service/icon5.svg" alt="">
+              <img src="/images/iconbox/icon5.svg" alt="Sitios Web Autoadministrables">
             </div>
             <div class="luminix-service-content">
               <h5>Sitios Web Autoadministrables</h5>
@@ -310,7 +437,7 @@ import fondoContacto from '@images/fondo-contacto.jpg';
         <div class="col-lg-4 col-md-6">
           <div class="luminix-service-wrap" data-aos="fade-up" data-aos-duration="1100">
             <div class="luminix-service-icon">
-              <img src="/images/service/icon6.svg" alt="">
+              <img src="/images/iconbox/icon6.svg" alt="Diseño de Logotipos Web">
             </div>
             <div class="luminix-service-content">
               <h5>Diseño de Logotipos Web</h5>
@@ -332,7 +459,7 @@ import fondoContacto from '@images/fondo-contacto.jpg';
         <div class="col-lg-4 col-md-6">
           <div class="luminix-service-wrap" data-aos="fade-up" data-aos-duration="1300">
             <div class="luminix-service-icon">
-              <img src="/images/service/icon1.svg" alt="">
+              <img src="/images/iconbox/icon1.svg" alt="Posicionamiento Web SEO">
             </div>
             <div class="luminix-service-content">
               <h5>Posicionamiento Web SEO</h5>
@@ -353,7 +480,7 @@ import fondoContacto from '@images/fondo-contacto.jpg';
         <div class="col-lg-4 col-md-6">
           <div class="luminix-service-wrap" data-aos="fade-up" data-aos-duration="1500">
             <div class="luminix-service-icon">
-              <img src="/images/service/icon2.svg" alt="">
+              <img src="/images/iconbox/icon2.svg" alt="Sitios web Ecommerce">
             </div>
             <div class="luminix-service-content">
               <h5>Sitios web Ecommerce</h5>
@@ -525,91 +652,61 @@ import fondoContacto from '@images/fondo-contacto.jpg';
 </style>
   <!-- end video -->
 
-  <div class="luminix-brand-section">
-    <div class="luminix-brand-slider-wrap">
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand1.svg" alt="">
-      </div>
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand2.svg" alt="">
-      </div>
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand3.svg" alt="">
-      </div>
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand4.svg" alt="">
-      </div>
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand5.svg" alt="">
-      </div>
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand4.svg" alt="">
-      </div>
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand3.svg" alt="">
-      </div>
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand2.svg" alt="">
-      </div>
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand3.svg" alt="">
-      </div>
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand4.svg" alt="">
-      </div>
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand5.svg" alt="">
-      </div>
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand4.svg" alt="">
-      </div>
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand3.svg" alt="">
-      </div>
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand2.svg" alt="">
-      </div>
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand3.svg" alt="">
-      </div>
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand4.svg" alt="">
-      </div>
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand5.svg" alt="">
-      </div>
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand4.svg" alt="">
-      </div>
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand3.svg" alt="">
-      </div>
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand2.svg" alt="">
-      </div>
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand3.svg" alt="">
-      </div>
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand4.svg" alt="">
-      </div>
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand5.svg" alt="">
-      </div>
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand4.svg" alt="">
-      </div>
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand3.svg" alt="">
-      </div>
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand2.svg" alt="">
-      </div>
-    </div>
-  </div>
+ 
+
+  <style>
+    .luminix-brand-section {
+      padding: 60px 0;
+      background: #fff;
+    }
+
+    .luminix-brand-slider-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .luminix-brand-item {
+      flex: 0 0 calc(20% - 24px);
+      text-align: center;
+    }
+
+    .luminix-brand-item img {
+      width: 100%;
+      height: auto;
+      max-width: 180px;
+      margin: 0 auto;
+      filter: grayscale(100%);
+      transition: filter 0.3s ease;
+    }
+
+    .luminix-brand-item:hover img {
+      filter: grayscale(0%);
+    }
+
+    @media (max-width: 991px) {
+      .luminix-brand-item {
+        flex: 0 0 calc(33.333% - 20px);
+      }
+    }
+
+    @media (max-width: 767px) {
+      .luminix-brand-item {
+        flex: 0 0 calc(50% - 15px);
+      }
+    }
+
+    @media (max-width: 575px) {
+      .luminix-brand-item {
+        flex: 0 0 100%;
+      }
+    }
+  </style>
   <!-- end brand -->
 
-  <div class="luminix-padding-section7">
+  <div class="luminix-padding-section7 pt-5 mt-5">
     <div class="container">
       <div class="row">
         <div class="col-lg-6">
@@ -650,7 +747,6 @@ import fondoContacto from '@images/fondo-contacto.jpg';
   </div>
   <!-- end content -->+
 
-
 <Tarifas />
   
   <!-- end section -->
@@ -664,7 +760,18 @@ import fondoContacto from '@images/fondo-contacto.jpg';
       <div class="row">
         <div class="col-lg-5">
           <div class="luminix-contact-us-thumb" data-aos="fade-up" data-aos-duration="700">
-            <Image src={fondoContacto} alt="Landing pages rápidas y optimizadas" />
+            <div class="contact-image-container">
+                <Image 
+                    src={fondoContacto} 
+                    alt="Landing pages rápidas y optimizadas"
+                    width={526}
+                    height={632}
+                    format="webp"
+                    quality={80}
+                    loading="lazy"
+                    decoding="async"
+                />
+            </div>
           </div>
         </div>
         <div class="col-lg-7">
@@ -688,30 +795,49 @@ import fondoContacto from '@images/fondo-contacto.jpg';
   <!-- Footer  -->
 <Footer />
 
-  <!-- scripts -->
-  <script src="/js/jquery-3.7.1.min.js" is:inline></script>
+  <!-- Scripts no críticos - mantener carga asíncrona -->
+  <script type="module">
+    window.addEventListener('load', function() {
+      const scripts = [
+        '/js/jquery.magnific-popup.min.js',
+        '/js/slick.js',
+        '/js/skillbar.js',
+        '/js/aos.js',
+        '/js/niceselect.js',
+        '/js/app.js'
+      ];
 
-  <script src="/js/bootstrap.bundle.min.js"is:inline></script>
-  <script src="/js/menu/menu.js"is:inline></script>
-  <script src="/js/jquery.magnific-popup.min.js"is:inline></script>
-  <script src="/js/slick.js" is:inline></script>
-  <script src="/js/pricing.min.js"is:inline></script>
-  <script src="/js/countdown.js"is:inline></script>
-  <script src="/js/skillbar.js"is:inline></script>
-  <script src="/js/slick-animation.js" is:inline></script>
-  <script src="/js/slick-animation.min.js" is:inline></script>
-  <script src="/js/faq.js" is:inline></script>
-  <script src="/js/isotope.pkgd.min.js" is:inline></script>
-  <script src="/js/tabs-slider.js" is:inline></script>
-  <script src="/js/product-increment.js" is:inline></script>
-  <script src="/js/aos.js" is:inline></script>
-  <script src="/js/niceselect.js" is:inline></script>
-  <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyArZVfNvjnLNwJZlLJKuOiWHZ6vtQzzb1Y"></script>
-  <script src="/js/slick.js" is:inline></script>
+      scripts.forEach(src => {
+        const script = document.createElement('script');
+        script.src = src;
+        script.async = true;
+        document.body.appendChild(script);
+      });
+    });
+  </script>
 
-  <script src="/js/app.js" is:inline></script>
+  <style>
+    .contact-image-container {
+        position: relative;
+        width: 100%;
+        max-width: 526px;
+        height: auto;
+        margin: 0 auto;
+    }
 
+    .contact-image-container img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    @media (max-width: 768px) {
+        .contact-image-container {
+            max-width: 100%;
+        }
+    }
+  </style>
 
 </body>
 </html>
-

@@ -1,5 +1,121 @@
 ---
-
+import Social from './Social.astro';
 ---
+
+<header class="site-header luminix-header-section luminix-header-three" id="sticky-menu">
+  <div class="luminix-header-top bg-accent">
+    <div class="container">
+      <div class="luminix-header-info-wraper">
+        <div class="luminix-header-info-wrap">
+          <div class="luminix-header-info-data">
+            <ul>
+              <li>
+                <a href="mailto:codigoraul@gmail.com">
+                  <img src="/images/iconbox/mail.svg" alt="">codigoraul@gmail.com
+                </a>
+              </li>
+              <li>
+                <img src="/images/iconbox/location.svg" alt="">Temuco, Chile
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="luminix-header-info-and-social">
+          <div class="luminix-header-info-data">
+            <ul>
+              <li>
+                <img src="/images/iconbox/clock.svg" alt="">Lunes a sabado: 24hrs
+              </li>
+            </ul>
+          </div>
+          <Social />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="luminix-header-bottom white-bg1">
+    <div class="container">
+      <div class="row gx-3 align-items-center justify-content-between">
+        <div class="col-8 col-sm-auto">
+          <div class="header-logo1">
+            <a href="/">
+              <img src="/images/logo/diseno-web-logo.svg" width="178" alt="logo Diseño web chile">
+            </a>
+          </div>
+        </div>
+        <div class="col-auto text-end text-lg-center">
+          <div class="luminix-main-menu-item">
+            <nav class="main-menu menu-style1 d-none d-xl-block menu-left">
+              <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/#nosotros">Nosotros</a></li>
+                <li><a href="/#servicios">Servicios</a></li>
+                <li><a href="/#portafolio">Portafolio</a></li>
+                <li><a href="/#precio">Precios</a></li>    
+                <li><a href="/#contacto">Contacto</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <div class="col-auto d-flex align-items-center">
+          <a class="luminix-default-btn luminix-header-btn3" href="#contacto">Formulario de contacto</a>
+          <div class="luminix-header-menu">
+            <nav class="navbar site-navbar justify-content-between">
+              <button class="luminix-menu-toggle d-inline-block d-xl-none">
+                <span></span>
+              </button>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Menu -->
+<div class="luminix-menu-wrapper">
+  <div class="luminix-menu-area text-center">
+    <div class="luminix-menu-mobile-top">
+      <div class="mobile-logo">
+        <a href="/">
+          <img src="/images/logo/diseno-web-logo.svg" width="112" alt="logo">
+        </a>
+      </div>
+      <button class="luminix-menu-toggle mobile">
+        <i class="ri-close-line"></i>
+      </button>
+    </div>
+    <div class="luminix-mobile-menu">
+      <ul class="luminix-mobile-menu-list">
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/#nosotros">Nosotros</a></li>
+        <li><a href="/#servicios">Servicios</a></li>
+        <li><a href="/#portafolio">Portafolio</a></li>
+        <li><a href="/#precio">Precios</a></li>    
+        <li><a href="/#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Scripts básicos para el menú hamburguesa -->
+<script is:inline src="/js/rt-plugins.js"></script>
+<script is:inline src="/js/menu/menu.js"></script>
+
+<!-- Inicialización simple del menú -->
+<script>
+  // Esperar a que jQuery esté disponible y luego inicializar
+  function waitForJQuery() {
+    if (typeof $ !== 'undefined') {
+      $(".luminix-menu-wrapper").vsmobilemenu();
+      console.log('Menú inicializado');
+    } else {
+      setTimeout(waitForJQuery, 100);
+    }
+  }
+  
+  // Iniciar cuando el DOM esté listo
+  document.addEventListener('DOMContentLoaded', waitForJQuery);
+</script>
 
 

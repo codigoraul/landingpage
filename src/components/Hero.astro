@@ -1,89 +1,405 @@
 ---
 import { Image } from 'astro:assets';
 import bgImage from '@images/bg-hero.webp';
-import htmlImage from '@images/astro-img.jpg';
+import htmlImage from '@images/heroCelu.webp';
 ---
 
+<!-- Precargar recursos críticos -->
+<link rel="preload" href={bgImage.src} as="image" fetchpriority="high" />
 
-<section class="luminix-hero-section section"> 
+<section class="luminix-hero-section section" data-astro-cid-wl2paqux> 
     <div class="hero-background">
         <Image 
             src={bgImage} 
-            alt=""
-            widths={[768, 1024, 1440, 1920]}
-            sizes="100vw"
+            alt="Diseño de Landing Pages Chile"
+            widths={[640, 768, 1024, 1440]}
+            sizes="(max-width: 640px) 640px, (max-width: 768px) 768px, (max-width: 1024px) 1024px, 1440px"
             quality={75}
             class="bg-image"
+            loading="eager"
+            decoding="sync"
+            fetchpriority="high"
+            format="webp"
         />
     </div>
     <div class="container">
       <div class="row">
         <div class="col-lg-5 order-lg-2">
-          <div class="luminix-hero-thumb" data-aos="fade-left" data-aos-duration="700">
+          <div class="luminix-hero-thumb" data-aos="fade-right" data-aos-duration="1000">
             <Image 
               src={htmlImage} 
               alt="Diseño de Landing Pages Chile"
-              widths={[280, 440, 540, 720, 960, 1280]}
-              sizes="(max-width: 360px) 280px, (max-width: 720px) 440px, (max-width: 1024px) 540px, (max-width: 1280px) 720px, 960px"
-              quality={80}
+              width={480}
+              height={640}
+              quality={75}
               loading="eager"
               class="img-fluid"
+              format="webp"
             />
           </div>
         </div>
         <div class="col-lg-7 d-flex align-items-center">
           <div class="luminix-hero-content3">
-            <h1 data-aos="fade-up" data-aos-duration="700" class="hero-title">Diseño de Landing Pages</h1>
-            <p data-aos="fade-up" data-aos-duration="900" class="text">
-              Ofrecemos servicios de landing pages personalizadas, rápidas y livianas para ser indexadas por google, ideales para captar clientes y generar conversiones
-               efectivas. Además, contamos con experiencia en la creación de sitios web dinámicos y funcionales utilizando CMS
-               como WordPress, lo que permite a nuestros clientes gestionar sus contenidos fácilmente.</p>
-            <div class="hero-btn btn2 mt-50">
-              <a href="#contacto" class="default-btn2 btn3" data-aos="fade-up" data-aos-duration="700">Contáctanos</a>
-              <a href="#precio" class="default-btn3" data-aos="fade-up" data-aos-duration="900">Ver Precios</a>
+            <!-- Banner de precio económico -->
+            <div class="price-banner fade-in">
+              <span class="price-tag">¡Oferta desde $70.000!</span>
+              <span class="delivery-time">¡Entrega en 48 horas!</span>
+            </div>
+            
+            <h1 class="hero-title fade-in">
+              <span class="visually-hidden">Landing Page Económica y Rápida</span>
+              <span class="hero-title-text">Landing Page Económica y Rápida</span>
+            </h1>
+            <p class="text fade-in">
+              <strong>Landing page económica desde $70.000</strong> con diseño profesional, optimizada para Google y entrega en 48 horas. 
+              Ideal para captar clientes y generar conversiones efectivas. 
+              Además, contamos con experiencia en WordPress para sitios web dinámicos y funcionales.
+            </p>
+            <p class="fw-bold" style="color: #433A44 !important; font-size: 1.1rem !important;">
+              Tu puerta de entrada al éxito digital - Rápida, Económica y Profesional
+            </p>
+            <div class="hero-btn btn2 mt-50 fade-in">
+              <a href="#contacto" class="default-btn2 btn3">Solicitar Cotización</a>
+              <a href="#precio" class="default-btn3">Ver Precios</a>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+</section>
 
-  <style>
+<style>
+  :root {
+    --accent-color: #2d5cc8;
+    --accent-bg: #2d5cc8;
+  }
+
+  /* Optimizar renderizado */
+  .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 677px;
+    contain: layout size paint;
+    z-index: -1;
+    background-color: #001A3D;
+    will-change: transform;
+  }
+
+  .bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    will-change: transform;
+    contain: layout paint;
+    transform: translateZ(0);
+  }
+
+  .hero-title.fade-in {
+    margin-bottom: 20px;
+  }
+  
+  .hero-title {
+    position: relative;
+    margin: 0;
+    padding: 0;
+  }
+
+  .hero-title-text {
+    font-size: clamp(2rem, 5vw, 4rem);
+    line-height: 1.2;
+    display: inline-block;
+    min-height: 1.2em;
+    color: #434656;
+  }
+
+  /* .luminix-hero-section {
+    position: relative;
+    min-height: 677px;
+    display: grid;
+    align-items: end;
+    overflow: hidden;
+    contain: layout paint size;
+    background: linear-gradient(90deg,#79d8df,#fff);
+  }
+
+  .luminix-hero-section::before {
+    background: linear-gradient(135deg, #79D8DF, #FFFFFF); 
+  }*/
+
+  .luminix-hero-thumb {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    margin: 0;
+    align-self: flex-end;
+    transform: translateX(-110px);
+  }
+
+  .luminix-hero-thumb img {
+    width: 100%;
+    height: auto;
+    max-height: 900px;
+    object-fit: contain;
+  }
+
+  .img-fluid {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  /* Animaciones CSS nativas para mejor rendimiento */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Aplicar delays escalonados */
+  .hero-title.fade-in { animation-delay: 0.2s; }
+  .text.fade-in { animation-delay: 0.4s; }
+  .hero-btn.fade-in { animation-delay: 0.6s; }
+
+  /* Banner de precio económico */
+  .price-banner {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    background: linear-gradient(135deg,#4379dc,#4379dc);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(76, 87, 253, 0.3);
+    font-weight: 600;
+    animation-delay: 0.1s;
+  }
+
+  .price-tag {
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+  .delivery-time {
+    font-size: 0.9rem;
+    opacity: 0.9;
+  }
+
+  /* Responsive para el banner de precio */
+  @media (max-width: 768px) {
+    .price-banner {
+      flex-direction: column;
+      gap: 8px;
+      text-align: center;
+      padding: 15px;
+    }
+    
+    .price-tag {
+      font-size: 1.1rem;
+    }
+    
+    .delivery-time {
+      font-size: 0.85rem;
+    }
+  }
+
+  /* Reducir complejidad de animaciones en dispositivos móviles */
+  @media (max-width: 768px) {
+    .fade-in {
+      opacity: 1;
+      transform: none;
+      animation: none;
+    }
+    
+    .hero-background {
+      min-height: auto;
+      height: 100vh;
+    }
+
+    .luminix-hero-thumb {
+      transform: none;
+      margin: 0 auto;
+    }
+
+    .luminix-hero-thumb img {
+      height: auto;
+    }
+  }
+
+  /* Respetar preferencias de reducción de movimiento */
+  @media (prefers-reduced-motion: reduce) {
+    .fade-in {
+      opacity: 1;
+      transform: none;
+      animation: none;
+    }
+  }
+
+  .row {
+    align-items: flex-end !important;
+  }
+
+  /* Ajuste específico para tamaño notebook/tablet */
+  @media (min-width: 768px) and (max-width: 1199px) {
+    .luminix-hero-thumb {
+      position: relative;
+      bottom: 0;
+    }
+
     .luminix-hero-section {
-        position: relative;
-        overflow: hidden;
+      display: grid;
+      align-items: end;
+    }
+
+    .col-lg-5 {
+      align-self: flex-end;
+      margin-bottom: 0;
+    }
+  }
+
+  /* Mantener el diseño responsive para móviles */
+  @media (max-width: 767px) {
+    .luminix-hero-section {
+      min-height: 100vh;
+      padding: 30px 0;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, #79D8DF, #FFFFFF);
     }
 
     .hero-background {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
+      display: none;
     }
 
-    .bg-image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
+    .luminix-hero-thumb {
+      position: relative;
+      width: 100%;
+      margin: 0 auto 15px;
+      transform: none;
+      z-index: 2;
     }
 
-    @media (max-width:  1224px) {
-        h1.hero-title.aos-init.aos-animate {
-            font-size: 86px;
-        }
+    .luminix-hero-thumb img {
+      max-width: 60%;
+      max-height: 300px;
+      margin: 0 auto;
+      display: block;
     }
-    
-    @media (max-width:  991px) {
-        h1.hero-title.aos-init.aos-animate {
-            font-size: 78px;
-        }
+
+    .luminix-hero-content3 {
+      position: relative;
+      z-index: 2;
+      padding: 15px 20px;
+      text-align: center;
+      background: transparent;
+      width: 100%;
     }
-    @media (max-width: 767px) {
-        h1.hero-title.aos-init.aos-animate {
-            font-size: 62px;
-        }
+
+    .luminix-hero-content3 p {
+      color: #433A44 !important;
+      font-size: 1.1rem !important;
+      line-height: 1.6 !important;
+      opacity: 1 !important;
+      font-family: inherit !important;
+      margin-bottom: 1.5rem !important;
+      padding: 0 15px !important;
+      max-width: 100% !important;
+      overflow-wrap: break-word !important;
+      word-wrap: break-word !important;
+      hyphens: auto !important;
+      position: relative;
+      z-index: 2;
     }
-  </style>
+
+    .luminix-hero-content3 .text {
+      display: block !important;
+      visibility: visible !important;
+      height: auto !important;
+      min-height: 0 !important;
+      position: relative;
+      z-index: 2;
+      color: #433A44 !important;
+      opacity: 1 !important;
+      margin-bottom: 1.5rem !important;
+    }
+
+    .row {
+      flex-direction: column;
+      align-items: center !important;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .col-lg-5 {
+      order: 1;
+      width: 100%;
+    }
+
+    .col-lg-7 {
+      order: 2;
+      width: 100%;
+    }
+
+    .hero-btn {
+      margin-top: 2rem !important;
+    }
+  }
+
+  /* Tablet: 70% del ancho, solo hasta 991px */
+  @media (max-width: 991px) and (min-width: 768px) {
+    .luminix-hero-thumb img {
+      max-width: 70%;
+      max-height: 500px;
+      margin: 0 auto;
+      display: block;
+    }
+  }
+
+  .hero-section {
+    background: linear-gradient(135deg, #79D8DF, #FFFFFF);
+    color: #6A6676;
+    padding: 80px 0;
+    text-align: center;
+  }
+
+
+  
+  .hero-section h1 {
+    color: #433A44;
+  }
+
+  .luminix-hero-content3 p {
+    color: #433A44;
+    font-size: 1.1rem !important;
+  }
+
+  .hero-section p,
+  .hero-section .fw-bold {
+    color: #433A44 !important;
+    font-size: 1.1rem !important;
+    opacity: 1 !important;
+    font-family: inherit !important;
+    background: none !important;
+  }
+
+  p, .fw-bold {
+    color: #433A44 !important;
+  }
+</style>

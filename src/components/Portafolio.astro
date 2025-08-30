@@ -7,6 +7,7 @@ import asesorialimentos from '../../public/images/portafolio/asesorialimentos.jp
 import bestproperty from '../../public/images/portafolio/bestproperty.jpg';
 import ceromultas from '../../public/images/portafolio/ceromultas.jpg';
 import comprobe from '../../public/images/portafolio/comprobe.jpg';
+import veterinaria from '../../public/images/portafolio/landing-vet.jpg';
 ---
 
 <div id="portafolio" class="luminix-padding-section3">
@@ -16,8 +17,8 @@ import comprobe from '../../public/images/portafolio/comprobe.jpg';
           <div class="col-xl-5 col-lg-6">
             <h2 class="title2">Nuestro portafolio de proyectos web</h2>
           </div>
-          <div class="col-xl-7 col-lg-6 d-flex align-items-center justify-content-end">
-            <div class="luminix-title-btn pl-102">
+          <div class="col-xl-7 col-lg-6 d-flex align-items-center justify-content-lg-end">
+            <div class="luminix-title-btn pl-lg-102">
               <p>Trabajamos con empresas de diversos sectores, así como con emprendedores que buscan destacar en el mercado digital chileno.</p>
               <p>Sea cual sea el tamaño de tu proyecto, estamos aquí para llevar tu presencia en línea al siguiente nivel.
                  ¡Contáctanos para una cotización personalizada! </p>
@@ -26,10 +27,40 @@ import comprobe from '../../public/images/portafolio/comprobe.jpg';
         </div>
       </div>
     </div>
+
+    <!-- Banner de oferta especial -->
+    <div class="container mb-5">
+      <div class="alert alert-primary text-center p-4" style="background-color: #e3f2fd; border-radius: 10px; border-left: 5px solid #0d6efd;">
+        <h4 class="mb-0" style="color: #0a58ca; font-weight: 600;">
+          🎉 OFERTA ESPECIAL: $70.000.- para empresas que ya cuenten con una página web
+        </h4>
+      </div>
+    </div>
     
     <div class="container">
-      <div class="row">
-        <div class="col-lg-3 col-md-6 mb-4">
+      <div class="row portfolio-grid">
+        <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item">
+          <div class="luminix-team-wrap">
+            <div class="luminix-team-thumb">
+              <Image 
+                src={veterinaria} 
+                alt="Diseño web para arqueólogos en Chile"
+                width={600}
+                height={400}
+                quality={80}
+                format="webp"
+                loading="lazy"
+              />
+              <div class="luminix-blog-thumb">
+                <a href="https://diseñopaginas.cl/portafolio-landing/veterinaria/" target="_blank">
+                  <h5>www.veterinaria-landing.cl</h5>
+                </a>
+                <p>Diseño web Veterinaria</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item">
           <div class="luminix-team-wrap">
             <div class="luminix-team-thumb">
               <Image 
@@ -51,7 +82,7 @@ import comprobe from '../../public/images/portafolio/comprobe.jpg';
           </div>
         </div>
 
-        <div class="col-lg-3 col-md-6 mb-4">
+        <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item">
           <div class="luminix-team-wrap">
             <div class="luminix-team-thumb">
               <Image 
@@ -73,7 +104,7 @@ import comprobe from '../../public/images/portafolio/comprobe.jpg';
           </div>
         </div>
 
-        <div class="col-lg-3 col-md-6 mb-4">
+        <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item">
           <div class="luminix-team-wrap">
             <div class="luminix-team-thumb">
               <Image 
@@ -95,7 +126,7 @@ import comprobe from '../../public/images/portafolio/comprobe.jpg';
           </div>
         </div>
 
-        <div class="col-lg-3 col-md-6 mb-4">
+        <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item">
           <div class="luminix-team-wrap">
             <div class="luminix-team-thumb">
               <Image 
@@ -117,7 +148,7 @@ import comprobe from '../../public/images/portafolio/comprobe.jpg';
           </div>
         </div>
 
-        <div class="col-lg-3 col-md-6 mb-4">
+        <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item">
           <div class="luminix-team-wrap">
             <div class="luminix-team-thumb">
               <Image 
@@ -139,7 +170,7 @@ import comprobe from '../../public/images/portafolio/comprobe.jpg';
           </div>
         </div>
 
-        <div class="col-lg-3 col-md-6 mb-4">
+        <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item">
           <div class="luminix-team-wrap">
             <div class="luminix-team-thumb">
               <Image 
@@ -161,7 +192,7 @@ import comprobe from '../../public/images/portafolio/comprobe.jpg';
           </div>
         </div>
 
-        <div class="col-lg-3 col-md-6 mb-4">
+        <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item">
           <div class="luminix-team-wrap">
             <div class="luminix-team-thumb">
               <Image 
@@ -187,16 +218,29 @@ import comprobe from '../../public/images/portafolio/comprobe.jpg';
   </div>
 
 <style>
+  .portfolio-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -15px;
+  }
+
+  .portfolio-item {
+    padding: 15px;
+    margin-bottom: 0;
+  }
+
   .luminix-team-thumb {
     position: relative;
     overflow: hidden;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    aspect-ratio: 3/2;
   }
 
   .luminix-team-thumb img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     transition: transform 0.3s ease;
   }
 
@@ -212,16 +256,19 @@ import comprobe from '../../public/images/portafolio/comprobe.jpg';
     padding: 15px;
     background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
     color: white;
+    transition: all 0.3s ease;
   }
 
   .luminix-blog-thumb h5 {
     color: white;
     margin-bottom: 5px;
+    font-size: clamp(14px, 2vw, 18px);
   }
 
   .luminix-blog-thumb p {
     color: rgba(255,255,255,0.9);
     margin: 0;
+    font-size: clamp(12px, 1.5vw, 16px);
   }
 
   .luminix-blog-thumb a {
@@ -233,9 +280,36 @@ import comprobe from '../../public/images/portafolio/comprobe.jpg';
     color: #007bff;
   }
 
+  @media (max-width: 1199px) {
+    .portfolio-item {
+      width: 33.333%;
+    }
+  }
+
   @media (max-width: 991px) {
-    .col-lg-3 {
-      margin-bottom: 30px;
+    .portfolio-item {
+      width: 50%;
+    }
+    
+    .luminix-title-btn {
+      padding-left: 0;
+      margin-top: 20px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .portfolio-grid {
+      margin: -10px;
+    }
+    
+    .portfolio-item {
+      padding: 10px;
+    }
+  }
+
+  @media (max-width: 575px) {
+    .portfolio-item {
+      width: 100%;
     }
   }
 </style>

@@ -84,4 +84,5 @@ $.fn.vsmobilemenu = function (options) {
     });
   };
 
+  // Inicialización automática del menú
   $(".luminix-menu-wrapper").vsmobilemenu();
