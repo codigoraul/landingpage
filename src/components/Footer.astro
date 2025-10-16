@@ -55,35 +55,7 @@ import Social from "./Social.astro";
               <div class="luminix-footer-title">
                 <h5>Link relacionados</h5>
               </div>
-              <ul>
-                <li>
-                  <a href="https://diseñopaginas.cl/diseno-web-antofagasta.php">Páginas web Antofagasta</a>
-                </li>
-                <li>
-                  <a href="https://diseñopaginas.cl/diseno-web-la-serena.php">Páginas web La Serena</a>
-                </li>
-                <li>
-                  <a href="https://diseñopaginas.cl/diseno-web-santiago.php">Páginas web Santiago</a>
-                </li>
-                <li>
-                  <a href="https://diseñopaginas.cl/concepcion/">Páginas web Concepción</a>
-                </li>
-                <li>
-                  <a href="https://diseñopaginas.cl/diseno-web-temuco.php">Páginas web Temuco</a>
-                </li>
-                <li>
-                    <a href="https://diseñopaginas.cl/diseno-web-valdivia.php">Páginas web Valdivia</a>
-                  </li>
-                  <li>
-                    <a href="https://diseñopaginas.cl/diseno-web-osorno.php">Páginas web Osorno</a>
-                  </li>
-                  <li>
-                    <a href="https://diseñopaginas.cl/diseno-web-puerto-montt.php">Páginas web Puerto Montt</a>
-                  </li>
-                  <li>
-                    <a href="https://diseñopaginas.cl/diseno-web-arica.php">Páginas web Arica</a>
-                  </li>
-              </ul>
+              <ul> <li> <a href="https://diseñopaginas.cl/antofagasta">Páginas web Antofagasta</a> </li> <li> <a href="https://diseñopaginas.cl/la-serena">Páginas web La Serena</a> </li> <li> <a href="https://diseñopaginas.cl/santiago">Páginas web Santiago</a> </li> <li> <a href="https://diseñopaginas.cl/concepcion/">Páginas web Concepción</a> </li> <li> <a href="https://diseñopaginas.cl/diseno-web-temuco.php">Páginas web Temuco</a> </li> <li> <a href="https://diseñopaginas.cl/diseno-web-valdivia.php">Páginas web Valdivia</a> </li> <li> <a href="https://diseñopaginas.cl/diseno-web-osorno.php">Páginas web Osorno</a> </li> <li> <a href="https://diseñopaginas.cl/puerto-montt">Páginas web Puerto Montt</a> </li> <li> <a href="https://diseñopaginas.cl/diseno-web-arica.php">Páginas web Arica</a> </li> </ul>
             </div>
           </div>
           <div class="col-xxl-3 col-xl-3 col-md-6">
@@ -123,10 +95,64 @@ import Social from "./Social.astro";
     </div>
   </footer>
 
+   <!-- BEGIN JIVOSITE CODE {literal} -->
+<script type='text/javascript'>
+  (function(){ var widget_id = 'PgpmFYkQWG';var d=document;var w=window;function l(){
+  var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
+  <!-- {/literal} END JIVOSITE CODE -->
+    <!-- Jivosite Chat - Optimizado -->
   <script>
-      // BEGIN JIVOSITE CODE {literal}
+    (function() {
+      let jivositeLoaded = false;
+      let jivositeTimeout = null;
+      let userInteracted = false;
 
-(function(){ var widget_id = 'PgpmFYkQWG';var d=document;var w=window;function l(){
-var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
+      function loadJivosite() {
+        if (!jivositeLoaded && userInteracted) {
+          jivositeLoaded = true;
+          const script = document.createElement('script');
+          script.src = 'https://code.jivosite.com/js/bundle_es.js?rand=' + new Date().getTime();
+          script.async = true;
+          script.defer = true;
+          document.body.appendChild(script);
+        }
+      }
 
+      // Solo cargar después de 15 segundos si no hay interacción
+      jivositeTimeout = setTimeout(() => {
+        if (!userInteracted) {
+          loadJivosite();
+        }
+      }, 15000);
+
+      // Eventos de interacción del usuario
+      const interactionEvents = ['scroll', 'mousemove', 'click', 'touchstart', 'keydown'];
+      interactionEvents.forEach(event => {
+        window.addEventListener(event, () => {
+          if (!userInteracted) {
+            userInteracted = true;
+            if (jivositeTimeout) {
+              clearTimeout(jivositeTimeout);
+              jivositeTimeout = null;
+            }
+            // Cargar solo si el usuario está en la página por más de 5 segundos
+            setTimeout(loadJivosite, 5000);
+          }
+        }, { once: true, passive: true });
+      });
+
+      // Detectar conexión lenta usando Network Information API
+      if ('connection' in navigator) {
+        const connection = (navigator as any).connection;
+        if (connection && connection.effectiveType) {
+          const slowConnections = ['slow-2g', '2g', '3g'];
+          if (slowConnections.includes(connection.effectiveType)) {
+            if (jivositeTimeout) {
+              clearTimeout(jivositeTimeout);
+              jivositeTimeout = null;
+            }
+          }
+        }
+      }
+    })();
   </script>

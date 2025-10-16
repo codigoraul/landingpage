@@ -1,27 +1,25 @@
 import { defineConfig } from 'astro/config';
-import node from '@astrojs/node';
 
 export default defineConfig({
   output: 'static',
   outDir: './dist',
-  publicDir: './public',
-  base: './',
   build: {
-    assets: '_assets'
+    assets: 'assets'
   },
   vite: {
-    base: './',
     build: {
-      rollupOptions: {
-        output: {
-          assetFileNames: 'assets/[name][extname]',
-          chunkFileNames: 'assets/[name].js',
-          entryFileNames: 'assets/[name].js',
-        }
-      }
+      cssMinify: true,
+      cssCodeSplit: true,
+      assetsInlineLimit: 4096
     }
   },
-  adapter: node({
-    mode: 'standalone'
-  })
+  image: {
+    service: {
+      entrypoint: 'astro/assets/services/sharp'
+    },
+    remotePatterns: [{ protocol: 'https' }],
+    domains: ['localhost'],
+    format: 'webp',
+    quality: 80
+  }
 });

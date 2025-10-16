@@ -1,0 +1,40 @@
+/* Sobrescribir el comportamiento de AOS para elementos con fade */
+[data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+/* Aplicar animaciones solo cuando la clase .aos-animate está presente */
+[data-aos].aos-animate {
+    opacity: 1;
+    transform: translateZ(0);
+}
+
+/* Animaciones específicas */
+[data-aos="fade-up"].aos-animate {
+    transform: translate3d(0, 0, 0);
+}
+
+[data-aos="fade-down"].aos-animate {
+    transform: translate3d(0, 0, 0);
+}
+
+[data-aos="fade-right"].aos-animate {
+    transform: translate3d(0, 0, 0);
+}
+
+[data-aos="fade-left"].aos-animate {
+    transform: translate3d(0, 0, 0);
+}
+
+/* Asegurar que las imágenes dentro de elementos con AOS sean visibles */
+[data-aos] img {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Optimizaciones de rendimiento */
+[data-aos] {
+    will-change: transform;
+    backface-visibility: hidden;
+} 

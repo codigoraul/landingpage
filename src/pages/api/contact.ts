@@ -1,13 +1,9 @@
-
 import type { APIRoute } from 'astro';
+import { config } from 'dotenv';
 
-import nodemailer from 'nodemailer'; // Importar Nodemailer
-import dotenv from 'dotenv';
-
-dotenv.config(); // Carga las variables del archivo .env
+config();
 
 export const post: APIRoute = async ({ request }) => {
-    // Leer los datos enviados por el formulario
     const formData = await request.formData();
     const nombre = formData.get('nombre')?.toString() || '';
     const fono = formData.get('fono')?.toString() || '';
@@ -15,7 +11,6 @@ export const post: APIRoute = async ({ request }) => {
     const presupuesto = formData.get('presupuesto')?.toString() || '';
     const mensaje = formData.get('mensaje')?.toString() || '';
 
-    // Validar datos básicos
     if (!nombre || !fono || !email || !presupuesto || !mensaje) {
         return new Response(JSON.stringify({ error: 'Todos los campos son obligatorios.' }), {
             status: 400,
@@ -30,8 +25,9 @@ export const post: APIRoute = async ({ request }) => {
         });
     }
 
-    // Configuración del contenido del correo
     const emailContent = `
+        Nuevo mensaje desde el formulario de contacto:
+        
         Nombre: ${nombre}
         Teléfono: ${fono}
         Email: ${email}
@@ -40,22 +36,24 @@ export const post: APIRoute = async ({ request }) => {
     `;
 
     try {
-        // Configuración de Nodemailer
-        const transporter = nodemailer.createTransport({
-            service: 'gmail', // Cambia esto si usas otro servicio (e.g., Outlook, Yahoo)
-            auth: {
-                user: process.env.EMAIL_USER, // Cambia por tu email
-                pass: process.env.EMAIL_PASS, // Cambia por tu contraseña (mejor usar variables de entorno)
+        const response = await fetch('https://api.resend.com/emails', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${process.env.RESEND_API_KEY}`
             },
+            body: JSON.stringify({
+                from: 'Formulario Web <onboarding@resend.dev>',
+                to: 'codigoraul@gmail.com',
+                subject: 'Nuevo Mensaje de Landing - diseñopaginas.cl',
+                text: emailContent,
+                reply_to: email
+            })
         });
 
-        // Enviar el correo
-        await transporter.sendMail({
-            from: 'tuemail@gmail.com', // Dirección del remitente
-            to: 'codigoraul@gmail.com', // Dirección del destinatario
-            subject: 'Nuevo Mensaje del Formulario', // Asunto del correo
-            text: emailContent, // Contenido del correo en texto plano
-        });
+        if (!response.ok) {
+            throw new Error('Error al enviar el correo');
+        }
 
         return new Response(
             JSON.stringify({ success: 'Mensaje enviado correctamente.' }), {

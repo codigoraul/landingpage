@@ -1,0 +1,166 @@
+---
+import { Image } from 'astro:assets';
+import icon1 from '../assets/images/iconbox/icon1.svg';
+import icon2 from '../assets/images/iconbox/icon2.svg';
+import icon3 from '../assets/images/iconbox/icon3.svg';
+import icon4 from '../assets/images/iconbox/icon4.svg';
+import icon5 from '../assets/images/iconbox/icon5.svg';
+import icon6 from '../assets/images/iconbox/icon6.svg';
+---
+<section class="luminix-service-section section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="luminix-service-wrap" data-aos="fade-up" data-aos-duration="500">
+                    <div class="luminix-service-icon">
+                        <img 
+                            src="/images/iconbox/icon3.svg" 
+                            alt="Diseño web La Serena"
+                            width="64"
+                            height="64"
+                            loading="lazy"
+                        />
+                    </div>
+                    <div class="luminix-service-content">
+                        <h5>Diseño de páginas La Serena</h5>
+                        <p>Creamos sitios web únicos, ligeros y optimizados, ideales para quienes buscan una 
+                        Solución básica pero profesional y efectiva.</p>
+                    </div>
+                    <div class="luminix-blog-btn">
+                        <a href="#">
+                            Leer más
+                            <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.50024 0.75L14.7502 6M14.7502 6L9.50024 11.25M14.7502 6L1.25024 6" 
+                                    stroke="#001A3D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="luminix-service-wrap" data-aos="fade-up" data-aos-duration="700">
+                    <div class="luminix-service-icon">
+                        <img 
+                            src="/images/iconbox/icon4.svg" 
+                            alt="Landing Pages ultra rápidas"
+                            width="64"
+                            height="64"
+                            loading="lazy"
+                        />
+                    </div>
+                    <div class="luminix-service-content">
+                        <h5>Landing Pages ultra rápidas</h5>
+                        <p>Diseño de landing pages ultra rápidas con Astro JS en Chile. Optimiza la velocidad de carga y mejora 
+                        la experiencia de usuario con soluciones personalizadas</p>
+                    </div>
+                    <div class="luminix-blog-btn">
+                        <a href="#">Leer más
+                            <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.50024 0.75L14.7502 6M14.7502 6L9.50024 11.25M14.7502 6L1.25024 6" 
+                                    stroke="#001A3D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Repite el patrón para los demás servicios -->
+        </div>
+    </div>
+</section>
+
+<style>
+    .luminix-service-section {
+        padding: 100px 0;
+        background-color: #fff;
+        position: relative;
+        z-index: 1;
+        overflow: visible;
+    }
+
+    .luminix-service-wrap {
+        background: #FFFFFF;
+        padding: 40px 30px;
+        border-radius: 10px;
+        margin-bottom: 30px;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        position: relative;
+        z-index: 2;
+    }
+
+    .luminix-service-wrap:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .luminix-service-icon {
+        margin-bottom: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .luminix-service-icon img {
+        width: 64px;
+        height: 64px;
+        object-fit: contain;
+    }
+
+    .luminix-service-content {
+        text-align: center;
+    }
+
+    .luminix-service-content h5 {
+        font-size: 22px;
+        margin-bottom: 15px;
+        color: #001A3D;
+    }
+
+    .luminix-service-content p {
+        margin-bottom: 20px;
+        color: #666;
+        line-height: 1.6;
+    }
+
+    .luminix-blog-btn {
+        text-align: center;
+    }
+
+    .luminix-blog-btn a {
+        color: #001A3D;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+
+    .luminix-blog-btn a:hover {
+        color: #0056b3;
+    }
+
+    .luminix-blog-btn svg {
+        transition: transform 0.3s ease;
+    }
+
+    .luminix-blog-btn a:hover svg {
+        transform: translateX(5px);
+    }
+
+    @media (max-width: 768px) {
+        .luminix-service-section {
+            padding: 60px 0;
+        }
+
+        .luminix-service-wrap {
+            padding: 30px 20px;
+        }
+
+        .luminix-service-content h5 {
+            font-size: 20px;
+        }
+    }
+</style> 

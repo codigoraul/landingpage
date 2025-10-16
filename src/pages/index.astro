@@ -5,12 +5,13 @@ import Portafolio from "../components/Portafolio.astro";
 import Formulario from "../components/Formulario.astro";
 import Tarifas from "../components/Tarifas.astro";
 import Hero from "../components/Hero.astro";
+import WhatsAppButton from "../components/WhatsAppButton.astro";
 
 import {Image} from 'astro:assets';
 import bgImagePantalla from '@images/bg-pantallas.jpg';
 import landingNosotros from '@images/landing-nosotros.jpg';
 import imgLanding from '@images/landingpage.jpg';
-import fondoContacto from '@images/fondo-contacto.jpg';
+import fondoContacto from '../assets/images/fondo-contacto.jpg';
 
 ---
 
@@ -20,48 +21,123 @@ import fondoContacto from '@images/fondo-contacto.jpg';
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Diseño Landing page Chile, Páginas Landing page, Landing page Chile</title>
-  <link rel="canonical" href="https://xn--diseopaginas-dhb.cl/index.php">
+  <title>Diseño Web La Serena | Páginas Web Profesionales</title>
+  <meta name="description" content="Diseño web profesional en La Serena. Especialistas en páginas web para empresas turísticas, pisqueras y observatorios del Valle del Elqui. Conectamos tu negocio con los cielos más despejados de Chile.">
+  <link rel="canonical" href="https://diseñopaginas.cl" />
   <meta name="p:domain_verify" content="202a15564602cb7871e576394e4296b8"/>
+  <meta name="robots" content="index,follow">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Diseño Páginas La Serena",
+    "description": "Diseño páginas web profesional en La Serena. Especialistas en sitios web rápidos y optimizados para empresas serenenses en la Región de Coquimbo.",
+    "url": "https://diseñopaginas.cl/la-serena",
+    "sameAs": "https://diseñopaginas.cl/",
+    "telephone": "+56961765268",
+    "email": "codigoraul@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "La Serena",
+      "addressRegion": "Coquimbo",
+      "addressCountry": "CL"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -29.9027,
+      "longitude": -71.2519
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "La Serena"
+    },
+    "serviceType": ["Diseño Web", "Páginas Web", "Landing Pages", "Tiendas Online"],
+    "priceRange": "$$",
+    "openingHours": "Mo-Sa 10:00-23:00"
+  }
+  </script>
   <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
   <!--- End favicon-->
 
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <!-- Optimización de fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Unificar fuentes en una sola llamada -->
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-
-  <link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-
-  <!-- End google font  -->
-
+  <!-- Cargar CSS crítico primero -->
   <link rel="stylesheet" href="/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/css/magnific-popup.css">
-  <link rel="stylesheet" href="/css/slick.css">
-  <link rel="stylesheet" href="/css/fontawesome.css">
-  <link rel="stylesheet" href="/css/remixicon.css">
-  <link rel="stylesheet" href="/css/aos.css">
-  <link rel="stylesheet" href="/css/niceselect.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-
-  <!-- Code Editor  -->
-
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/app.min.css">
+
+  <!-- Cargar CSS no crítico de forma asíncrona -->
+  <link rel="preload" href="/css/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="/css/custom-aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="/css/magnific-popup.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="/css/slick.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="/css/fontawesome.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="/css/remixicon.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="/css/niceselect.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+  <noscript>
+    <link rel="stylesheet" href="/css/aos.css">
+    <link rel="stylesheet" href="/css/custom-aos.css">
+    <link rel="stylesheet" href="/css/magnific-popup.css">
+    <link rel="stylesheet" href="/css/slick.css">
+    <link rel="stylesheet" href="/css/fontawesome.css">
+    <link rel="stylesheet" href="/css/remixicon.css">
+    <link rel="stylesheet" href="/css/niceselect.css">
+  </noscript>
+
+  <!-- jQuery - Carga Síncrona en el Head para garantizar disponibilidad -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+  <!-- Reemplazar cualquier script de reCAPTCHA existente con esta versión optimizada -->
+  <script type="text/javascript">
+    let recaptchaScript;
+    const loadRecaptcha = () => {
+      if (!recaptchaScript) {
+        recaptchaScript = document.createElement('script');
+        recaptchaScript.src = 'https://www.google.com/recaptcha/api.js?render=explicit';
+        recaptchaScript.async = true;
+        recaptchaScript.defer = true;
+        document.body.appendChild(recaptchaScript);
+      }
+    };
+
+    // Cargar reCAPTCHA solo cuando el usuario interactúe con el formulario
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.querySelector('#contact-form');
+      if (form) {
+        form.addEventListener('focusin', loadRecaptcha, { once: true });
+      }
+    });
+  </script>
+
+  <!-- Preload AOS CSS -->
+  <link rel="preload" href="/css/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/css/aos.css"></noscript>
+
+  <!-- Cargar AOS JS de manera optimizada -->
+  <script type="module">
+    document.addEventListener('DOMContentLoaded', function() {
+      import('/js/aos.js').then(module => {
+        AOS.init({
+          duration: 800,
+          easing: 'ease-in-out',
+          once: true, // Animar solo una vez
+          mirror: false,
+          disable: 'mobile' // Deshabilitar en móviles para mejor rendimiento
+        });
+      });
+    });
+  </script>
 </head>
 
 <body>
-
-  <div class="luminix-preloader-wrap">
-    <div class="luminix-preloader">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </div>
-  <!-- End preloader -->
-
+  <WhatsAppButton />
   <div class="progress-bar-container">
     <div class="progress-bar"></div>
   </div>
@@ -85,7 +161,7 @@ import fondoContacto from '@images/fondo-contacto.jpg';
     <div class="luminix-menu-area text-center">
       <div class="luminix-menu-mobile-top">
         <div class="mobile-logo">
-          <a href="index.html">
+          <a href="/">
             <img src="/images/logo/disenopaginas.svg" width="112" alt="logo">
           </a>
         </div>
@@ -100,10 +176,9 @@ import fondoContacto from '@images/fondo-contacto.jpg';
           <li><a href="#servicios">Servicios</a></li>
           <li><a href="#portafolio">Portafolio</a></li>
           <li><a href="#precio">Precios</a></li>    
-          <li><a href="#contacto">Contacto</a></li>    
+          <li><a href="#contacto">Contacto</a></li>
         </ul>
       </div>
-      
     </div>
   </div>
   <!-- End mobile menu -->
@@ -117,11 +192,11 @@ import fondoContacto from '@images/fondo-contacto.jpg';
               <ul>
                 <li>
                   <a href="mailto:name@email.com">
-                    <img src="assets/images/iconbox/mail.svg" alt="">codigoraul@gmail.com
+                    <img src="/images/iconbox/mail.svg" alt="">codigoraul@gmail.com
                   </a>
                 </li>
                 <li>
-                  <img src="assets/images/iconbox/location.svg" alt="">Temuco, Chile
+                  <img src="/images/iconbox/location.svg" alt="">La Serena, Chile
                 </li>
               </ul>
             </div>
@@ -131,7 +206,7 @@ import fondoContacto from '@images/fondo-contacto.jpg';
             <div class="luminix-header-info-data">
               <ul>
                 <li>
-                  <img src="assets/images/iconbox/clock.svg" alt="">Lunes a sabado: 24hrs
+                  <img src="/images/iconbox/clock.svg" alt="">Lunes a sabado: 24hrs
                 </li>
               </ul>
             </div>
@@ -147,8 +222,8 @@ import fondoContacto from '@images/fondo-contacto.jpg';
         <div class="row gx-3 align-items-center justify-content-between">
           <div class="col-8 col-sm-auto ">
             <div class="header-logo1 ">
-              <a href="index.html">
-                <img src="/images/logo/disenopaginas.svg" width="178" alt="logo Diseño web chile">
+              <a href="/">
+                <img src="/images/logo/disenopaginas.svg" width="178" alt="Logo Diseño Web La Serena">
               </a>
             </div>
           </div>
@@ -161,6 +236,7 @@ import fondoContacto from '@images/fondo-contacto.jpg';
                   <li><a href="#servicios">Servicios</a></li>
                   <li><a href="#portafolio">Portafolio</a></li>
                   <li><a href="#precio">Precios</a></li>    
+                  <li><a href="#testimonios">Testimonios</a></li>
                   <li><a href="#contacto">Contacto</a></li>    
                 </ul>
               </nav>
@@ -172,7 +248,7 @@ import fondoContacto from '@images/fondo-contacto.jpg';
               <nav class="navbar site-navbar justify-content-between">
                 <!-- Brand Logo-->
                 <!-- mobile menu trigger -->
-                <button class="luminix-menu-toggle  d-inline-block d-xl-none">
+                <button class="luminix-menu-toggle d-inline-block d-xl-none">
                   <span></span>
                 </button>
                 <!--/.Mobile Menu Hamburger Ends-->
@@ -198,35 +274,37 @@ import fondoContacto from '@images/fondo-contacto.jpg';
              src={landingNosotros} 
              width={600}
              height={700}
-             alt="Landing page para empresas y emprendedores"
+             alt="Diseño web profesional en La Serena"
              />
             <div class="luminix-about-card3">
-              <img src="/images/about-us/author.png" alt="">
+              <img src="/images/about-us/author.png" alt="Experto en diseño web La Serena">
               <h6>Nuestros Clientes nos respaldan con un 98% de satisfacción y continuidad en los años de nuestros servicios web.</h6>
             </div>
           </div>
         </div>
         <div class="col-lg-7 d-flex align-items-center">
           <div class="luminix-default-content pl-100">
-            <h2 class="title2">Diseño de Landing page </h2>
-            <p class="text">Landing Pages en Astro en Chile | Diseño y desarrollo de páginas web rápidas y optimizadas con Astro. Creamos landing pages modernas, ligeras y SEO-friendly para maximizar conversiones y atraer clientes. Ideal para empresas, emprendedores y negocios en Chile que buscan presencia digital con altísimo rendimiento y velocidad.</p>
+            <h2 class="title2">Expertos en Diseño Web La Serena</h2>
+            <p class="text">Diseñamos páginas web profesionales en La Serena, corazón del Valle del Elqui y puerta de entrada al turismo astronómico. 
+              Especializados en sitios web para empresas turísticas, pisqueras, observatorios y negocios de La Serena que buscan brillar 
+              bajo los cielos más despejados de Chile. Conectamos tu marca con el espíritu serenense.</p>
             <div class="luminix-list-icon-content">
               <ul>
                 <li>
-                  <img src="/images/about-us/icon1.svg" alt="Landing page para empresas y emprendedores">
-                  Soluciones adaptadas a todo tipo de presupuestos.
+                  <img src="/images/about-us/icon1.svg" alt="Diseño web personalizado La Serena">
+                  Soluciones web adaptadas al mercado de La Serena, desde turismo hasta industria pisquera.
                 </li>
                 <li>
-                  <img src="/images/about-us/icon1.svg" alt="Diseño web responsivo">
-                  Diseño responsivo para una experiencia óptima en dispositivos móviles, tablets y computadores.
+                  <img src="/images/about-us/icon1.svg" alt="Diseño web responsivo La Serena">
+                  Páginas web que capturan la esencia del Valle del Elqui, optimizadas para el turismo astronómico.
                 </li>
                 <li>
-                  <img src="/images/about-us/icon1.svg" alt="Landing page rápidas">
-                  Asesoramiento en elección de tecnología según los objetivos del negocio
+                  <img src="/images/about-us/icon1.svg" alt="Landing pages rápidas La Serena">
+                  Tecnología web de vanguardia para empresas de La Serena, desde observatorios hasta viñas pisqueras.
                 </li>
                 <li>
-                  <img src="/images/about-us/icon1.svg" alt="">
-                  Soporte y mantenimiento continuo para garantizar la eficiencia y la seguridad de su sitio web.
+                  <img src="/images/about-us/icon1.svg" alt="Soporte técnico La Serena">
+                  Soporte técnico continuo para empresas de La Serena, manteniendo tu presencia digital bajo los cielos del Elqui.
                 </li>
                
               </ul>
@@ -244,18 +322,19 @@ import fondoContacto from '@images/fondo-contacto.jpg';
   <section id="servicios" class="luminix-padding-section">
     <div class="container">
       <div class="luminix-section-title center">
-        <h2 class="title2">Te presentamos nuestros Servicios</h2>
+        <h2 class="title2">Servicios Web Especializados La Serena</h2>
       </div>
       <div class="row">
         <div class="col-lg-4 col-md-6">
           <div class="luminix-service-wrap" data-aos="fade-up" data-aos-duration="500">
             <div class="luminix-service-icon">
-              <img src="/images/service/icon3.svg" alt="">
+              <img src="/images/iconbox/icon3.svg" alt="Diseño de páginas web La Serena">
             </div>
             <div class="luminix-service-content">
-              <h5>Diseño de Landing Pages</h5>
-              <p>Creamos sitios web únicos, ligeros y optimizados, ideales para quienes buscan una 
-                Solución básica pero profesional y efectiva.</p>
+              <h5>Páginas Web para Empresas Turísticas</h5>
+              <p>Diseñamos sitios web especializados para el sector turístico de La Serena. Perfectos para hoteles, tours astronómicos, 
+                agencias de turismo del Valle del Elqui y empresas que aprovechan los cielos más despejados del mundo. 
+                Conectamos tu negocio de La Serena con visitantes de todo el planeta.</p>
             </div>
             <div class="luminix-blog-btn">
               <a href="#">Leer más
@@ -270,12 +349,13 @@ import fondoContacto from '@images/fondo-contacto.jpg';
         <div class="col-lg-4 col-md-6">
           <div class="luminix-service-wrap" data-aos="fade-up" data-aos-duration="700">
             <div class="luminix-service-icon">
-              <img src="/images/service/icon4.svg" alt="">
+              <img src="/images/iconbox/icon4.svg" alt="Landing Pages La Serena">
             </div>
             <div class="luminix-serice-content">
-              <h5> Landing Pages ultra rápidas</h5>
-              <p> Diseño de landing pages ultra rápidas con Astro JS en Chile. Optimiza la velocidad de carga y mejora 
-                la experiencia de usuario con soluciones personalizadas</p>
+              <h5>Landing Pages La Serena</h5>
+              <p>Creamos landing pages optimizadas para empresas pisqueras, observatorios astronómicos y turismo del Valle del Elqui. 
+                Diseños que capturan la magia de los cielos de La Serena y convierten visitantes en clientes. 
+                Especializados en el mercado turístico y vitivinícola de La Serena.</p>
             </div>
             <div class="luminix-blog-btn">
               <a href="">Leer Más
@@ -290,12 +370,13 @@ import fondoContacto from '@images/fondo-contacto.jpg';
         <div class="col-lg-4 col-md-6">
           <div class="luminix-service-wrap" data-aos="fade-up" data-aos-duration="900">
             <div class="luminix-service-icon">
-              <img src="/images/service/icon5.svg" alt="">
+              <img src="/images/iconbox/icon5.svg" alt="Sitios web autoadministrables La Serena">
             </div>
             <div class="luminix-service-content">
-              <h5>Sitios Web Autoadministrables</h5>
-              <p>Implementamos sitios web que permiten a los usuarios gestionar fácilmente su contenido, utilizando 
-                tecnología como  CMS WordPress</p>
+              <h5>Sitios Web Autoadministrables para PyMEs La Serena</h5>
+              <p>Desarrollamos sitios web autoadministrables para pequeñas y medianas empresas de La Serena. 
+                Ideales para restaurantes, hoteles boutique, tiendas de productos locales y servicios turísticos. 
+                Tecnología fácil de usar con capacitación incluida para empresarios de La Serena.</p>
             </div>
             <div class="luminix-blog-btn">
               <a href="#">Leer más
@@ -310,14 +391,13 @@ import fondoContacto from '@images/fondo-contacto.jpg';
         <div class="col-lg-4 col-md-6">
           <div class="luminix-service-wrap" data-aos="fade-up" data-aos-duration="1100">
             <div class="luminix-service-icon">
-              <img src="/images/service/icon6.svg" alt="">
+              <img src="/images/iconbox/icon6.svg" alt="Diseño de logotipos La Serena">
             </div>
             <div class="luminix-service-content">
-              <h5>Diseño de Logotipos Web</h5>
-              <p>Diseñamos tu logotipo de empresa en Adobe Illustrator, de manera rápida pero eficiente, 
-                con un enfoque en la usabilidad y la calidad para tu página web.
-
-              </p>
+              <h5>Identidad Visual La Serena</h5>
+              <p>Creamos identidades visuales que reflejan el espíritu de La Serena. Logotipos inspirados en los paisajes 
+                del Valle del Elqui, la tradición pisquera y la magia astronómica de La Serena. 
+                Diseños únicos que conectan con la esencia local y el mercado turístico.</p>
             </div>
             <div class="luminix-blog-btn">
               <a href="#">Leer Más
@@ -332,13 +412,13 @@ import fondoContacto from '@images/fondo-contacto.jpg';
         <div class="col-lg-4 col-md-6">
           <div class="luminix-service-wrap" data-aos="fade-up" data-aos-duration="1300">
             <div class="luminix-service-icon">
-              <img src="/images/service/icon1.svg" alt="">
+              <img src="/images/iconbox/icon1.svg" alt="Posicionamiento SEO La Serena">
             </div>
             <div class="luminix-service-content">
-              <h5>Posicionamiento Web SEO</h5>
-              <p>Creamos páginas web con posicionamiento SEO en Chile, para que tus marca, servicios y/o productos sean visibles en la web.
-                mediante el proceso de optimización de contenidos y enlaces.
-              </p>
+              <h5>SEO Local para La Serena</h5>
+              <p>Optimizamos tu presencia digital para búsquedas locales en La Serena. 
+                Posicionamiento especializado para turismo astronómico, ruta del pisco, hoteles y servicios de La Serena. 
+                Conectamos tu negocio con turistas y residentes de la región de Coquimbo.</p>
             </div>
             <div class="luminix-blog-btn">
               <a href="#">Leer más
@@ -353,13 +433,13 @@ import fondoContacto from '@images/fondo-contacto.jpg';
         <div class="col-lg-4 col-md-6">
           <div class="luminix-service-wrap" data-aos="fade-up" data-aos-duration="1500">
             <div class="luminix-service-icon">
-              <img src="/images/service/icon2.svg" alt="">
+              <img src="/images/iconbox/icon2.svg" alt="Tiendas online La Serena">
             </div>
             <div class="luminix-service-content">
-              <h5>Sitios web Ecommerce</h5>
-              <p>Páginas web Tiendas online, ya sea con caracteristicas de venta de productos o servicios, o como catalogo para que
-                tus clientes conoscan tus productos y te contácten rápidamente.
-              </p>
+              <h5>E-commerce La Serena</h5>
+              <p>Desarrollamos tiendas online especializadas en productos de La Serena: pisco, artesanías del Valle del Elqui, 
+                productos astronómicos y souvenirs turísticos. Plataformas optimizadas para comerciantes de La Serena 
+                que buscan expandir su alcance nacional e internacional.</p>
             </div>
             <div class="luminix-blog-btn">
               <a href="#">Leer más
@@ -380,7 +460,7 @@ import fondoContacto from '@images/fondo-contacto.jpg';
     <div class="video-background">
         <Image 
             src={bgImagePantalla} 
-            alt="Fondo de sección de video"
+            alt="Diseño de sitios web profesionales en La Serena"
             width={1920}
             height={1080}
             quality={80}
@@ -394,12 +474,12 @@ import fondoContacto from '@images/fondo-contacto.jpg';
             <div class="row">
                 <div class="col-lg-6">
                     <div class="luminix-video-content">
-                        <h2 class="video-title">Landing Page Optimizadas</h2>
-                        <p class="video-text"><b>Landing page optimizada,</b> Astro mejora el rendimiento del sitio web al renderizar componentes en el servidor y enviar HTML liviano al navegador 
-                        sin sobrecarga innecesaria de JavaScript.</p>
+                        <h2 class="video-title">Tecnología Web La Serena</h2>
+                        <p class="video-text"><b>Conectividad digital de La Serena,</b> desarrollamos sitios web optimizados para el turismo astronómico, 
+                        empresas pisqueras y negocios de La Serena que brillan bajo los cielos más claros de Chile.</p>
                         <div class="mt-50 play-btn">
                             <a class="luminix-popup-video3 video-init" href="https://www.youtube.com/watch?v=kssIEqSJeMI">
-                                <img src="/images/v2/play-btn1.svg" alt="">
+                                <img src="/images/v2/play-btn1.svg" alt="Ver video de diseño web La Serena">
                                 <div class="waves waves2 wave-1"></div>
                                 <div class="waves waves2 wave-2"></div>
                                 <div class="waves waves2 wave-3"></div>
@@ -525,112 +605,154 @@ import fondoContacto from '@images/fondo-contacto.jpg';
 </style>
   <!-- end video -->
 
-  <div class="luminix-brand-section">
-    <div class="luminix-brand-slider-wrap">
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand1.svg" alt="">
+
+  <style>
+    .luminix-brand-section {
+      padding: 60px 0;
+      background: #fff;
+    }
+
+    .luminix-brand-slider-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .luminix-brand-item {
+      flex: 0 0 calc(20% - 24px);
+      text-align: center;
+    }
+
+    .luminix-brand-item img {
+      width: 100%;
+      height: auto;
+      max-width: 180px;
+      margin: 0 auto;
+      filter: grayscale(100%);
+      transition: filter 0.3s ease;
+    }
+
+    .luminix-brand-item:hover img {
+      filter: grayscale(0%);
+    }
+
+    @media (max-width: 991px) {
+      .luminix-brand-item {
+        flex: 0 0 calc(33.333% - 20px);
+      }
+    }
+
+    @media (max-width: 767px) {
+      .luminix-brand-item {
+        flex: 0 0 calc(50% - 15px);
+      }
+    }
+
+    @media (max-width: 575px) {
+      .luminix-brand-item {
+        flex: 0 0 100%;
+      }
+    }
+  </style>
+  <!-- end brand -->
+
+  <div id="testimonios" class="luminix-padding-section testimonios-section">
+    <div class="container">
+      <div class="luminix-section-title center">
+        <h3 class="title2">Testimonios de Clientes La Serena</h3>
+        <p class="text">Lo que dicen nuestros clientes de La Serena sobre nuestros servicios especializados en turismo y valle del Elqui</p>
       </div>
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand2.svg" alt="">
-      </div>
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand3.svg" alt="">
-      </div>
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand4.svg" alt="">
-      </div>
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand5.svg" alt="">
-      </div>
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand4.svg" alt="">
-      </div>
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand3.svg" alt="">
-      </div>
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand2.svg" alt="">
-      </div>
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand3.svg" alt="">
-      </div>
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand4.svg" alt="">
-      </div>
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand5.svg" alt="">
-      </div>
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand4.svg" alt="">
-      </div>
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand3.svg" alt="">
-      </div>
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand2.svg" alt="">
-      </div>
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand3.svg" alt="">
-      </div>
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand4.svg" alt="">
-      </div>
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand5.svg" alt="">
-      </div>
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand4.svg" alt="">
-      </div>
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand3.svg" alt="">
-      </div>
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand2.svg" alt="">
-      </div>
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand3.svg" alt="">
-      </div>
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand4.svg" alt="">
-      </div>
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand5.svg" alt="">
-      </div>
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand4.svg" alt="">
-      </div>
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand3.svg" alt="">
-      </div>
-      <div class="luminix-brand-item">
-        <img src="/images/brand/brand2.svg" alt="">
+      <div class="row">
+        <div class="col-lg-4 col-md-6">
+          <div class="testimonio-card" data-aos="fade-up" data-aos-duration="500">
+            <div class="testimonio-content">
+              <p>"Nuestra pisquera familiar ahora recibe turistas de todo el mundo gracias a nuestra nueva página web. Capturaron perfectamente la esencia del Valle del Elqui y nuestra tradición."</p>
+              <div class="testimonio-author">
+                <h5>María Elena González</h5>
+                <p>Pisquera Familiar, Valle del Elqui</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="testimonio-card" data-aos="fade-up" data-aos-duration="700">
+            <div class="testimonio-content">
+              <p>"Nuestro observatorio astronómico ha duplicado las reservas desde que lanzamos la nueva web. Entendieron perfectamente cómo conectar la magia de nuestros cielos con los turistas."</p>
+              <div class="testimonio-author">
+                <h5>Carlos Rodríguez</h5>
+                <p>Observatorio Astronómico, Valle del Elqui</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="testimonio-card" data-aos="fade-up" data-aos-duration="900">
+            <div class="testimonio-content">
+              <p>"Como hotel boutique en el corazón de La Serena, necesitábamos una web que reflejara nuestra exclusividad. El resultado superó nuestras expectativas y aumentó nuestras reservas directas."</p>
+              <div class="testimonio-author">
+                <h5>Ana Martínez</h5>
+                <p>Hotel Boutique, Centro Histórico La Serena</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <!-- end brand -->
+
+  <style>
+    .testimonios-section {
+      background-color: #f8f9fa;
+      padding: 80px 0;
+    }
+    .testimonio-card {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+      height: 100%;
+    }
+    .testimonio-content p {
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+    .testimonio-author h5 {
+      margin-bottom: 5px;
+      color: #001A3D;
+    }
+    .testimonio-author p {
+      margin: 0;
+      font-size: 14px;
+      color: #666;
+    }
+  </style>
 
   <div class="luminix-padding-section7">
     <div class="container">
       <div class="row">
         <div class="col-lg-6">
           <div class="luminix-content-thumb2" data-aos="fade-up" data-aos-duration="700">
-            <Image src={imgLanding} alt="Diseño de Landing page en Chile" />
+            <Image src={imgLanding} alt="Diseño web empresas La Serena" />
           </div>
         </div>
         <div class="col-lg-6 d-flex align-items-center">
           <div class="luminix-default-content">
-            <h2 class="title2">Landing page Rápidas, Páginas rápidas</h2>
-            <p class="text">En un mundo digital donde la velocidad y la optimización marcan la diferencia,
-               diseñamos landing pages en Astro que cargan en milisegundos
-               y están optimizadas para el mejor rendimiento en Google</p>
+            <h2 class="title2">Landing Pages Rápidas La Serena</h2>
+            <p class="text">Como los vientos que recorren el Valle del Elqui, nuestras landing pages navegan rápidamente por la web.
+               Diseñamos experiencias digitales optimizadas para empresas de La Serena, desde observatorios astronómicos 
+               hasta pisqueras tradicionales, con la velocidad que demanda el turismo de La Serena.</p>
             <div class="mt-50">
               <div class="luminix-list-icon-wrap wrap3">
                 <div class="luminix-list-icon-icon2">
                   <img src="/images/v3/icon1.svg" alt="Diseño de landing pages en Chile">
                 </div>
                 <div class="luminix-list-icon-data">
-                  <h5>Aumenta tus Conversiones con Landing Pages Profesionales</h5>
-                  <p>Desarrollamos landing pages optimizadas que transforman visitantes en clientes. Nuestro diseño estratégico maximiza las conversiones y potencia el crecimiento de tu negocio en el mercado chileno.</p>
+                  <h5>Experiencia Forjada en el Valle Digital del Elqui</h5>
+                  <p>Transformamos la magia del Valle del Elqui en experiencias web únicas. Nuestras landing pages capturan la esencia local 
+                  y convierten la curiosidad turística en reservas reales para hoteles, tours astronómicos y experiencias pisqueras.</p>
                 </div>
               </div>
               <div class="luminix-list-icon-wrap wrap3">
@@ -638,8 +760,9 @@ import fondoContacto from '@images/fondo-contacto.jpg';
                   <img src="/images/v3/icon2.svg" alt="Expertos en landing pages Chile">
                 </div>
                 <div class="luminix-list-icon-data">
-                  <h5>Experiencia Comprobada en Landing Pages</h5>
-                  <p>Más de 5 años diseñando landing pages exitosas en Chile. Combinamos diseño atractivo, optimización SEO y estrategias de conversión para destacar tu marca en el mercado digital chileno.</p>
+                  <h5>Conectando Negocios de La Serena con el Mundo</h5>
+                  <p>Especializados en el mercado turístico de La Serena, conectamos empresas locales con visitantes globales. 
+                  Desde observatorios que muestran las estrellas hasta viñas que destilan tradición, potenciamos negocios de La Serena.</p>
                 </div>
               </div>
             </div>
@@ -648,15 +771,12 @@ import fondoContacto from '@images/fondo-contacto.jpg';
       </div>
     </div>
   </div>
-  <!-- end content -->+
+  <!-- end content -->
 
-
-<Tarifas />
-  
+  <Tarifas />
   <!-- end section -->
 
   <Portafolio />
-
   <!-- end Portafolio -->
 
   <div id="contacto" class="luminix-padding-section4">
@@ -664,7 +784,18 @@ import fondoContacto from '@images/fondo-contacto.jpg';
       <div class="row">
         <div class="col-lg-5">
           <div class="luminix-contact-us-thumb" data-aos="fade-up" data-aos-duration="700">
-            <Image src={fondoContacto} alt="Landing pages rápidas y optimizadas" />
+            <div class="contact-image-container">
+                <Image 
+                    src={fondoContacto} 
+                    alt="Contacto diseño web La Serena"
+                    width={526}
+                    height={632}
+                    format="webp"
+                    quality={80}
+                    loading="lazy"
+                    decoding="async"
+                />
+            </div>
           </div>
         </div>
         <div class="col-lg-7">
@@ -672,46 +803,28 @@ import fondoContacto from '@images/fondo-contacto.jpg';
             <div class="luminix-contact-title">
               <h2 class="title pb-0 pt-0">Envianos tu consulta:</h2>
             </div>
-           <!-- Formulario -->
+            <!-- Formulario -->
             <Formulario />
-
-           <!-- End Formulario -->
+            <!-- End Formulario -->
           </div>
         </div>
       </div>
-  
-
     </div>
   </div>
   <!-- end team -->
 
-  <!-- Footer  -->
-<Footer />
+  <!-- Footer -->
+  <Footer />
 
-  <!-- scripts -->
-  <script src="/js/jquery-3.7.1.min.js" is:inline></script>
+  <!-- Plugins de jQuery -->
+  <script is:inline src="/js/menu/menu.js"></script>
+  <script is:inline src="/js/jquery.magnific-popup.min.js"></script>
+  <script is:inline src="/js/slick.js"></script>
+  <script is:inline src="/js/skillbar.js"></script>
+  <script is:inline src="/js/niceselect.js"></script>
 
-  <script src="/js/bootstrap.bundle.min.js"is:inline></script>
-  <script src="/js/menu/menu.js"is:inline></script>
-  <script src="/js/jquery.magnific-popup.min.js"is:inline></script>
-  <script src="/js/slick.js" is:inline></script>
-  <script src="/js/pricing.min.js"is:inline></script>
-  <script src="/js/countdown.js"is:inline></script>
-  <script src="/js/skillbar.js"is:inline></script>
-  <script src="/js/slick-animation.js" is:inline></script>
-  <script src="/js/slick-animation.min.js" is:inline></script>
-  <script src="/js/faq.js" is:inline></script>
-  <script src="/js/isotope.pkgd.min.js" is:inline></script>
-  <script src="/js/tabs-slider.js" is:inline></script>
-  <script src="/js/product-increment.js" is:inline></script>
-  <script src="/js/aos.js" is:inline></script>
-  <script src="/js/niceselect.js" is:inline></script>
-  <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyArZVfNvjnLNwJZlLJKuOiWHZ6vtQzzb1Y"></script>
-  <script src="/js/slick.js" is:inline></script>
-
-  <script src="/js/app.js" is:inline></script>
-
-
+  <!-- Script principal de la plantilla que usa los plugins -->
+  <script is:inline src="/js/app.js"></script>
+  
 </body>
 </html>
-
