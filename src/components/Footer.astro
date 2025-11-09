@@ -12,7 +12,7 @@ import Social from "./Social.astro";
           <div class="col-xxl-4 col-xl-3 col-md-6">
             <div class="luminix-footer-textarea">
               <a href="index.html">
-                <img src="/images/logo/logo-claro.png" width="149"alt="">
+                <img src="/images/logo/logo-claro.png" width="159" alt="">
               </a>
               <p>Diseño y desarrollo de páginas web 2025, que transforman la presencia digital de empresas y emprendedores. 
                 Nuestro objetivo es ofrecer soluciones personalizadas y funcionales que se adapten a 
@@ -47,6 +47,9 @@ import Social from "./Social.astro";
                 <li>
                   <a href="https://diseñopaginas.cl/diseno-web-corredor-propiedades.php">Corredoras propiedades</a>
                 </li>
+                <li>
+                  <a href="https://diseñopaginas.cl/reservas-online-profesionales">Reservas online profesionales</a>
+                </li>
               </ul>
             </div>
           </div>
@@ -61,6 +64,9 @@ import Social from "./Social.astro";
                 </li>
                 <li>
                   <a href="https://diseñopaginas.cl/la-serena/">Páginas web La Serena</a>
+                </li>
+                <li>
+                  <a href="https://diseñopaginas.cl/vina-del-mar/">Páginas web Viña del Mar</a>
                 </li>
                 <li>
                   <a href="https://diseñopaginas.cl/santiago/">Páginas web Santiago</a>
@@ -94,7 +100,7 @@ import Social from "./Social.astro";
               <ul>
                 <li>
                   <img src="/images/iconbox/location.svg" alt="">
-                  Temuco, Chile
+                  Temuco / Santiago, Chile
                 </li>
                 <li>
                   <a href="mailto:name@email.com">
@@ -123,10 +129,73 @@ import Social from "./Social.astro";
     </div>
   </footer>
 
-  <script>
-      // BEGIN JIVOSITE CODE {literal}
-
-(function(){ var widget_id = 'PgpmFYkQWG';var d=document;var w=window;function l(){
-var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
-
+  <!-- JivoChat - Código estándar con mejoras de compatibilidad -->
+  <script is:inline>
+    (function(){
+      // Tu ID de widget de JivoSite
+      var widget_id = 'PgpmFYkQWG';
+      var d = document;
+      var w = window;
+      
+      // Función para cargar el script
+      function loadJivoChat() {
+        // Evitar carga múltiple
+        if (window.jivo_loaded) return;
+        window.jivo_loaded = true;
+        
+        // Crear y configurar el script
+        var s = d.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        // Usar https para mayor seguridad
+        s.src = 'https://code.jivosite.com/script/widget/' + widget_id;
+        
+        // Manejo de eventos para depuración
+        s.onload = function() {
+          console.log('JivoChat cargado correctamente');
+        };
+        
+        s.onerror = function() {
+          console.error('Error al cargar JivoChat');
+          // Reintentar después de 5 segundos en caso de error
+          setTimeout(loadJivoChat, 5000);
+        };
+        
+        // Insertar el script en el documento
+        var ss = d.getElementsByTagName('script')[0];
+        if (ss && ss.parentNode) {
+          ss.parentNode.insertBefore(s, ss);
+        } else {
+          // Si no se puede insertar antes del primer script, añadirlo al body
+          d.body.appendChild(s);
+        }
+      }
+      
+      // Cargar cuando el documento esté listo
+      if (d.readyState === 'complete' || d.readyState === 'interactive') {
+        // El documento ya está listo o casi listo
+        loadJivoChat();
+      } else if (w.addEventListener) {
+        // Navegadores modernos
+        w.addEventListener('load', loadJivoChat, false);
+      } else if (w.attachEvent) {
+        // IE8 y navegadores antiguos
+        w.attachEvent('onload', loadJivoChat);
+      } else {
+        // Último recurso
+        w.onload = loadJivoChat;
+      }
+      
+      // Cargar después de 3 segundos como respaldo
+      setTimeout(loadJivoChat, 3000);
+      
+      // Cargar al primer evento de interacción del usuario
+      ['click', 'scroll', 'mousemove', 'keydown', 'touchstart'].forEach(function(event) {
+        w.addEventListener(event, function loadOnInteraction() {
+          loadJivoChat();
+          // Eliminar el event listener después de la primera interacción
+          w.removeEventListener(event, loadOnInteraction, false);
+        }, { once: true, passive: true });
+      });
+    })();
   </script>

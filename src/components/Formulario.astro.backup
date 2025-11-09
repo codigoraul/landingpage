@@ -24,7 +24,7 @@ const SITE_KEY = "6Lc1VBsTAAAAAJ94jzAhw1B3-Cgi3G6TRnoeejLF";
                 <div class="form-group">
                     <select name="presupuesto" required class="form-control">
                         <option value="">Selecciona un plan</option>
-                        <option value="Si ya tienes sitio web">Si ya tienes sitio web - $80.000</option>
+                        <option value="Si ya tienes sitio web">Si ya tienes sitio web - $70.000</option>
                         <option value="Landing Page - Medio">Landing Page - Medio - $140.000</option>
                         <option value="Landing Page - Avanzada">Landing Page - Avanzada - $200.000</option>
                     </select>
@@ -175,13 +175,6 @@ const SITE_KEY = "6Lc1VBsTAAAAAJ94jzAhw1B3-Cgi3G6TRnoeejLF";
         max-width: 800px;
         margin: 0 auto;
         padding: 20px;
-        background-color: #ffffff;
-        border-radius: 12px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    .luminix-contact-form {
-        background-color: #ffffff !important;
     }
 
     .luminix-contact-form .form-group {
@@ -192,14 +185,13 @@ const SITE_KEY = "6Lc1VBsTAAAAAJ94jzAhw1B3-Cgi3G6TRnoeejLF";
     .luminix-contact-form .form-control {
         width: 100%;
         height: 50px;
-        background-color: #ffffff !important;
+        background-color: #ffffff;
         border: 1px solid #e1e1e1;
         border-radius: 8px;
         padding: 10px 20px;
         font-size: 15px;
         font-weight: 400;
         transition: all 0.3s ease;
-        color: #333333;
     }
 
     .luminix-contact-form .form-control:focus {

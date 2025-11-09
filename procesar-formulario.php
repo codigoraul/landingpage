@@ -96,4 +96,5 @@ if ($success) {
         'error' => 'Error al enviar el email',
         'details' => $error ? $error['message'] : 'Error desconocido en el servidor de correo'
     ]);
-} 
+}
+
