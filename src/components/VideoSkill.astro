@@ -1,0 +1,68 @@
+---
+import { Image } from 'astro:assets';
+import bgImagePantalla from '@images/bg-pantallas.jpg';
+
+const skills = [
+  { label: 'Diseño Profesional', value: 95 },
+  { label: 'Optimización SEO', value: 98 },
+  { label: 'Velocidad de Carga', value: 99 },
+];
+---
+
+<section class="relative min-h-[500px] overflow-hidden text-white section-padded">
+  <Image
+    src={bgImagePantalla}
+    alt=""
+    width={1920}
+    height={1080}
+    quality={70}
+    format="webp"
+    loading="lazy"
+    class="absolute inset-0 h-full w-full object-cover"
+  />
+  <div class="absolute inset-0 bg-ink/60"></div>
+
+  <div class="container-page relative z-10 grid gap-12 lg:grid-cols-2 lg:items-center">
+    <div class="reveal">
+      <h2 class="text-section-title text-white mb-4">Landing Pages Optimizadas</h2>
+      <p class="text-lg text-white/90 leading-relaxed">
+        <strong class="font-semibold">Landing page optimizada,</strong>
+        Astro mejora el rendimiento del sitio web al renderizar componentes en el servidor y enviar
+        HTML liviano al navegador sin sobrecarga innecesaria de JavaScript.
+      </p>
+      <div class="mt-8">
+        <a
+          href="https://www.youtube.com/watch?v=kssIEqSJeMI"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-3 text-white font-semibold hover:text-brand-200 transition-colors"
+        >
+          <span class="relative flex h-16 w-16 items-center justify-center rounded-full bg-white text-accent shadow-float">
+            <svg class="h-6 w-6 ml-1" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+            <span class="pointer-events-none absolute inset-0 rounded-full ring-2 ring-white/50 animate-ping"></span>
+          </span>
+          Ver Video
+        </a>
+      </div>
+    </div>
+
+    <div class="reveal space-y-6 lg:pl-12">
+      {
+        skills.map((s) => (
+          <div>
+            <h3 class="text-white font-semibold mb-2">{s.label}</h3>
+            <div class="relative h-2 rounded-full bg-white/20 overflow-hidden">
+              <div
+                class="absolute inset-y-0 left-0 rounded-full bg-gradient-to-r from-brand-300 to-white"
+                style={`width:${s.value}%`}
+                aria-label={`${s.label} ${s.value}%`}
+              />
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

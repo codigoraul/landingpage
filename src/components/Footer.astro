@@ -1,201 +1,144 @@
 ---
-import Social from "./Social.astro";
+import Social from './Social.astro';
 
-// import { Icon } from 'astro-icon';
+const servicios = [
+  { href: 'https://diseñopaginas.cl/paginas-web-clinica-dental.php', label: 'Web Dentistas' },
+  { href: 'https://diseñopaginas.cl/diseno-de-logotipo.php', label: 'Logos e identidad visual' },
+  { href: 'https://diseñopaginas.cl/web-tienda-online.php', label: 'Tiendas Online' },
+  { href: 'https://diseñopaginas.cl/paginas-web-empresas-mineria.php', label: 'Empresas Minería' },
+  { href: 'https://diseñopaginas.cl/diseno-web-abogados/', label: 'Webs Abogados' },
+  { href: 'https://diseñopaginas.cl/diseno-web-psicologos/', label: 'Webs Psicólogos' },
+  { href: 'https://diseñopaginas.cl/veterinarias/', label: 'Webs Veterinarias' },
+  { href: 'https://diseñopaginas.cl/diseno-web-corredor-propiedades.php', label: 'Corredoras propiedades' },
+  { href: 'https://diseñopaginas.cl/reservas-online-profesionales', label: 'Reservas online profesionales' },
+];
+
+const ciudades = [
+  { href: 'https://diseñopaginas.cl/antofagasta/', label: 'Web Antofagasta' },
+  { href: 'https://diseñopaginas.cl/la-serena/', label: 'Web La Serena' },
+  { href: 'https://diseñopaginas.cl/vina-del-mar/', label: 'Web Viña del Mar' },
+  { href: 'https://diseñopaginas.cl/santiago/', label: 'Web Santiago' },
+  { href: 'https://diseñopaginas.cl/concepcion/', label: 'Web Concepción' },
+  { href: 'https://diseñopaginas.cl/diseno-web-temuco.php', label: 'Web Temuco' },
+  { href: 'https://diseñopaginas.cl/diseno-web-valdivia.php', label: 'Web Valdivia' },
+  { href: 'https://diseñopaginas.cl/diseno-web-osorno.php', label: 'Web Osorno' },
+  { href: 'https://diseñopaginas.cl/puerto-montt/', label: 'Web Puerto Montt' },
+  { href: 'https://diseñopaginas.cl/diseno-web-arica.php', label: 'Web Arica' },
+];
+
+const currentYear = new Date().getFullYear();
 ---
 
-<footer class="luminix-footer-section1">
-    <div class="container">
-      
-      <div class="luminix-footer-one">
-        <div class="row">
-          <div class="col-xxl-4 col-xl-3 col-md-6">
-            <div class="luminix-footer-textarea">
-              <a href="index.html">
-                <img src="/images/logo/logo-claro.png" width="159" alt="">
-              </a>
-              <p>Diseño y desarrollo de páginas web 2025, que transforman la presencia digital de empresas y emprendedores. 
-                Nuestro objetivo es ofrecer soluciones personalizadas y funcionales que se adapten a 
-                las necesidades de nuestros clientes, con un enfoque en calidad, usabilidad y estética. desde 2012
-              diseñando páginas web</p>
-              <div class="luminix-social-wrap wrap2">
-                <Social />
-              </div>
-            </div>
-          </div>
-          <div class="col-xxl-2 col-xl-3 col-md-6">
-            <div class="luminix-footer-menu pl-50 ml-15">
-              <div class="luminix-footer-title">
-                <h5>Link relacionados</h5>
-              </div>
-              <ul>
-                <li>
-                  <a href="https://diseñopaginas.cl/paginas-web-clinica-dental.php">Web Dentistas</a>
-                </li>
-                <li>
-                  <a href="https://diseñopaginas.cl/diseno-de-logotipo.php">Logos e identidad visual</a>
-                </li>
-                <li>
-                  <a href="https://diseñopaginas.cl/web-tienda-online.php">Tiendas Online</a>
-                </li>
-                <li>
-                  <a href="https://diseñopaginas.cl/paginas-web-empresas-mineria.php">Empresas Minería</a>
-                </li>
-                <li>
-                  <a href="https://diseñopaginas.cl/diseno-web-abogados.php">Webs Abogados</a>
-                </li>
-                <li>
-                  <a href="https://diseñopaginas.cl/diseno-web-corredor-propiedades.php">Corredoras propiedades</a>
-                </li>
-                <li>
-                  <a href="https://diseñopaginas.cl/reservas-online-profesionales">Reservas online profesionales</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-xxl-3 col-xl-3 col-md-6">
-            <div class="luminix-footer-menu pl-51">
-              <div class="luminix-footer-title">
-                <h5>Link relacionados</h5>
-              </div>
-              <ul>
-                <li>
-                  <a href="https://diseñopaginas.cl/antofagasta/">Páginas web Antofagasta</a>
-                </li>
-                <li>
-                  <a href="https://diseñopaginas.cl/la-serena/">Páginas web La Serena</a>
-                </li>
-                <li>
-                  <a href="https://diseñopaginas.cl/vina-del-mar/">Páginas web Viña del Mar</a>
-                </li>
-                <li>
-                  <a href="https://diseñopaginas.cl/santiago/">Páginas web Santiago</a>
-                </li>
-                <li>
-                  <a href="https://diseñopaginas.cl/concepcion/">Páginas web Concepción</a>
-                </li>
-                <li>
-                  <a href="https://diseñopaginas.cl/diseno-web-temuco.php">Páginas web Temuco</a>
-                </li>
-                <li>
-                    <a href="https://diseñopaginas.cl/diseno-web-valdivia.php">Páginas web Valdivia</a>
-                  </li>
-                  <li>
-                    <a href="https://diseñopaginas.cl/diseno-web-osorno.php">Páginas web Osorno</a>
-                  </li>
-                  <li>
-                    <a href="https://diseñopaginas.cl/puerto-montt/">Páginas web Puerto Montt</a>
-                  </li>
-                  <li>
-                    <a href="https://diseñopaginas.cl/diseno-web-arica.php">Páginas web Arica</a>
-                  </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-xxl-3 col-xl-3 col-md-6">
-            <div class="luminix-footer-menu2 mb-0 pl-50">
-              <div class="luminix-footer-title">
-                <h5>Datos de contacto</h5>
-              </div>
-              <ul>
-                <li>
-                  <img src="/images/iconbox/location.svg" alt="">
-                  Temuco / Santiago, Chile
-                </li>
-                <li>
-                  <a href="mailto:name@email.com">
-                    <img src="/images/iconbox/mail.svg" alt="">
-                    codigoraul@gmail.com
-                  </a>
-                </li>
-                <li>
-                  <a href="tel:+56 961765268">
-                    <img src="/images/iconbox/call.svg" alt="">
-                    (+56) 9 61765268
-                  </a>
-                </li>
-                <li>
-                  <img src="/images/iconbox/clock.svg" alt="">
-                  Lunes a sábado: de 10:00. a 23:00 hrs
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="luminix-footer-bottom-text">
-        <p>Copyright  <span id="current-year"></span>, <a href="https://diseñopaginas.cl">diseñopaginas.cl</a></p>
+<footer class="bg-brand-900 text-white section-padded">
+  <div class="container-page grid gap-10 md:grid-cols-2 lg:grid-cols-12">
+    <!-- Brand -->
+    <div class="lg:col-span-4">
+      <a href="./" aria-label="Ir al inicio" class="inline-block">
+        <img
+          src="./images/logo/logo-claro.png"
+          width="180"
+          height="45"
+          alt="diseñopaginas.cl"
+          class="h-11 w-auto"
+          loading="lazy"
+        />
+      </a>
+      <p class="mt-5 text-white/75 leading-relaxed">
+        Diseño y desarrollo de páginas web {currentYear}, que transforman la presencia digital de
+        empresas y emprendedores. Nuestro objetivo es ofrecer soluciones personalizadas y
+        funcionales que se adapten a las necesidades de nuestros clientes, con un enfoque en
+        calidad, usabilidad y estética. Desde 2012 diseñando páginas web.
+      </p>
+      <div class="mt-6">
+        <Social variant="light" />
       </div>
     </div>
-  </footer>
 
-  <!-- JivoChat - Código estándar con mejoras de compatibilidad -->
-  <script is:inline>
-    (function(){
-      // Tu ID de widget de JivoSite
-      var widget_id = 'PgpmFYkQWG';
-      var d = document;
-      var w = window;
-      
-      // Función para cargar el script
-      function loadJivoChat() {
-        // Evitar carga múltiple
-        if (window.jivo_loaded) return;
-        window.jivo_loaded = true;
-        
-        // Crear y configurar el script
-        var s = d.createElement('script');
-        s.type = 'text/javascript';
-        s.async = true;
-        // Usar https para mayor seguridad
-        s.src = 'https://code.jivosite.com/script/widget/' + widget_id;
-        
-        // Manejo de eventos para depuración
-        s.onload = function() {
-          console.log('JivoChat cargado correctamente');
-        };
-        
-        s.onerror = function() {
-          console.error('Error al cargar JivoChat');
-          // Reintentar después de 5 segundos en caso de error
-          setTimeout(loadJivoChat, 5000);
-        };
-        
-        // Insertar el script en el documento
-        var ss = d.getElementsByTagName('script')[0];
-        if (ss && ss.parentNode) {
-          ss.parentNode.insertBefore(s, ss);
-        } else {
-          // Si no se puede insertar antes del primer script, añadirlo al body
-          d.body.appendChild(s);
+    <!-- Servicios -->
+    <div class="lg:col-span-2">
+      <h3 class="text-lg font-bold text-white mb-4">Servicios</h3>
+      <ul class="space-y-2">
+        {
+          servicios.map((item) => (
+            <li>
+              <a href={item.href} class="text-white/75 hover:text-white transition-colors">
+                {item.label}
+              </a>
+            </li>
+          ))
         }
-      }
-      
-      // Cargar cuando el documento esté listo
-      if (d.readyState === 'complete' || d.readyState === 'interactive') {
-        // El documento ya está listo o casi listo
-        loadJivoChat();
-      } else if (w.addEventListener) {
-        // Navegadores modernos
-        w.addEventListener('load', loadJivoChat, false);
-      } else if (w.attachEvent) {
-        // IE8 y navegadores antiguos
-        w.attachEvent('onload', loadJivoChat);
-      } else {
-        // Último recurso
-        w.onload = loadJivoChat;
-      }
-      
-      // Cargar después de 3 segundos como respaldo
-      setTimeout(loadJivoChat, 3000);
-      
-      // Cargar al primer evento de interacción del usuario
-      ['click', 'scroll', 'mousemove', 'keydown', 'touchstart'].forEach(function(event) {
-        w.addEventListener(event, function loadOnInteraction() {
-          loadJivoChat();
-          // Eliminar el event listener después de la primera interacción
-          w.removeEventListener(event, loadOnInteraction, false);
-        }, { once: true, passive: true });
-      });
-    })();
-  </script>
+      </ul>
+    </div>
+
+    <!-- Ciudades -->
+    <div class="lg:col-span-2">
+      <h3 class="text-lg font-bold text-white mb-4">Ciudades</h3>
+      <ul class="space-y-2">
+        {
+          ciudades.map((item) => (
+            <li>
+              <a href={item.href} class="text-white/75 hover:text-white transition-colors">
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <!-- Contacto -->
+    <div class="lg:col-span-4">
+      <h3 class="text-lg font-bold text-white mb-4">Contacto</h3>
+      <ul class="space-y-3 text-white/75">
+        <li class="flex items-start gap-2">
+          <svg class="h-5 w-5 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-7 8-13a8 8 0 1 0-16 0c0 6 8 13 8 13Z"/><circle cx="12" cy="9" r="3"/></svg>
+          <span>Temuco / Santiago, Chile</span>
+        </li>
+        <li>
+          <a href="mailto:codigoraul@gmail.com" class="flex items-start gap-2 hover:text-white">
+            <svg class="h-5 w-5 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            <span class="break-all">codigoraul@gmail.com</span>
+          </a>
+        </li>
+        <li>
+          <a href="tel:+56961765268" class="flex items-start gap-2 hover:text-white">
+            <svg class="h-5 w-5 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.37 1.9.72 2.8a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.35 1.84.6 2.8.72a2 2 0 0 1 1.73 2.01Z"/></svg>
+            <span>(+56) 9 61765268</span>
+          </a>
+        </li>
+        <li class="flex items-start gap-2">
+          <svg class="h-5 w-5 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          <span>Lunes a sábado: 10:00 a 23:00 hrs</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container-page mt-12 border-t border-white/10 pt-6 text-center text-sm text-white/60">
+    <p>
+      Copyright © {currentYear},
+      <a href="https://diseñopaginas.cl" class="text-white hover:text-brand-200">diseñopaginas.cl</a>
+    </p>
+  </div>
+</footer>
+
+<!-- JivoChat diferido (se carga en primer interacción del usuario) -->
+<script is:inline>
+  (function () {
+    var widgetId = 'PgpmFYkQWG';
+    var loaded = false;
+    function loadJivo() {
+      if (loaded) return;
+      loaded = true;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://code.jivosite.com/script/widget/' + widgetId;
+      document.body.appendChild(s);
+    }
+    ['click', 'scroll', 'mousemove', 'keydown', 'touchstart'].forEach(function (ev) {
+      window.addEventListener(ev, loadJivo, { once: true, passive: true });
+    });
+    // respaldo: cargar al cabo de 8 seg
+    setTimeout(loadJivo, 8000);
+  })();
+</script>

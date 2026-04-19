@@ -1,405 +1,94 @@
 ---
 import { Image } from 'astro:assets';
 import bgImage from '@images/bg-hero.webp';
-import htmlImage from '@images/heroCelu.webp';
+import heroCelu from '@images/heroCelu.webp';
 ---
 
-<!-- Precargar recursos críticos -->
-<link rel="preload" href={bgImage.src} as="image" fetchpriority="high" />
+<section
+  class="relative overflow-hidden bg-gradient-to-br from-[#79D8DF] to-white"
+  aria-label="Hero principal"
+>
+  <!-- Fondo (solo desktop) -->
+  <div class="pointer-events-none absolute inset-0 hidden lg:block" aria-hidden="true">
+    <Image
+      src={bgImage}
+      alt=""
+      widths={[1024, 1440, 1920]}
+      sizes="100vw"
+      quality={70}
+      class="absolute inset-0 h-full w-full object-cover"
+      loading="eager"
+      decoding="sync"
+      fetchpriority="high"
+      format="webp"
+    />
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-white/30"></div>
+  </div>
 
-<section class="luminix-hero-section section" data-astro-cid-wl2paqux> 
-    <div class="hero-background">
-        <Image 
-            src={bgImage} 
-            alt="Diseño de Landing Pages Chile"
-            widths={[640, 768, 1024, 1440]}
-            sizes="(max-width: 640px) 640px, (max-width: 768px) 768px, (max-width: 1024px) 1024px, 1440px"
-            quality={75}
-            class="bg-image"
-            loading="eager"
-            decoding="sync"
-            fetchpriority="high"
-            format="webp"
-        />
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-5 order-lg-2">
-          <div class="luminix-hero-thumb" data-aos="fade-right" data-aos-duration="1000">
-            <Image 
-              src={htmlImage} 
-              alt="Diseño de Landing Pages Chile"
-              width={480}
-              height={640}
-              quality={75}
-              loading="eager"
-              class="img-fluid"
-              format="webp"
-            />
-          </div>
-        </div>
-        <div class="col-lg-7 d-flex align-items-center">
-          <div class="luminix-hero-content3">
-            <!-- Banner de precio económico -->
-            <div class="price-banner fade-in">
-              <span class="price-tag">¡Oferta desde $70.000!</span>
-              <span class="delivery-time">¡Entrega en 48 horas!</span>
-            </div>
-            
-            <h1 class="hero-title fade-in">
-              <span class="visually-hidden">Landing Page Económica y Rápida</span>
-              <span class="hero-title-text">Landing Page Económica y Rápida</span>
-            </h1>
-            <p class="text fade-in">
-              <strong>Landing page económica desde $70.000</strong> con diseño profesional, optimizada para Google y entrega en 48 horas. 
-              Ideal para captar clientes y generar conversiones efectivas. 
-              Además, contamos con experiencia en WordPress para sitios web dinámicos y funcionales.
-            </p>
-            <p class="fw-bold" style="color: #433A44 !important; font-size: 1.1rem !important;">
-              Tu puerta de entrada al éxito digital - Rápida, Económica y Profesional
-            </p>
-            <div class="hero-btn btn2 mt-50 fade-in">
-              <a href="#contacto" class="default-btn2 btn3">Solicitar Cotización</a>
-              <a href="#precio" class="default-btn3">Ver Precios</a>
-            </div>
-          </div>
+  <div class="container-page relative z-10 grid gap-10 py-14 md:py-20 lg:grid-cols-12 lg:gap-8 lg:py-24">
+    <!-- Texto -->
+    <div class="lg:col-span-7 lg:order-1 flex flex-col justify-center text-center lg:text-left">
+      <h1 class="text-hero text-ink-soft text-balance">
+        Landing Page Económica y Rápida
+      </h1>
+
+      <p class="mt-5 max-w-2xl text-lg leading-relaxed text-ink-soft mx-auto lg:mx-0">
+        <strong class="font-semibold text-ink">Landing page económica desde $70.000</strong>
+        con diseño profesional, optimizada para Google y entrega en 48 horas. Ideal para captar
+        clientes y generar conversiones efectivas. Experiencia en Astro.js y WordPress: combinación perfecta para rapidez y posicionamiento SEO.
+      </p>
+
+      <!-- Slider de mensajes -->
+      <div class="mt-6 relative h-20 overflow-hidden mx-auto lg:mx-0 max-w-2xl">
+        <div id="hero-slider">
+          <p class="slider-item text-2xl font-bold text-orange-600 absolute w-full text-center lg:text-left transition-opacity duration-1000 ease-in-out opacity-100">
+            ¿Quieres una landing rápida como esta? ⚡ Carga en menos de 1 segundo
+          </p>
+          <p class="slider-item text-2xl font-bold text-orange-600 absolute w-full text-center lg:text-left transition-opacity duration-1000 ease-in-out opacity-0">
+            Tu puerta de entrada al éxito digital — Rápida, Económica y Profesional
+          </p>
         </div>
       </div>
+
+      <div class="mt-8 flex flex-wrap justify-center gap-4 lg:justify-start">
+        <a href="#contacto" class="btn-primary">Solicitar Cotización</a>
+        <a href="#precio" class="btn-secondary">Ver Precios</a>
+      </div>
     </div>
+
+    <!-- Imagen producto -->
+    <div class="lg:col-span-5 lg:order-2 flex items-end justify-center">
+      <Image
+        src={heroCelu}
+        alt="Diseño de Landing Pages Chile"
+        width={560}
+        height={720}
+        quality={80}
+        loading="eager"
+        class="w-auto max-w-[70%] md:max-w-[60%] lg:max-w-full h-auto object-contain"
+        format="webp"
+      />
+    </div>
+  </div>
 </section>
 
-<style>
-  :root {
-    --accent-color: #2d5cc8;
-    --accent-bg: #2d5cc8;
-  }
+<script is:inline>
+  (function () {
+    const slides = document.querySelectorAll('.slider-item');
+    let currentSlide = 0;
 
-  /* Optimizar renderizado */
-  .hero-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    min-height: 677px;
-    contain: layout size paint;
-    z-index: -1;
-    background-color: #001A3D;
-    will-change: transform;
-  }
-
-  .bg-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    will-change: transform;
-    contain: layout paint;
-    transform: translateZ(0);
-  }
-
-  .hero-title.fade-in {
-    margin-bottom: 20px;
-  }
-  
-  .hero-title {
-    position: relative;
-    margin: 0;
-    padding: 0;
-  }
-
-  .hero-title-text {
-    font-size: clamp(2rem, 5vw, 4rem);
-    line-height: 1.2;
-    display: inline-block;
-    min-height: 1.2em;
-    color: #434656;
-  }
-
-  /* .luminix-hero-section {
-    position: relative;
-    min-height: 677px;
-    display: grid;
-    align-items: end;
-    overflow: hidden;
-    contain: layout paint size;
-    background: linear-gradient(90deg,#79d8df,#fff);
-  }
-
-  .luminix-hero-section::before {
-    background: linear-gradient(135deg, #79D8DF, #FFFFFF); 
-  }*/
-
-  .luminix-hero-thumb {
-    position: relative;
-    width: 100%;
-    max-width: 700px;
-    margin: 0;
-    align-self: flex-end;
-    transform: translateX(-110px);
-  }
-
-  .luminix-hero-thumb img {
-    width: 100%;
-    height: auto;
-    max-height: 900px;
-    object-fit: contain;
-  }
-
-  .img-fluid {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-
-  /* Animaciones CSS nativas para mejor rendimiento */
-  .fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.8s ease-out forwards;
-  }
-
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  /* Aplicar delays escalonados */
-  .hero-title.fade-in { animation-delay: 0.2s; }
-  .text.fade-in { animation-delay: 0.4s; }
-  .hero-btn.fade-in { animation-delay: 0.6s; }
-
-  /* Banner de precio económico */
-  .price-banner {
-    display: inline-flex;
-    align-items: center;
-    gap: 15px;
-    background: linear-gradient(135deg,#4379dc,#4379dc);
-    color: white;
-    padding: 12px 20px;
-    border-radius: 25px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 15px rgba(76, 87, 253, 0.3);
-    font-weight: 600;
-    animation-delay: 0.1s;
-  }
-
-  .price-tag {
-    font-size: 1.2rem;
-    font-weight: 700;
-  }
-
-  .delivery-time {
-    font-size: 0.9rem;
-    opacity: 0.9;
-  }
-
-  /* Responsive para el banner de precio */
-  @media (max-width: 768px) {
-    .price-banner {
-      flex-direction: column;
-      gap: 8px;
-      text-align: center;
-      padding: 15px;
-    }
-    
-    .price-tag {
-      font-size: 1.1rem;
-    }
-    
-    .delivery-time {
-      font-size: 0.85rem;
-    }
-  }
-
-  /* Reducir complejidad de animaciones en dispositivos móviles */
-  @media (max-width: 768px) {
-    .fade-in {
-      opacity: 1;
-      transform: none;
-      animation: none;
-    }
-    
-    .hero-background {
-      min-height: auto;
-      height: 100vh;
+    function nextSlide() {
+      // Ocultar slide actual
+      slides[currentSlide].style.opacity = '0';
+      
+      // Siguiente slide
+      currentSlide = (currentSlide + 1) % slides.length;
+      
+      // Mostrar nuevo slide
+      slides[currentSlide].style.opacity = '1';
     }
 
-    .luminix-hero-thumb {
-      transform: none;
-      margin: 0 auto;
-    }
-
-    .luminix-hero-thumb img {
-      height: auto;
-    }
-  }
-
-  /* Respetar preferencias de reducción de movimiento */
-  @media (prefers-reduced-motion: reduce) {
-    .fade-in {
-      opacity: 1;
-      transform: none;
-      animation: none;
-    }
-  }
-
-  .row {
-    align-items: flex-end !important;
-  }
-
-  /* Ajuste específico para tamaño notebook/tablet */
-  @media (min-width: 768px) and (max-width: 1199px) {
-    .luminix-hero-thumb {
-      position: relative;
-      bottom: 0;
-    }
-
-    .luminix-hero-section {
-      display: grid;
-      align-items: end;
-    }
-
-    .col-lg-5 {
-      align-self: flex-end;
-      margin-bottom: 0;
-    }
-  }
-
-  /* Mantener el diseño responsive para móviles */
-  @media (max-width: 767px) {
-    .luminix-hero-section {
-      min-height: 100vh;
-      padding: 30px 0;
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      background: linear-gradient(135deg, #79D8DF, #FFFFFF);
-    }
-
-    .hero-background {
-      display: none;
-    }
-
-    .luminix-hero-thumb {
-      position: relative;
-      width: 100%;
-      margin: 0 auto 15px;
-      transform: none;
-      z-index: 2;
-    }
-
-    .luminix-hero-thumb img {
-      max-width: 60%;
-      max-height: 300px;
-      margin: 0 auto;
-      display: block;
-    }
-
-    .luminix-hero-content3 {
-      position: relative;
-      z-index: 2;
-      padding: 15px 20px;
-      text-align: center;
-      background: transparent;
-      width: 100%;
-    }
-
-    .luminix-hero-content3 p {
-      color: #433A44 !important;
-      font-size: 1.1rem !important;
-      line-height: 1.6 !important;
-      opacity: 1 !important;
-      font-family: inherit !important;
-      margin-bottom: 1.5rem !important;
-      padding: 0 15px !important;
-      max-width: 100% !important;
-      overflow-wrap: break-word !important;
-      word-wrap: break-word !important;
-      hyphens: auto !important;
-      position: relative;
-      z-index: 2;
-    }
-
-    .luminix-hero-content3 .text {
-      display: block !important;
-      visibility: visible !important;
-      height: auto !important;
-      min-height: 0 !important;
-      position: relative;
-      z-index: 2;
-      color: #433A44 !important;
-      opacity: 1 !important;
-      margin-bottom: 1.5rem !important;
-    }
-
-    .row {
-      flex-direction: column;
-      align-items: center !important;
-      justify-content: center;
-      width: 100%;
-    }
-
-    .col-lg-5 {
-      order: 1;
-      width: 100%;
-    }
-
-    .col-lg-7 {
-      order: 2;
-      width: 100%;
-    }
-
-    .hero-btn {
-      margin-top: 2rem !important;
-    }
-  }
-
-  /* Tablet: 70% del ancho, solo hasta 991px */
-  @media (max-width: 991px) and (min-width: 768px) {
-    .luminix-hero-thumb img {
-      max-width: 70%;
-      max-height: 500px;
-      margin: 0 auto;
-      display: block;
-    }
-  }
-
-  .hero-section {
-    background: linear-gradient(135deg, #79D8DF, #FFFFFF);
-    color: #6A6676;
-    padding: 80px 0;
-    text-align: center;
-  }
-
-
-  
-  .hero-section h1 {
-    color: #433A44;
-  }
-
-  .luminix-hero-content3 p {
-    color: #433A44;
-    font-size: 1.1rem !important;
-  }
-
-  .hero-section p,
-  .hero-section .fw-bold {
-    color: #433A44 !important;
-    font-size: 1.1rem !important;
-    opacity: 1 !important;
-    font-family: inherit !important;
-    background: none !important;
-  }
-
-  p, .fw-bold {
-    color: #433A44 !important;
-  }
-</style>
+    // Cambiar cada 4 segundos
+    setInterval(nextSlide, 4000);
+  })();
+</script>

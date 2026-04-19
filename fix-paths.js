@@ -15,71 +15,7 @@ function fixPaths(directory) {
     } else if (file.endsWith('.html')) {
       let content = fs.readFileSync(filePath, 'utf8');
       
-      // Optimizar carga de recursos críticos
-      content = content.replace(
-        /<link[^>]*\.css"[^>]*>/g,
-        match => {
-          if (match.includes('critical') || match.includes('main')) {
-            // Estilos críticos: cargar inmediatamente
-            return match.replace('rel="stylesheet"', 'rel="stylesheet" media="print" onload="this.media=\'all\'"');
-          } else {
-            // Estilos no críticos: cargar de forma diferida
-            return match.replace('rel="stylesheet"', 'rel="preload" as="style" onload="this.rel=\'stylesheet\'"');
-          }
-        }
-      );
-
-      // Agregar fallback para navegadores sin JavaScript
-      const noscriptStyles = `
-        <noscript>
-          <link rel="stylesheet" href="./assets/styles/main.css">
-        </noscript>
-      `;
-      content = content.replace('</head>', `${noscriptStyles}\n</head>`);
-
-      // Optimizar carga de scripts
-      content = content.replace(
-        /<script\s+src="([^"]+)"/g,
-        (match, src) => {
-          if (src.includes('gstatic.com')) {
-            return `<script src="${src}" defer async`;
-          } else if (src.includes('critical') || src.includes('main')) {
-            return `<script src="${src}"`;
-          } else {
-            return `<script src="${src}" defer`;
-          }
-        }
-      );
-      
-      // Agregar preconnect para recursos externos
-      const preconnects = `
-        <link rel="preconnect" href="https://www.gstatic.com" crossorigin>
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="dns-prefetch" href="https://www.gstatic.com">
-      `;
-      content = content.replace('</head>', `${preconnects}\n</head>`);
-
-      // Optimizar carga de imágenes
-      content = content.replace(
-        /<img[^>]+>/g,
-        match => {
-          if (!match.includes('loading=')) {
-            return match.replace('>', ' loading="lazy">');
-          }
-          return match;
-        }
-      );
-
-      // Agregar atributos de tamaño a imágenes
-      content = content.replace(
-        /<img[^>]+>/g,
-        match => {
-          if (!match.includes('width=') && !match.includes('height=')) {
-            return match.replace('>', ' width="auto" height="auto">');
-          }
-          return match;
-        }
-      );
+      // NO MODIFICAR SCRIPTS NI ESTILOS - dejar como están en el código fuente
 
       // Optimizaciones existentes de rutas
       content = content.replace(/src="\//g, 'src="./');

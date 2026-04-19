@@ -1,0 +1,59 @@
+---
+import { Image } from 'astro:assets';
+import imgLanding from '@images/landingpage.jpg';
+
+const features = [
+  {
+    title: 'Aumenta tus Conversiones con Landing Pages Profesionales',
+    desc: 'Desarrollamos landing pages optimizadas que transforman visitantes en clientes. Nuestro diseño estratégico maximiza las conversiones y potencia el crecimiento de tu negocio en el mercado chileno.',
+  },
+  {
+    title: 'Experiencia Comprobada en Landing Pages',
+    desc: 'Más de 5 años diseñando landing pages exitosas en Chile. Combinamos diseño atractivo, optimización SEO y estrategias de conversión para destacar tu marca en el mercado digital chileno.',
+  },
+];
+---
+
+<section class="section-padded bg-white">
+  <div class="container-page grid gap-12 lg:grid-cols-2 lg:items-center">
+    <div class="reveal">
+      <Image
+        src={imgLanding}
+        alt="Diseño de Landing page en Chile"
+        width={720}
+        height={600}
+        quality={80}
+        format="webp"
+        loading="lazy"
+        class="w-full rounded-2xl shadow-card"
+      />
+    </div>
+
+    <div class="reveal">
+      <h2 class="section-title">Landing Pages Rápidas, Páginas Rápidas</h2>
+      <p class="text-lg text-ink-muted leading-relaxed">
+        En un mundo digital donde la velocidad y la optimización marcan la diferencia, diseñamos
+        landing pages en Astro que cargan en milisegundos y están optimizadas para el mejor
+        rendimiento en Google.
+      </p>
+
+      <div class="mt-8 space-y-6">
+        {
+          features.map((f) => (
+            <div class="flex gap-4">
+              <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-accent">
+                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7Z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-ink mb-2">{f.title}</h3>
+                <p class="text-ink-muted leading-relaxed">{f.desc}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

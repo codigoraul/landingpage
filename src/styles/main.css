@@ -1,29 +1,109 @@
-/* Importaciones críticas para el LCP */
-@import url('/css/bootstrap.min.css') layer(framework);
-@import url('/css/app.min.css') layer(app);
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* Importaciones no críticas */
-@import url('/css/fontawesome.css') layer(icons);
-@import url('/css/aos.css') layer(animations);
+/* ==========================================================================
+   Fuentes y variables base
+   ========================================================================== */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
 
-@layer framework, app, icons, animations;
+  body {
+    @apply font-sans text-ink-soft bg-white leading-relaxed;
+    overflow-x: hidden;
+  }
 
-/* Optimizaciones para el LCP */
-.luminix-hero-section {
-  contain: layout style paint;
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display text-ink font-bold;
+  }
+
+  a {
+    @apply transition-colors duration-200;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand-500;
+  }
 }
 
-.hero-background img {
-  content-visibility: auto;
-  contain: paint;
-} 
+/* ==========================================================================
+   Componentes reutilizables
+   ========================================================================== */
+@layer components {
+  /* Contenedor responsive */
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
 
-.luminix-list-icon-content ul li {
-  font-size: 18px;
-  line-height: 1.43em;
-  font-weight: 600;
-  margin-bottom: 15px;
-  position: relative;
-  padding-left: 35px;
-  color: var(--heading-color);
-} 
+  /* Botones principales */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3 text-base font-semibold text-white shadow-cta transition-all duration-300 hover:bg-accent-hover hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border-2 border-ink bg-white px-6 py-3 text-base font-semibold text-ink transition-all duration-300 hover:bg-ink hover:text-white;
+  }
+
+  .btn-header {
+    @apply inline-flex items-center justify-center rounded-lg border-2 border-ink bg-transparent px-5 py-2.5 text-sm font-semibold text-ink transition-all duration-300 hover:bg-ink hover:text-white hover:shadow-md;
+  }
+
+  /* Card base */
+  .card {
+    @apply rounded-xl bg-white p-8 shadow-card transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1;
+  }
+
+  /* Sección padding estándar */
+  .section-padded {
+    @apply py-16 md:py-20 lg:py-24;
+  }
+
+  /* Títulos de sección */
+  .section-title {
+    @apply text-section-title text-ink mb-4;
+  }
+
+  /* Animaciones de entrada (reemplaza AOS) */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    will-change: opacity, transform;
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+}
+
+/* ==========================================================================
+   Utilidades extra
+   ========================================================================== */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+}

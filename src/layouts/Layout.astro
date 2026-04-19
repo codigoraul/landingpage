@@ -1,58 +1,184 @@
 ---
-interface Props {
-	title: string;
+import '../styles/main.css';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  keywords?: string;
+  image?: string;
+  canonical?: string;
 }
 
-const { title } = Astro.props;
-import '../styles/main.css';
+const {
+  title = 'Landing Page Económica desde $70.000 | Diseño Rápido y Profesional Chile',
+  description = 'Landing page económica y rápida desde $70.000 en Chile. Diseño profesional, optimizada para Google, ideal para captar clientes y generar conversiones. ¡Entrega en 48 horas!',
+  keywords = 'landing page económica, landing page $70.000, diseño web barato, landing page rápida, Chile, Temuco, Santiago, Astro, SEO',
+  image = 'https://diseñopaginas.cl/landing/images/og-landing.jpg',
+  canonical = 'https://diseñopaginas.cl/landing/',
+} = Astro.props;
+
+const siteUrl = 'https://diseñopaginas.cl/landing';
+
+// Schema.org LocalBusiness + WebSite (boost SEO)
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'LocalBusiness',
+      '@id': `${siteUrl}/#business`,
+      name: 'diseñopaginas.cl',
+      url: siteUrl,
+      image: `${siteUrl}/images/logo/diseno-web-logo.svg`,
+      logo: `${siteUrl}/images/logo/diseno-web-logo.svg`,
+      telephone: '+56961765268',
+      email: 'codigoraul@gmail.com',
+      priceRange: '$$',
+      description,
+      areaServed: ['Chile', 'Temuco', 'Santiago', 'Viña del Mar', 'Concepción', 'La Serena', 'Puerto Montt', 'Antofagasta'],
+      address: {
+        '@type': 'PostalAddress',
+        addressCountry: 'CL',
+        addressRegion: 'Araucanía',
+        addressLocality: 'Temuco',
+      },
+      openingHoursSpecification: {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+        opens: '10:00',
+        closes: '23:00',
+      },
+      sameAs: [
+        'https://web.facebook.com/PaginasChile',
+        'https://www.instagram.com/disenopaginas/',
+        'https://www.linkedin.com/in/raul-riquelme-69a16859/',
+        'https://x.com/raulriquelme2',
+        'https://pinterest.com/raulriquelme/',
+      ],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${siteUrl}/#website`,
+      url: siteUrl,
+      name: 'diseñopaginas.cl',
+      description,
+      inLanguage: 'es-CL',
+      publisher: { '@id': `${siteUrl}/#business` },
+    },
+    {
+      '@type': 'Service',
+      '@id': `${siteUrl}/#service`,
+      serviceType: 'Diseño de Landing Pages',
+      provider: { '@id': `${siteUrl}/#business` },
+      areaServed: 'Chile',
+      offers: [
+        {
+          '@type': 'Offer',
+          name: 'Landing Page (si ya tienes sitio)',
+          price: '70000',
+          priceCurrency: 'CLP',
+        },
+        {
+          '@type': 'Offer',
+          name: 'Landing Page Medio',
+          price: '140000',
+          priceCurrency: 'CLP',
+        },
+        {
+          '@type': 'Offer',
+          name: 'Landing Page Avanzada',
+          price: '200000',
+          priceCurrency: 'CLP',
+        },
+      ],
+    },
+  ],
+};
 ---
 
 <!doctype html>
-<html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-		
-		<!-- Precargar recursos críticos -->
-		<link rel="preload" href="/css/bootstrap.min.css" as="style" />
-		<link rel="preload" href="/css/app.min.css" as="style" />
-		
-		<!-- Cargar estilos no críticos de manera asíncrona -->
-		<link rel="preload" href="/css/fontawesome.css" as="style" media="print" onload="this.media='all'" />
-		<link rel="preload" href="/css/aos.css" as="style" media="print" onload="this.media='all'" />
-	</head>
-	<body>
-		<slot />
-		
-		<!-- Scripts críticos en orden correcto -->
-		<script src="/js/jquery-3.7.1.min.js"></script>
-		<script src="/js/bootstrap.bundle.min.js"></script>
-		
-		<!-- Scripts secundarios -->
-		<script src="/js/app.js"></script>
-	</body>
-</html>
+<html lang="es-CL">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
-		color-scheme: dark light;
-	}
-</style>
+    <!-- SEO básico -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="author" content="diseñopaginas.cl" />
+    <meta name="theme-color" content="#2b59ff" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Canonical -->
+    <link rel="canonical" href={canonical} />
+
+    <!-- Pinterest verification (preservado) -->
+    <meta name="p:domain_verify" content="202a15564602cb7871e576394e4296b8" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_CL" />
+    <meta property="og:site_name" content="diseñopaginas.cl" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={image} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/images/logo/diseno-web-logo.svg" />
+
+    <!-- Fuentes optimizadas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fira+Sans:wght@400;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fira+Sans:wght@400;500;600;700&display=swap"
+    />
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+    <slot name="head" />
+  </head>
+  <body>
+    <slot />
+
+    <!-- IntersectionObserver para animaciones (reemplaza AOS, ~200 bytes) -->
+    <script is:inline>
+      (function () {
+        if (typeof IntersectionObserver === 'undefined') return;
+        var io = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                io.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
+        );
+        document.querySelectorAll('.reveal').forEach(function (el) {
+          io.observe(el);
+        });
+      })();
+    </script>
+  </body>
+</html>

@@ -1,80 +1,69 @@
+---
 import { Image } from 'astro:assets';
-import landingNosotros from '../assets/images/landing-nosotros.jpg';
-import authorImage from '../assets/images/about-us/author.png';
+import landingNosotros from '@images/landing-nosotros.jpg';
 
-<div class="luminix-about-thumb" data-aos="fade-up" data-aos-duration="700">
-    <Image
-        src={landingNosotros} 
-        alt="Landing page para empresas y emprendedores"
-        width={600}
-        height={700}
-        loading="lazy"
-        decoding="async"
-        format="webp"
-        quality={80}
-    />
-    <div class="luminix-about-card3">
-        <Image 
-            src={authorImage} 
-            alt="Autor" 
-            width={60} 
-            height={60} 
-            loading="lazy"
-            format="webp"
-            quality={80}
+const bullets = [
+  'Soluciones adaptadas a todo tipo de presupuestos.',
+  'Diseño responsivo para una experiencia óptima en dispositivos móviles, tablets y computadores.',
+  'Asesoramiento en elección de tecnología según los objetivos del negocio.',
+  'Soporte y mantenimiento continuo para garantizar la eficiencia y la seguridad de su sitio web.',
+];
+---
+
+<section id="nosotros" class="section-padded bg-brand-50/40">
+  <div class="container-page grid gap-12 lg:grid-cols-12 lg:items-center">
+    <!-- Imagen -->
+    <div class="lg:col-span-5 reveal">
+      <div class="relative">
+        <Image
+          src={landingNosotros}
+          alt="Landing page para empresas y emprendedores"
+          width={600}
+          height={700}
+          quality={80}
+          loading="lazy"
+          format="webp"
+          class="w-full rounded-2xl shadow-card object-cover"
         />
-        <h6>Nuestros Clientes nos respaldan con un 98% de satisfacción y continuidad en los años de nuestros servicios web.</h6>
+        <div class="absolute -bottom-6 right-0 lg:-right-6 max-w-xs rounded-2xl bg-white p-5 shadow-float">
+          <div class="flex items-center gap-3">
+            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-brand-100 text-brand-700 font-bold">
+              98%
+            </div>
+            <p class="text-sm font-medium text-ink leading-snug">
+              Nuestros Clientes nos respaldan con un 98% de satisfacción y continuidad en los años de nuestros servicios web.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-</div>
 
-<style>
-    .luminix-about-thumb {
-        position: relative;
-        width: 100%;
-        max-width: 600px;
-        margin: 0 auto;
-    }
+    <!-- Texto -->
+    <div class="lg:col-span-7 reveal">
+      <h2 class="section-title">Diseño de Landing page</h2>
+      <p class="text-lg text-ink-muted leading-relaxed">
+        Landing Pages en Astro en Chile | Diseño y desarrollo de páginas web rápidas y optimizadas
+        con Astro. Creamos landing pages modernas, ligeras y SEO-friendly para maximizar
+        conversiones y atraer clientes. Ideal para empresas, emprendedores y negocios en Chile que
+        buscan presencia digital con altísimo rendimiento y velocidad.
+      </p>
 
-    .luminix-about-thumb img {
-        width: 100%;
-        height: auto;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    }
-
-    .luminix-about-card3 {
-        position: absolute;
-        bottom: 30px;
-        right: -30px;
-        background: white;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        max-width: 80%;
-    }
-
-    .luminix-about-card3 img {
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        object-fit: cover;
-    }
-
-    .luminix-about-card3 h6 {
-        margin: 0;
-        font-size: 14px;
-        line-height: 1.5;
-        color: #333;
-    }
-
-    @media (max-width: 768px) {
-        .luminix-about-card3 {
-            right: 0;
-            bottom: 20px;
-            padding: 15px;
+      <ul class="mt-8 space-y-4">
+        {
+          bullets.map((b) => (
+            <li class="flex items-start gap-3 text-ink font-semibold">
+              <svg class="mt-1 h-6 w-6 shrink-0 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m5 13 4 4L19 7" />
+              </svg>
+              <span>{b}</span>
+            </li>
+          ))
         }
-    }
-</style> 
+      </ul>
+
+      <div class="mt-8">
+        <a href="#contacto" class="btn-primary">Contactanos</a>
+      </div>
+    </div>
+  </div>
+</section>

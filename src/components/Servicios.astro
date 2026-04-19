@@ -1,261 +1,80 @@
-import { Image } from 'astro:assets';
+---
+const servicios = [
+  {
+    title: 'Diseño de Landing Pages',
+    desc: 'Creamos sitios web únicos, ligeros y optimizados, ideales para quienes buscan una solución básica pero profesional y efectiva.',
+    alt: 'Diseño de Landing Pages',
+    href: '/que-es-una-landing-page',
+    icon: 'M3 12 12 4l9 8M5 10v10h14V10M9 20v-6h6v6',
+  },
+  {
+    title: 'Landing Pages ultra rápidas',
+    desc: 'Diseño de landing pages ultra rápidas con Astro JS en Chile. Optimiza la velocidad de carga y mejora la experiencia de usuario con soluciones personalizadas.',
+    alt: 'Landing Pages ultra rápidas',
+    href: '/que-es-una-landing-page',
+    icon: 'M13 10V3L4 14h7v7l9-11h-7Z',
+  },
+  {
+    title: 'Sitios Web Autoadministrables',
+    desc: 'Implementamos sitios web que permiten a los usuarios gestionar fácilmente su contenido, utilizando tecnología como CMS WordPress.',
+    alt: 'Sitios Web Autoadministrables',
+    href: '/que-es-una-landing-page',
+    icon: 'M12 6v6l4 2M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Z',
+  },
+  {
+    title: 'Diseño de Logotipos Web',
+    desc: 'Diseñamos tu logotipo de empresa en Adobe Illustrator, de manera rápida pero eficiente, con un enfoque en la usabilidad y la calidad para tu página web.',
+    alt: 'Diseño de Logotipos Web',
+    href: '/que-es-una-landing-page',
+    icon: 'M7 8h10M7 12h10M7 16h6M5 4h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z',
+  },
+  {
+    title: 'Posicionamiento Web SEO',
+    desc: 'Creamos páginas web con posicionamiento SEO en Chile, para que tu marca, servicios y/o productos sean visibles en la web, mediante el proceso de optimización de contenidos y enlaces.',
+    alt: 'Posicionamiento Web SEO',
+    href: '/que-es-una-landing-page',
+    icon: 'm21 21-4.35-4.35M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z',
+  },
+  {
+    title: 'Sitios web Ecommerce',
+    desc: 'Páginas web Tiendas online, ya sea con características de venta de productos o servicios, o como catálogo para que tus clientes conozcan tus productos y te contacten rápidamente.',
+    alt: 'Sitios web Ecommerce',
+    href: '/que-es-una-landing-page',
+    icon: 'M3 3h2l.4 2M7 13h10l4-8H5.4M7 13 5.4 5M7 13l-1.68 3.39A1 1 0 0 0 6.22 18H17M9 21a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm8 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z',
+  },
+];
+---
 
-<section class="luminix-service-section section" id="servicios">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 col-md-6">
-                <div class="luminix-service-wrap" data-aos="fade-up" data-aos-duration="500">
-                    <div class="luminix-service-icon">
-                        <img 
-                            src="/images/iconbox/icon2.svg" 
-                            alt="Diseño de Landing Pages"
-                            width="60"
-                            height="60"
-                            loading="lazy"
-                        />
-                    </div>
-                    <div class="luminix-service-content">
-                        <h5>Diseño de Landing Pages</h5>
-                        <p>Creamos sitios web únicos, ligeros y optimizados, ideales para quienes buscan una 
-                        Solución básica pero profesional y efectiva.</p>
-                    </div>
-                    <div class="luminix-blog-btn">
-                        <a href="/que-es-una-landing-page">
-                            Leer más
-                            <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9.50024 0.75L14.7502 6M14.7502 6L9.50024 11.25M14.7502 6L1.25024 6" 
-                                    stroke="#001A3D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="luminix-service-wrap" data-aos="fade-up" data-aos-duration="700">
-                    <div class="luminix-service-icon">
-                        <img 
-                            src="/images/iconbox/icon2.svg" 
-                            alt="Landing Pages ultra rápidas"
-                            width="64"
-                            height="64"
-                            loading="lazy"
-                        />
-                    </div>
-                    <div class="luminix-service-content">
-                        <h5>Landing Pages ultra rápidas</h5>
-                        <p>Diseño de landing pages ultra rápidas con Astro JS en Chile. Optimiza la velocidad de carga y mejora 
-                        la experiencia de usuario con soluciones personalizadas</p>
-                    </div>
-                    <div class="luminix-blog-btn">
-                        <a href="/que-es-una-landing-page">Leer más
-                            <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9.50024 0.75L14.7502 6M14.7502 6L9.50024 11.25M14.7502 6L1.25024 6" 
-                                    stroke="#001A3D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="luminix-service-wrap" data-aos="fade-up" data-aos-duration="900">
-                    <div class="luminix-service-icon">
-                        <img 
-                            src="/images/iconbox/icon2.svg" 
-                            alt="Wordpress"
-                            width="64"
-                            height="64"
-                            loading="lazy"
-                        />
-                    </div>
-                    <div class="luminix-service-content">
-                        <h5>Wordpress</h5>
-                        <p>Además de nuestras landing pages, también ofrecemos desarrollo en WordPress, ideal para quienes necesitan un gestor de contenidos robusto y fácil de usar.</p>
-                    </div>
-                    <div class="luminix-blog-btn">
-                        <a href="/que-es-una-landing-page">Leer más
-                            <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9.50024 0.75L14.7502 6M14.7502 6L9.50024 11.25M14.7502 6L1.25024 6" 
-                                    stroke="#001A3D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="luminix-service-wrap" data-aos="fade-up" data-aos-duration="500">
-                    <div class="luminix-service-icon">
-                        <img 
-                            src="/images/iconbox/icon4.svg" 
-                            alt="Servicio de Hosting"
-                            width="64"
-                            height="64"
-                            loading="lazy"
-                        />
-                    </div>
-                    <div class="luminix-service-content">
-                        <h5>Servicio de Hosting</h5>
-                        <p>Ofrecemos soluciones de hosting rápidas y seguras, optimizadas para el rendimiento de tu sitio web y con soporte técnico especializado.</p>
-                    </div>
-                    <div class="luminix-blog-btn">
-                        <a href="/que-es-una-landing-page">Leer más
-                            <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9.50024 0.75L14.7502 6M14.7502 6L9.50024 11.25M14.7502 6L1.25024 6" 
-                                    stroke="#001A3D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="luminix-service-wrap" data-aos="fade-up" data-aos-duration="700">
-                    <div class="luminix-service-icon">
-                        <img 
-                            src="/images/iconbox/icon5.svg" 
-                            alt="Mantención Web"
-                            width="64"
-                            height="64"
-                            loading="lazy"
-                        />
-                    </div>
-                    <div class="luminix-service-content">
-                        <h5>Mantención Web</h5>
-                        <p>Aseguramos que tu sitio web funcione siempre a la perfección con nuestros planes de mantención, que incluyen actualizaciones, seguridad y soporte continuo.</p>
-                    </div>
-                    <div class="luminix-blog-btn">
-                        <a href="/que-es-una-landing-page">Leer más
-                            <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9.50024 0.75L14.7502 6M14.7502 6L9.50024 11.25M14.7502 6L1.25024 6" 
-                                    stroke="#001A3D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="luminix-service-wrap" data-aos="fade-up" data-aos-duration="900">
-                    <div class="luminix-service-icon">
-                        <img 
-                            src="/images/iconbox/icon6.svg" 
-                            alt="Correos Corporativos"
-                            width="64"
-                            height="64"
-                            loading="lazy"
-                        />
-                    </div>
-                    <div class="luminix-service-content">
-                        <h5>Correos Corporativos</h5>
-                        <p>Proyecta una imagen profesional con nuestros servicios de correo corporativo, seguros, confiables y fáciles de gestionar.</p>
-                    </div>
-                    <div class="luminix-blog-btn">
-                        <a href="/que-es-una-landing-page">Leer más
-                            <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9.50024 0.75L14.7502 6M14.7502 6L9.50024 11.25M14.7502 6L1.25024 6" 
-                                    stroke="#001A3D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+<section id="servicios" class="section-padded bg-white">
+  <div class="container-page">
+    <div class="mx-auto max-w-2xl text-center">
+      <h2 class="section-title text-balance">Te presentamos nuestros Servicios</h2>
     </div>
+
+    <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {
+        servicios.map((s) => (
+          <article class="group card reveal flex flex-col">
+            <div class="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-brand-50 text-accent transition-colors group-hover:bg-accent group-hover:text-white">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-7 w-7"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-label={s.alt}
+              >
+                <path d={s.icon} />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-ink mb-3">{s.title}</h3>
+            <p class="text-ink-muted leading-relaxed flex-1">{s.desc}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
 </section>
-
-<style>
-    .luminix-service-section {
-        padding: 100px 0;
-        background-color: #fff;
-        position: relative;
-        z-index: 1;
-        overflow: visible;
-    }
-
-    .luminix-service-wrap {
-        background: #FFFFFF;
-        padding: 40px 30px;
-        border-radius: 10px;
-        margin-bottom: 30px;
-        transition: all 0.3s ease;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        position: relative;
-        z-index: 2;
-    }
-
-    .luminix-service-wrap:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    }
-
-    .luminix-service-icon {
-        margin-bottom: 25px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .luminix-service-icon img {
-        width: 64px;
-        height: 64px;
-        object-fit: contain;
-    }
-
-    .luminix-service-content {
-        text-align: center;
-    }
-
-    .luminix-service-content h5 {
-        font-size: 22px;
-        margin-bottom: 15px;
-        color: #001A3D;
-    }
-
-    .luminix-service-content p {
-        margin-bottom: 20px;
-        color: #666;
-        line-height: 1.6;
-    }
-
-    .luminix-blog-btn {
-        text-align: center;
-    }
-
-    .luminix-blog-btn a {
-        color: #001A3D;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        font-weight: 500;
-        transition: all 0.3s ease;
-    }
-
-    .luminix-blog-btn a:hover {
-        color: #0056b3;
-    }
-
-    .luminix-blog-btn svg {
-        transition: transform 0.3s ease;
-    }
-
-    .luminix-blog-btn a:hover svg {
-        transform: translateX(5px);
-    }
-
-    @media (max-width: 768px) {
-        .luminix-service-section {
-            padding: 60px 0;
-        }
-
-        .luminix-service-wrap {
-            padding: 30px 20px;
-        }
-
-        .luminix-service-content h5 {
-            font-size: 20px;
-        }
-    }
-</style> 

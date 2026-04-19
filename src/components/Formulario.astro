@@ -1,323 +1,168 @@
 ---
-const SITE_KEY = "6Lc1VBsTAAAAAJ94jzAhw1B3-Cgi3G6TRnoeejLF";
+const SITE_KEY = '6Lc1VBsTAAAAAJ94jzAhw1B3-Cgi3G6TRnoeejLF';
 ---
 
-<div class="luminix-contact-area">
-    <form id="contactForm" class="luminix-contact-form" method="POST">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <input type="text" name="nombre" placeholder="Nombre" required class="form-control">
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <input type="email" name="email" placeholder="Email" required class="form-control">
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <input type="tel" name="fono" placeholder="Teléfono" required class="form-control">
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <select name="presupuesto" required class="form-control">
-                        <option value="">Selecciona un plan</option>
-                        <option value="Si ya tienes sitio web">Si ya tienes sitio web - $70.000</option>
-                        <option value="Landing Page - Medio">Landing Page - Medio - $140.000</option>
-                        <option value="Landing Page - Avanzada">Landing Page - Avanzada - $200.000</option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="form-group">
-                    <textarea name="mensaje" placeholder="Mensaje" required class="form-control"></textarea>
-                </div>
-            </div>
-            <div class="col-12">
-                <div id="recaptcha-container"></div>
-            </div>
-            <div class="col-12">
-                <button type="submit" class="luminix-default-btn">Enviar mensaje</button>
-            </div>
-            <div id="formMessage" class="col-12" style="display: none;">
-                <p class="success-message" style="display: none">¡Mensaje enviado correctamente!</p>
-                <p class="error-message" style="display: none">Error al enviar el mensaje. Por favor, intenta nuevamente.</p>
-            </div>
-        </div>
-    </form>
-</div>
+<form
+  id="contactForm"
+  method="POST"
+  class="space-y-5"
+  data-sitekey={SITE_KEY}
+  novalidate
+>
+  <div class="grid gap-5 md:grid-cols-2">
+    <div>
+      <label for="f-nombre" class="sr-only">Nombre</label>
+      <input
+        id="f-nombre"
+        type="text"
+        name="nombre"
+        placeholder="Nombre"
+        required
+        autocomplete="name"
+        class="w-full h-12 rounded-lg border border-gray-200 bg-white px-4 text-base text-ink placeholder:text-gray-400 focus:border-accent focus:ring-4 focus:ring-accent/10 focus:outline-none transition"
+      />
+    </div>
+    <div>
+      <label for="f-email" class="sr-only">Email</label>
+      <input
+        id="f-email"
+        type="email"
+        name="email"
+        placeholder="Email"
+        required
+        autocomplete="email"
+        class="w-full h-12 rounded-lg border border-gray-200 bg-white px-4 text-base text-ink placeholder:text-gray-400 focus:border-accent focus:ring-4 focus:ring-accent/10 focus:outline-none transition"
+      />
+    </div>
+    <div>
+      <label for="f-fono" class="sr-only">Teléfono</label>
+      <input
+        id="f-fono"
+        type="tel"
+        name="fono"
+        placeholder="Teléfono"
+        required
+        autocomplete="tel"
+        class="w-full h-12 rounded-lg border border-gray-200 bg-white px-4 text-base text-ink placeholder:text-gray-400 focus:border-accent focus:ring-4 focus:ring-accent/10 focus:outline-none transition"
+      />
+    </div>
+    <div>
+      <label for="f-presupuesto" class="sr-only">Plan</label>
+      <select
+        id="f-presupuesto"
+        name="presupuesto"
+        required
+        class="w-full h-12 rounded-lg border border-gray-200 bg-white px-4 text-base text-ink focus:border-accent focus:ring-4 focus:ring-accent/10 focus:outline-none transition appearance-none bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2216%22%20height=%2216%22%20viewBox=%220%200%2024%2024%22%20fill=%22none%22%20stroke=%22%23666%22%20stroke-width=%222%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22%3E%3Cpolyline%20points=%226%209%2012%2015%2018%209%22%3E%3C/polyline%3E%3C/svg%3E')] bg-no-repeat bg-[right_1rem_center] pr-10"
+      >
+        <option value="">Selecciona un plan</option>
+        <option value="Si ya tienes sitio web">Si ya tienes sitio web — $70.000</option>
+        <option value="Landing Page - Medio">Landing Page Medio — $140.000</option>
+        <option value="Landing Page - Avanzada">Landing Page Avanzada — $200.000</option>
+      </select>
+    </div>
+  </div>
+
+  <div>
+    <label for="f-mensaje" class="sr-only">Mensaje</label>
+    <textarea
+      id="f-mensaje"
+      name="mensaje"
+      placeholder="Mensaje"
+      required
+      rows="5"
+      class="w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-base text-ink placeholder:text-gray-400 focus:border-accent focus:ring-4 focus:ring-accent/10 focus:outline-none transition resize-y min-h-[120px]"
+    ></textarea>
+  </div>
+
+  <div id="recaptcha-container" class="flex justify-start"></div>
+
+  <div class="flex flex-col sm:flex-row sm:items-center gap-4">
+    <button type="submit" class="btn-primary min-w-[200px]">
+      Enviar mensaje
+    </button>
+    <p class="text-xs text-ink-muted">
+      Al enviar aceptas que te contactemos por los medios indicados.
+    </p>
+  </div>
+
+  <div
+    id="formMessage"
+    class="hidden rounded-lg p-4 text-sm"
+    role="status"
+    aria-live="polite"
+  ></div>
+</form>
 
 <script>
-    const SITE_KEY = "6Lc1VBsTAAAAAJ94jzAhw1B3-Cgi3G6TRnoeejLF";
-    let recaptchaLoaded = false;
-    let recaptchaWidget: number | null = null;
+  const form = document.getElementById('contactForm') as HTMLFormElement | null;
+  const formMessage = document.getElementById('formMessage');
+  const recaptchaContainer = document.getElementById('recaptcha-container');
+  const SITE_KEY = form?.dataset.sitekey || '';
+  let recaptchaLoaded = false;
+  let recaptchaWidget: number | null = null;
 
-    // Elementos del DOM
-    const form = document.getElementById('contactForm');
-    const formMessage = document.getElementById('formMessage');
-    const successMessage = formMessage?.querySelector('.success-message') as HTMLElement;
-    const errorMessage = formMessage?.querySelector('.error-message') as HTMLElement;
+  function showMessage(ok: boolean, text: string) {
+    if (!formMessage) return;
+    formMessage.classList.remove('hidden', 'bg-green-50', 'text-green-800', 'bg-red-50', 'text-red-800');
+    if (ok) {
+      formMessage.classList.add('bg-green-50', 'text-green-800');
+      formMessage.textContent = '✓ ' + text;
+    } else {
+      formMessage.classList.add('bg-red-50', 'text-red-800');
+      formMessage.textContent = '⚠ ' + text;
+    }
+  }
 
-    // Función para cargar reCAPTCHA
-    function loadRecaptcha() {
-        if (!recaptchaLoaded) {
-            const script = document.createElement('script');
-            script.src = 'https://www.google.com/recaptcha/api.js?render=explicit';
-            script.async = true;
-            script.defer = true;
-            script.onload = function() {
-                // @ts-ignore
-                window.grecaptcha.ready(function() {
-                    try {
-                        // @ts-ignore
-                        recaptchaWidget = window.grecaptcha.render('recaptcha-container', {
-                            'sitekey': SITE_KEY,
-                            'callback': onRecaptchaSuccess,
-                            'error-callback': onRecaptchaError
-                        });
-                    } catch (error) {
-                        console.error('Error al renderizar reCAPTCHA:', error);
-                        showMessage(false, 'Error al cargar el reCAPTCHA. Por favor, recarga la página.');
-                    }
-                });
-            };
-            script.onerror = function() {
-                console.error('Error al cargar el script de reCAPTCHA');
-                showMessage(false, 'Error al cargar el reCAPTCHA. Por favor, recarga la página.');
-            };
-            document.head.appendChild(script);
-            recaptchaLoaded = true;
+  function loadRecaptcha() {
+    if (recaptchaLoaded || !recaptchaContainer) return;
+    recaptchaLoaded = true;
+    const script = document.createElement('script');
+    script.src = 'https://www.google.com/recaptcha/api.js?render=explicit';
+    script.async = true;
+    script.defer = true;
+    script.onload = () => {
+      // @ts-ignore
+      (window as any).grecaptcha?.ready(() => {
+        try {
+          // @ts-ignore
+          recaptchaWidget = (window as any).grecaptcha.render('recaptcha-container', {
+            sitekey: SITE_KEY,
+          });
+        } catch (err) {
+          console.error('reCAPTCHA render error', err);
         }
-    }
+      });
+    };
+    document.head.appendChild(script);
+  }
 
-    // Función para manejar el éxito del reCAPTCHA
-    function onRecaptchaSuccess(token: string) {
-        // El token se agregará automáticamente al formulario
-    }
+  form?.querySelectorAll('input, textarea, select').forEach((el) => {
+    el.addEventListener('focus', loadRecaptcha, { once: true });
+  });
 
-    // Función para manejar errores del reCAPTCHA
-    function onRecaptchaError() {
-        showMessage(false, 'Error en la verificación del reCAPTCHA. Por favor, intenta nuevamente.');
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    // @ts-ignore
+    const token = (window as any).grecaptcha?.getResponse(recaptchaWidget);
+    if (!token) {
+      showMessage(false, 'Por favor, completa el reCAPTCHA antes de enviar el mensaje.');
+      return;
     }
-
-    // Función para mostrar mensajes
-    function showMessage(success: boolean, message: string) {
-        if (formMessage && successMessage && errorMessage) {
-            formMessage.style.display = 'block';
-            successMessage.style.display = success ? 'block' : 'none';
-            errorMessage.style.display = success ? 'none' : 'block';
-            if (!success) {
-                errorMessage.textContent = message;
-            }
-        }
+    const fd = new FormData(form);
+    fd.append('g-recaptcha-response', token);
+    try {
+      const res = await fetch('/procesar-formulario.php', { method: 'POST', body: fd });
+      const data = await res.json().catch(() => ({ error: 'Respuesta inválida del servidor.' }));
+      if (data.success) {
+        showMessage(true, '¡Mensaje enviado correctamente! Te responderemos a la brevedad.');
+        form.reset();
+        // @ts-ignore
+        if (recaptchaWidget !== null) (window as any).grecaptcha.reset(recaptchaWidget);
+      } else {
+        showMessage(false, data.error || 'Error al enviar el mensaje.');
+      }
+    } catch (err) {
+      showMessage(false, 'Error de conexión. Por favor, intenta nuevamente.');
     }
-
-    // Cargar reCAPTCHA cuando el usuario interactúe con el formulario
-    if (form) {
-        const formInputs = form.querySelectorAll('input, textarea, select');
-        formInputs.forEach(input => {
-            input.addEventListener('focus', loadRecaptcha, { once: true });
-        });
-    }
-
-    // Manejar el envío del formulario
-    if (form instanceof HTMLFormElement) {
-        form.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            // Verificar reCAPTCHA
-            // @ts-ignore
-            const recaptchaResponse = window.grecaptcha?.getResponse(recaptchaWidget);
-            
-            if (!recaptchaResponse) {
-                showMessage(false, 'Por favor, completa el reCAPTCHA antes de enviar el mensaje');
-                return;
-            }
-            
-            const formData = new FormData(this);
-            formData.append('g-recaptcha-response', recaptchaResponse);
-            
-            try {
-                console.log('Enviando formulario...'); // Debug
-                const response = await fetch('../procesar-formulario.php', {
-                    method: 'POST',
-                    body: formData
-                });
-                
-                console.log('Estado de la respuesta:', response.status); // Debug
-                const data = await response.json();
-                console.log('Respuesta del servidor:', data); // Debug
-                
-                if (data.success) {
-                    showMessage(true, '');
-                    this.reset();
-                    if (recaptchaWidget !== null) {
-                        // @ts-ignore
-                        window.grecaptcha.reset(recaptchaWidget);
-                    }
-                } else {
-                    const errorMsg = data.error || 'Error desconocido al enviar el mensaje';
-                    console.error('Error detallado:', errorMsg); // Debug
-                    showMessage(false, errorMsg);
-                }
-            } catch (error) {
-                console.error('Error completo:', error);
-                showMessage(false, 'Error de conexión: No se pudo contactar con el servidor. Por favor, intenta nuevamente.');
-            }
-        });
-    }
+  });
 </script>
-
-<style>
-    .luminix-contact-area {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
-        background-color: #ffffff;
-        border-radius: 12px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    .luminix-contact-form {
-        background-color: #ffffff !important;
-    }
-
-    .luminix-contact-form .form-group {
-        margin-bottom: 20px;
-        width: 100%;
-    }
-
-    .luminix-contact-form .form-control {
-        width: 100%;
-        height: 50px;
-        background-color: #ffffff !important;
-        border: 1px solid #e1e1e1;
-        border-radius: 8px;
-        padding: 10px 20px;
-        font-size: 15px;
-        font-weight: 400;
-        transition: all 0.3s ease;
-        color: #333333;
-    }
-
-    .luminix-contact-form .form-control:focus {
-        border-color: var(--accent-color, #2b59ff);
-        box-shadow: 0 0 0 3px rgba(43, 89, 255, 0.1);
-        outline: none;
-    }
-
-    .luminix-contact-form textarea.form-control {
-        height: 150px;
-        resize: vertical;
-        min-height: 150px;
-        max-height: 300px;
-    }
-
-    .g-recaptcha {
-        margin: 20px 0;
-        display: flex;
-        justify-content: center;
-    }
-
-    .luminix-default-btn {
-        display: inline-block;
-        padding: 15px 35px;
-        background-color: var(--accent-color, #2b59ff);
-        color: #ffffff;
-        border: none;
-        border-radius: 8px;
-        font-size: 16px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        text-align: center;
-        min-width: 200px;
-    }
-
-    .luminix-default-btn:hover {
-        background-color: var(--accent-hover-color, #1a3cc9);
-        transform: translateY(-2px);
-    }
-
-    .luminix-default-btn:active {
-        transform: translateY(0);
-    }
-
-    .col-12 {
-        display: flex;
-        justify-content: flex-start;
-        margin-bottom: 20px;
-        width: 100%;
-    }
-
-    .col-12 .g-recaptcha {
-        margin-left: 0;
-    }
-
-    .col-12 button {
-        margin-left: 0;
-    }
-
-    #formMessage {
-        text-align: left;
-        padding: 15px;
-        border-radius: 8px;
-        margin-top: 20px;
-        width: 100%;
-    }
-
-    .success-message {
-        color: #155724;
-        background-color: #d4edda;
-        border: 1px solid #c3e6cb;
-        padding: 15px;
-        border-radius: 8px;
-        margin: 0;
-    }
-
-    .error-message {
-        color: #721c24;
-        background-color: #f8d7da;
-        border: 1px solid #f5c6cb;
-        padding: 15px;
-        border-radius: 8px;
-        margin: 0;
-    }
-
-    @media (max-width: 767px) {
-        .luminix-contact-form .form-control {
-            height: 45px;
-            padding: 8px 15px;
-        }
-
-        .luminix-contact-form textarea.form-control {
-            height: 120px;
-            min-height: 120px;
-        }
-
-        .luminix-default-btn {
-            padding: 12px 25px;
-            font-size: 15px;
-        }
-    }
-
-    .luminix-contact-form select.form-control {
-        appearance: none;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-        background-repeat: no-repeat;
-        background-position: right 15px center;
-        padding-right: 40px;
-    }
-
-    .luminix-contact-form select.form-control option {
-        color: #333;
-        padding: 10px;
-    }
-
-    .luminix-contact-form select.form-control:focus {
-        border-color: var(--accent-color, #2b59ff);
-        box-shadow: 0 0 0 3px rgba(43, 89, 255, 0.1);
-    }
-</style>
