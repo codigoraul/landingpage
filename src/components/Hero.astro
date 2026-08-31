@@ -33,8 +33,9 @@ import heroCelu from '@images/heroCelu.webp';
   <div class="container-page relative z-10 grid gap-10 py-14 md:py-20 lg:grid-cols-12 lg:gap-8 lg:py-24">
     <!-- Texto -->
     <div class="lg:col-span-7 lg:order-1 flex flex-col justify-center text-center lg:text-left">
-      <h1 class="text-3xl md:text-4xl lg:text-[3.25rem] text-ink-soft text-balance uppercase !font-bold tracking-wide leading-[1.5]">
-        Landing Page Rápida y Económica
+      <h1 class="text-3xl md:text-4xl lg:text-[3.125rem] text-ink-soft uppercase !font-bold tracking-wide">
+        <span class="block animate-fade-up">Landing Page</span>
+        <span class="block mt-2 md:mt-3 lg:mt-4 animate-fade-up animate-delay-150">Rápida y Económica</span>
       </h1>
 
       <p class="mt-5 max-w-2xl text-lg leading-relaxed text-ink-soft mx-auto lg:mx-0">
@@ -44,18 +45,18 @@ import heroCelu from '@images/heroCelu.webp';
       </p>
 
       <!-- Slider de mensajes -->
-      <div class="mt-6 relative h-20 overflow-hidden mx-auto lg:mx-0 max-w-2xl">
+      <div class="mt-3 lg:mt-6 relative h-12 sm:h-14 lg:h-20 overflow-hidden mx-auto lg:mx-0 max-w-2xl">
         <div id="hero-slider">
-          <p class="slider-item text-2xl font-bold text-accent absolute w-full text-center lg:text-left transition-opacity duration-1000 ease-in-out opacity-100">
+          <p class="slider-item text-base sm:text-lg lg:text-2xl font-bold text-accent absolute w-full text-center lg:text-left transition-opacity duration-1000 ease-in-out opacity-100">
             ¿Quieres una landing rápida como esta? ⚡ Carga en menos de 1 segundo
           </p>
-          <p class="slider-item text-2xl font-bold text-accent absolute w-full text-center lg:text-left transition-opacity duration-1000 ease-in-out opacity-0">
+          <p class="slider-item text-base sm:text-lg lg:text-2xl font-bold text-accent absolute w-full text-center lg:text-left transition-opacity duration-1000 ease-in-out opacity-0">
             Tu puerta de entrada al éxito digital — Rápida, Económica y Profesional
           </p>
         </div>
       </div>
 
-      <div class="mt-8 flex flex-wrap justify-center gap-4 lg:justify-start">
+      <div class="mt-5 lg:mt-8 flex flex-wrap justify-center gap-4 lg:justify-start">
         <a href="#contacto" class="btn-primary">Solicitar Cotización</a>
       </div>
       <div class="mt-4 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-ink-muted lg:justify-start">
@@ -86,7 +87,7 @@ import heroCelu from '@images/heroCelu.webp';
         height={720}
         quality={80}
         loading="eager"
-        class="relative w-auto max-w-full max-h-full lg:h-full object-contain transition-transform duration-500 ease-out hover:-translate-y-3"
+        class="relative w-auto max-w-full lg:h-full lg:scale-[1.26] origin-center object-contain animate-fade-in-scale transition-transform duration-500 ease-out hover:-translate-y-3"
         format="webp"
       />
     </div>
