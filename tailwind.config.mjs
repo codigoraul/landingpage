@@ -35,7 +35,7 @@ export default {
       },
       fontFamily: {
         sans: ['"Plus Jakarta Sans"', '"Fira Sans"', 'system-ui', 'sans-serif'],
-        display: ['"Poppins"', '"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+        display: ['"Manrope"', '"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
       },
       fontSize: {
         'hero': ['clamp(2rem, 5vw, 4rem)', { lineHeight: '1.15', fontWeight: '700' }],
