@@ -1,0 +1,46 @@
+---
+const testimonios = [
+  {
+    texto:
+      "Me asesoraron para solucionar problemas de hosting, migrar correos y la puesta en servicio de mi página web. Excelente servicio, profesional muy comprometido y competente, resultados mejores a los esperados, recomendable absolutamente.",
+    nombre: "Gerardo Ojeda",
+    rol: "Cliente Satisfecho",
+  },
+  {
+    texto:
+      "Muy buenos servicios, la página web quedó profesional y en poco tiempo. También cabe recalcar que tiene una preocupación y dedicación por cada cliente.",
+    nombre: "Arqueocat",
+    rol: "Empresa Cliente",
+  },
+  {
+    texto:
+      "Raúl tiene excelente disposición para ayudarte con las dudas y con las actualizaciones que necesitas.",
+    nombre: "Lorena Gacitua",
+    rol: "Psicóloga",
+  },
+];
+---
+
+<section id="testimonios" class="section-padded bg-brand-50/40" aria-label="Testimonios de clientes">
+  <div class="container-page">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+      <p class="text-ink-muted mt-3">Empresas y profesionales que ya confiaron en nosotros.</p>
+    </div>
+
+    <div class="grid gap-6 md:grid-cols-3">
+      {testimonios.map((t) => (
+        <figure class="flex flex-col rounded-2xl bg-white p-6 shadow-card reveal">
+          <div class="mb-3 flex gap-1 text-yellow-400" aria-hidden="true">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+          <blockquote class="flex-1 text-ink-soft leading-relaxed">"{t.texto}"</blockquote>
+          <figcaption class="mt-5 border-t border-gray-100 pt-4">
+            <span class="block font-semibold text-ink">{t.nombre}</span>
+            <span class="block text-sm text-ink-muted">{t.rol}</span>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>
