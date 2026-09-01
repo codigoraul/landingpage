@@ -80,16 +80,18 @@ import heroCelu from '@images/heroCelu.webp';
       <div class="pointer-events-none absolute inset-0 flex items-center justify-center" aria-hidden="true">
         <div class="h-4/5 w-4/5 rounded-full bg-white/50 blur-3xl"></div>
       </div>
-      <Image
-        src={heroCelu}
-        alt="Diseño de Landing Pages Chile"
-        width={560}
-        height={720}
-        quality={80}
-        loading="eager"
-        class="relative w-auto max-w-full lg:h-full lg:scale-[1.26] origin-center object-contain animate-fade-in-scale transition-transform duration-500 ease-out hover:-translate-y-3"
-        format="webp"
-      />
+      <div class="relative w-auto max-w-full lg:h-full animate-fade-in-scale">
+        <Image
+          src={heroCelu}
+          alt="Diseño de Landing Pages Chile"
+          width={560}
+          height={720}
+          quality={80}
+          loading="eager"
+          class="relative w-auto max-w-full lg:h-full lg:scale-[1.26] origin-center object-contain transition-transform duration-500 ease-out hover:-translate-y-3"
+          format="webp"
+        />
+      </div>
     </div>
   </div>
 </section>
